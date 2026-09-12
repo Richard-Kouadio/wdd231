@@ -1,5 +1,5 @@
 /* ------------------------------
-   General Styles
+   Base Styles
 --------------------------------- */
 
 * {
@@ -8,10 +8,10 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: "Roboto", sans-serif;
     color: #1f2937;
     background-color: #f5f7fa;
+    line-height: 1.6;
 }
 
 img {
@@ -21,6 +21,11 @@ img {
 
 a {
     color: inherit;
+}
+
+button,
+a {
+    font-family: inherit;
 }
 
 /* ------------------------------
@@ -35,7 +40,7 @@ header {
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
     padding: 1rem;
 }
 
@@ -46,17 +51,17 @@ header {
 
 .site-header span {
     flex: 1;
-    margin-left: 0.75rem;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 #menu-button {
     border: none;
-    background: transparent;
+    background-color: transparent;
     color: white;
     font-size: 2rem;
     cursor: pointer;
+    padding: 0.25rem 0.5rem;
 }
 
 /* ------------------------------
@@ -74,11 +79,11 @@ nav.open {
 }
 
 nav a {
-    padding: 1rem;
     color: white;
     text-decoration: none;
+    padding: 0.9rem 1rem;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
 }
 
 nav a:hover,
@@ -100,20 +105,19 @@ main {
 
 h1 {
     color: #12355b;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 section {
     background-color: white;
-    margin-bottom: 1.5rem;
     padding: 1.25rem;
+    margin-bottom: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 section h2 {
-    margin-top: 0;
     color: #12355b;
+    margin-top: 0;
 }
 
 /* ------------------------------
@@ -128,12 +132,12 @@ section h2 {
 }
 
 .course-filters button {
-    padding: 0.75rem;
     border: 2px solid #12355b;
-    border-radius: 5px;
     background-color: white;
     color: #12355b;
-    font-weight: bold;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -145,16 +149,22 @@ section h2 {
    Course Cards
 --------------------------------- */
 
-#course-list {
+.course-list {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
 }
 
 .course-card {
-    padding: 1rem;
-    border: 2px solid #d1d5db;
-    border-radius: 8px;
     background-color: #f9fafb;
+    border: 2px solid #12355b;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.course-card.completed {
+    background-color: #d8f3dc;
+    border-color: #2e7d32;
 }
 
 .course-card h3 {
@@ -162,9 +172,18 @@ section h2 {
     color: #12355b;
 }
 
-.course-card.completed {
-    background-color: #d8f3dc;
-    border-color: #40916c;
+.course-card.completed h3 {
+    color: #2e7d32;
+}
+
+.course-card p {
+    margin: 0.5rem 0;
+}
+
+.credit-total {
+    font-weight: 700;
+    color: #12355b;
+    margin-top: 1rem;
 }
 
 /* ------------------------------
@@ -188,6 +207,7 @@ footer {
 .social-links a {
     color: white;
     text-decoration: none;
+    font-weight: 700;
 }
 
 .social-links a:hover {
@@ -196,4 +216,19 @@ footer {
 
 footer p {
     margin: 0.5rem 0;
+}
+
+/* ------------------------------
+   Small Screen Improvements
+--------------------------------- */
+
+@media screen and (min-width: 480px) {
+    .course-filters {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .course-filters button {
+        flex: 1;
+    }
 }

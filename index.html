@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="WDD 231 Web Frontend Development I course home page for Kouame Richard Kouadio.">
-    <meta name="author" content="Kouame Richard Kouadio">
-
     <title>WDD 231 | Web Frontend Development I</title>
 
+    <meta name="description" content="WDD 231 Web Frontend Development I course home page for Kouame Richard Kouadio.">
+
+    <meta name="author" content="Kouame Richard Kouadio">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
+    <!-- JavaScript -->
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/course.js" defer></script>
@@ -40,18 +48,17 @@
     <main>
         <h1>Home</h1>
 
-        <section class="student-info">
+        <section class="about">
             <h2>About Me</h2>
-
             <p>
                 My name is Kouame Richard Kouadio. I am a student studying
-                Web Frontend Development. This page is my course home page
-                for WDD 231.
+                Web Frontend Development. I enjoy learning how to create
+                websites using HTML, CSS, and JavaScript.
             </p>
-
             <p>
-                Through this course, I am developing my skills in HTML, CSS,
-                JavaScript, responsive design, accessibility, and web development.
+                This course will help me improve my skills in responsive
+                design, accessibility, user experience, and modern web
+                development.
             </p>
         </section>
 
@@ -59,12 +66,12 @@
             <h2>Web and Computer Programming Certificate</h2>
 
             <div class="course-filters">
-                <button id="all-courses">All Courses</button>
-                <button id="wdd-courses">WDD Courses</button>
-                <button id="cse-courses">CSE Courses</button>
+                <button id="all-courses" type="button">All Courses</button>
+                <button id="wdd-courses" type="button">WDD Courses</button>
+                <button id="cse-courses" type="button">CSE Courses</button>
             </div>
 
-            <div id="course-list"></div>
+            <div id="course-list" class="course-list"></div>
 
             <p class="credit-total">
                 Total Credits:
@@ -72,38 +79,30 @@
             </p>
         </section>
 
-        <section class="course-information">
-            <h2>WDD 231 Course Information</h2>
-
+        <section class="location">
+            <h2>My Location</h2>
             <p>
-                WDD 231 focuses on modern web frontend development. The course
-                builds on HTML, CSS, JavaScript, and design principles while
-                emphasizing user experience, accessibility, performance,
-                responsive design, and basic API use.
-            </p>
-
-            <p>
-                The goal is to develop a strong foundation in core web
-                technologies and prepare for more advanced web application
-                courses.
+                I live in Côte d'Ivoire and I am studying Web Frontend
+                Development through BYU-Idaho.
             </p>
         </section>
     </main>
 
     <footer>
         <div class="social-links">
-            <a href="https://github.com/Richard-Kouadio" target="_blank" rel="noopener">
+            <a href="https://github.com/Richard-Kouadio" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 GitHub
             </a>
 
-            <a href="#" target="_blank" rel="noopener">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 LinkedIn
             </a>
         </div>
 
         <p>
             &copy; <span id="currentyear"></span>
-            Kouame Richard Kouadio | Côte d'Ivoire
+            Kouame Richard Kouadio
+            | Côte d'Ivoire
         </p>
 
         <p id="lastModified"></p>

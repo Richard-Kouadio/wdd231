@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="WDD 231 Web Frontend Development I course home page for Kouame Richard Kouadio.">
+    <meta name="author" content="Kouame Richard Kouadio">
+
+    <title>WDD 231 | Web Frontend Development I</title>
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="site-header">
+            <img src="images/logo.svg" alt="WDD 231 logo">
+            <span>Kouame Richard Kouadio</span>
+
+            <button id="menu-button" aria-label="Open navigation menu">
+                ☰
+            </button>
+        </div>
+
+        <nav id="navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="chamber/index.html">Chamber</a>
+            <a href="#">Final</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <section class="student-info">
+            <h2>About Me</h2>
+
+            <p>
+                My name is Kouame Richard Kouadio. I am a student studying
+                Web Frontend Development. This page is my course home page
+                for WDD 231.
+            </p>
+
+            <p>
+                Through this course, I am developing my skills in HTML, CSS,
+                JavaScript, responsive design, accessibility, and web development.
+            </p>
+        </section>
+
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+
+            <div class="course-filters">
+                <button id="all-courses">All Courses</button>
+                <button id="wdd-courses">WDD Courses</button>
+                <button id="cse-courses">CSE Courses</button>
+            </div>
+
+            <div id="course-list"></div>
+
+            <p class="credit-total">
+                Total Credits:
+                <span id="total-credits">0</span>
+            </p>
+        </section>
+
+        <section class="course-information">
+            <h2>WDD 231 Course Information</h2>
+
+            <p>
+                WDD 231 focuses on modern web frontend development. The course
+                builds on HTML, CSS, JavaScript, and design principles while
+                emphasizing user experience, accessibility, performance,
+                responsive design, and basic API use.
+            </p>
+
+            <p>
+                The goal is to develop a strong foundation in core web
+                technologies and prepare for more advanced web application
+                courses.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/Richard-Kouadio" target="_blank" rel="noopener">
+                GitHub
+            </a>
+
+            <a href="#" target="_blank" rel="noopener">
+                LinkedIn
+            </a>
+        </div>
+
+        <p>
+            &copy; <span id="currentyear"></span>
+            Kouame Richard Kouadio | Côte d'Ivoire
+        </p>
+
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>

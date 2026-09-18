@@ -5,34 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Grand-Bassam Business & Commerce Chamber | Directory</title>
+    <title>Grand-Bassam Business &amp; Commerce Chamber | Directory</title>
+
     <meta name="description"
-        content="Explore the Grand-Bassam Business & Commerce Chamber directory and discover local businesses, services, and community partners in Grand-Bassam, Côte d'Ivoire.">
+        content="Explore the Grand-Bassam Business &amp; Commerce Chamber directory and discover local businesses, services, and community partners in Grand-Bassam, Côte d'Ivoire.">
+
     <meta name="author" content="Kouame Richard Kouadio">
 
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Grand-Bassam Business & Commerce Chamber">
+    <meta property="og:title" content="Grand-Bassam Business &amp; Commerce Chamber">
+
     <meta property="og:description"
         content="Connecting Businesses, Building Grand-Bassam. Explore our local business directory.">
+
     <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+
+    <meta property="og:url" content="https://richard-kouadio.github.io/wdd231/chamber/directory.html">
+
     <meta property="og:type" content="website">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 </head>
 
 <body>
+
     <header class="site-header">
+
         <div class="header-content">
+
             <a class="brand" href="directory.html">
-                <div class="brand-logo" aria-hidden="true">GB</div>
+                <div class="brand-logo" aria-hidden="true">
+                    GB
+                </div>
+
                 <div>
-                    <span class="brand-name">Grand-Bassam</span>
-                    <span class="brand-subtitle">Business &amp; Commerce Chamber</span>
+                    <span class="brand-name">
+                        Grand-Bassam
+                    </span>
+
+                    <span class="brand-subtitle">
+                        Business &amp; Commerce Chamber
+                    </span>
                 </div>
             </a>
 
@@ -40,78 +58,157 @@
                 aria-expanded="false">
                 ☰
             </button>
+
         </div>
 
         <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-            <a class="active" href="directory.html">Home</a>
-            <a href="directory.html">Directory</a>
-            <a href="#">Discover</a>
-            <a href="#">Join</a>
+            <a class="active" href="directory.html">
+                Home
+            </a>
+
+            <a href="directory.html">
+                Directory
+            </a>
+
+            <a href="#">
+                Discover
+            </a>
+
+            <a href="#">
+                Join
+            </a>
         </nav>
+
     </header>
 
     <main>
+
         <section class="page-heading">
+
             <div>
-                <p class="eyebrow">Grand-Bassam, Côte d'Ivoire</p>
-                <h1>Business Directory</h1>
-                <p>
-                    Discover businesses and organizations helping Grand-Bassam
-                    grow and prosper.
+
+                <p class="eyebrow">
+                    Grand-Bassam, Côte d'Ivoire
                 </p>
+
+                <h1>
+                    Business Directory
+                </h1>
+
+                <p>
+                    Discover businesses and organizations helping
+                    Grand-Bassam grow and prosper.
+                </p>
+
             </div>
+
         </section>
 
         <section class="directory-section" aria-labelledby="directory-title">
+
             <div class="directory-header">
+
                 <div>
-                    <h2 id="directory-title">Our Members</h2>
-                    <p id="member-count">Loading members...</p>
+
+                    <h2 id="directory-title">
+                        Our Members
+                    </h2>
+
+                    <p id="member-count">
+                        Loading members...
+                    </p>
+
                 </div>
 
                 <div class="view-controls">
 
                     <button id="grid-view" class="view-button active" type="button"
-                        aria-label="Display members as a grid">
+                        aria-label="Display members as a grid" aria-pressed="true">
                         ▦ Grid
                     </button>
 
-                    <button id="list-view" class="view-button" type="button" aria-label="Display members as a list">
+                    <button id="list-view" class="view-button" type="button" aria-label="Display members as a list"
+                        aria-pressed="false">
                         ☰ List
                     </button>
+
                 </div>
+
             </div>
 
             <div id="members-container" class="members-grid">
-                <!-- Member cards are created with JavaScript -->
+                <!-- Member cards are generated with JavaScript -->
             </div>
+
         </section>
+
     </main>
 
     <footer class="site-footer">
+
         <div class="footer-content">
+
             <div>
-                <h2>Grand-Bassam Business &amp; Commerce Chamber</h2>
-                <p>Connecting Businesses, Building Grand-Bassam</p>
+
+                <h2>
+                    Grand-Bassam Business &amp; Commerce Chamber
+                </h2>
+
+                <p>
+                    Connecting Businesses, Building Grand-Bassam
+                </p>
+
             </div>
 
             <div class="contact-info">
-                <p><strong>Contact</strong></p>
-                <p>Grand-Bassam, Côte d'Ivoire</p>
-                <p>Email: info@gbcc.example</p>
-                <p>Phone: +225 07 00 00 00 00</p>
+
+                <p>
+                    <strong>Contact</strong>
+                </p>
+
+                <p>
+                    Grand-Bassam, Côte d'Ivoire
+                </p>
+
+                <p>
+                    Email: info@gbcc.example
+                </p>
+
+                <p>
+                    Phone: +225 07 00 00 00 00
+                </p>
+
             </div>
 
             <div class="development-info">
-                <p>&copy; <span id="current-year"></span> Grand-Bassam Business &amp; Commerce Chamber</p>
-                <p>Kouame Richard Kouadio</p>
-                <p>WDD 231</p>
-                <p>Last Modification: <span id="last-modified"></span></p>
+
+                <p>
+                    &copy;
+                    <span id="current-year"></span>
+                    Grand-Bassam Business &amp; Commerce Chamber
+                </p>
+
+                <p>
+                    Kouame Richard Kouadio
+                </p>
+
+                <p>
+                    WDD 231
+                </p>
+
+                <p>
+                    Last Modification:
+                    <span id="last-modified"></span>
+                </p>
+
             </div>
+
         </div>
+
     </footer>
 
     <script src="scripts/directory.js"></script>
+
 </body>
 
 </html>

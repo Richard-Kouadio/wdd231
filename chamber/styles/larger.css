@@ -1,0 +1,85 @@
+@media screen and (min-width: 640px) {
+
+    .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .main-nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        border-top: none;
+    }
+
+    .main-nav a {
+        padding: 1rem 1.25rem;
+    }
+
+    .page-heading {
+        padding: 3rem 1.5rem;
+    }
+
+    .page-heading>div {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .page-heading h1 {
+        font-size: 2.8rem;
+    }
+
+    .directory-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .directory-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .development-info {
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.25);
+        padding-top: 0;
+        padding-left: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .page-heading h1 {
+        font-size: 3.2rem;
+    }
+
+    .member-card {
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .member-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+}

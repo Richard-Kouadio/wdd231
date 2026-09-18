@@ -1,0 +1,76 @@
+{
+    "members": [
+        {
+            "name": "Grand-Bassam Heritage Tours",
+            "address": "12 Rue de la Lagune, Grand-Bassam, Côte d'Ivoire",
+            "phone": "+225 07 11 22 33 44",
+            "website": "https://example.com",
+            "image": "heritage-tours.jpg",
+            "membership": 3,
+            "description": "Guided cultural and historical tours showcasing the heritage of Grand-Bassam."
+        },
+        {
+            "name": "Bassam Coastal Hotel",
+            "address": "25 Boulevard de la Plage, Grand-Bassam, Côte d'Ivoire",
+            "phone": "+225 05 22 33 44 55",
+            "website": "https://example.com",
+            "image": "coastal-hotel.jpg",
+            "membership": 2,
+            "description": "A comfortable coastal hospitality business serving visitors and local travelers."
+        },
+        {
+            "name": "Lagune Business Center",
+            "address": "8 Avenue de la République, Grand-Bassam, Côte d'Ivoire",
+            "phone": "+225 07 33 44 55 66",
+            "website": "https://example.com",
+            "image": "business-center.jpg",
+            "membership": 2,
+            "description": "Professional office, meeting, printing, and business support services."
+        },
+        {
+            "name": "Ébrié Artisan Gallery",
+            "address": "4 Rue des Artisans, Grand-Bassam, Côte d'Ivoire",
+            "phone": "+225 01 44 55 66 77",
+            "website": "https://example.com",
+            "image": "artisan-gallery.jpg",
+            "membership": 1,
+            "description": "A local gallery featuring handcrafted art, cultural products, and creative work."
+        },
+        {
+            "name": "Azure Coast Restaurant",
+            "address": "31 Boulevard de la Plage, Grand-Bassam, Côte d'Ivoire",
+            "phone": "+225 07 55 66 77 88",
+            "website": "https://example.com",
+            "image": "azure-restaurant.jpg",
+            "membership": 3,
+            "description": "A coastal restaurant offering local cuisine and a welcoming dining experience."
+        },
+        {
+            "name": "Bassam Digital Solutions",
+            "address": "17 Avenue de la République, Grand-Bassam, Côte d'Ivoire",
+            "phone": "+225 05 66 77 88 99",
+            "website": "https://example.com",
+            "image": "digital-solutions.jpg",
+            "membership": 2,
+            "description": "Website development, digital marketing, and technology services for local businesses."
+        },
+        {
+            "name": "N'Zassa Construction & Services",
+            "address": "6 Rue du Commerce, Grand-Bassam, Côte d'Ivoire",
+            "phone": "+225 07 77 88 99 00",
+            "website": "https://example.com",
+            "image": "construction.jpg",
+            "membership": 1,
+            "description": "Construction, maintenance, and property improvement services."
+        },
+        {
+            "name": "Maison du Chocolat Bassam",
+            "address": "19 Rue des Jardins, Grand-Bassam, Côte d'Ivoire",
+            "phone": "+225 01 88 99 00 11",
+            "website": "https://example.com",
+            "image": "chocolate-shop.jpg",
+            "membership": 3,
+            "description": "A specialty chocolate and confectionery business inspired by Côte d'Ivoire's cocoa heritage."
+        }
+    ]
+}

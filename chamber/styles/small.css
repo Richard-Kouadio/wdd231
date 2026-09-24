@@ -7,21 +7,38 @@
     --dark-text: #17202a;
     --light-gray: #f4f6f7;
     --border: #d6dfe3;
-
     --heading-font: "Playfair Display", Georgia, "Times New Roman", serif;
     --body-font: "DM Sans", Arial, Helvetica, sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
     font-family: var(--body-font);
     color: var(--dark-text);
     background-color: var(--light-gray);
     line-height: 1.6;
 }
 
-/* ------------------------------
-   Header
------------------------------- */
+img {
+    max-width: 100%;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ==============================
+   HEADER
+============================== */
 
 .site-header {
     background-color: var(--ocean-blue);
@@ -40,6 +57,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -52,8 +70,8 @@ body {
     color: var(--white);
     border-radius: 50%;
     font-family: var(--heading-font);
-    font-weight: 700;
     font-size: 1.15rem;
+    font-weight: 700;
 }
 
 .brand-name,
@@ -68,26 +86,26 @@ body {
 }
 
 .brand-subtitle {
-    font-size: 0.75rem;
     color: var(--sand);
+    font-size: 0.75rem;
 }
 
-/* ------------------------------
-   Mobile Menu Button
------------------------------- */
+/* ==============================
+   MOBILE MENU
+============================== */
 
 .menu-button {
     border: 2px solid var(--white);
-    background: transparent;
-    color: var(--white);
     border-radius: 5px;
     padding: 0.3rem 0.6rem;
+    background-color: transparent;
+    color: var(--white);
     font-size: 1.5rem;
 }
 
-/* ------------------------------
-   Navigation
------------------------------- */
+/* ==============================
+   NAVIGATION
+============================== */
 
 .main-nav {
     display: none;
@@ -101,8 +119,8 @@ body {
 
 .main-nav a {
     padding: 0.9rem 1rem;
-    text-decoration: none;
     color: var(--white);
+    text-decoration: none;
     font-weight: 700;
 }
 
@@ -111,35 +129,35 @@ body {
     background-color: var(--turquoise);
 }
 
-/* ------------------------------
-   Page Heading
------------------------------- */
+/* ==============================
+   PAGE HEADING
+============================== */
 
 .page-heading {
-    background-color: var(--sand);
     padding: 2rem 1rem;
+    background-color: var(--sand);
 }
 
 .eyebrow {
+    margin-bottom: 0.25rem;
     color: var(--ocean-blue);
     font-weight: 700;
-    margin-bottom: 0.25rem;
 }
 
 .page-heading h1 {
-    font-family: var(--heading-font);
+    margin: 0 0 0.5rem;
     color: var(--ocean-blue);
+    font-family: var(--heading-font);
     font-size: 2rem;
-    margin-bottom: 0.5rem;
 }
 
 .page-heading p:last-child {
     margin-bottom: 0;
 }
 
-/* ------------------------------
-   Directory
------------------------------- */
+/* ==============================
+   DIRECTORY
+============================== */
 
 .directory-section {
     max-width: 1200px;
@@ -155,18 +173,18 @@ body {
 }
 
 .directory-header h2 {
-    font-family: var(--heading-font);
+    margin: 0 0 0.25rem;
     color: var(--ocean-blue);
-    margin-bottom: 0.25rem;
+    font-family: var(--heading-font);
 }
 
 .directory-header p {
     margin-bottom: 0;
 }
 
-/* ------------------------------
-   View Buttons
------------------------------- */
+/* ==============================
+   VIEW CONTROLS
+============================== */
 
 .view-controls {
     display: flex;
@@ -175,10 +193,10 @@ body {
 
 .view-button {
     border: 2px solid var(--turquoise);
-    background-color: var(--white);
-    color: var(--ocean-blue);
     border-radius: 5px;
     padding: 0.6rem 1rem;
+    background-color: var(--white);
+    color: var(--ocean-blue);
     font-weight: 700;
 }
 
@@ -188,9 +206,9 @@ body {
     color: var(--white);
 }
 
-/* ------------------------------
-   Member Grid
------------------------------- */
+/* ==============================
+   MEMBER GRID
+============================== */
 
 .members-grid {
     display: grid;
@@ -199,21 +217,22 @@ body {
 }
 
 .member-card {
-    background-color: var(--white);
+    overflow: hidden;
     border: 1px solid var(--border);
     border-radius: 8px;
-    overflow: hidden;
+    background-color: var(--white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .member-image-container {
-    background-color: var(--sand);
     min-height: 180px;
+    background-color: var(--sand);
 }
 
 .member-image-container img {
     width: 100%;
     height: 180px;
+    display: block;
     object-fit: cover;
 }
 
@@ -222,10 +241,10 @@ body {
 }
 
 .member-information h3 {
-    font-family: var(--heading-font);
-    color: var(--ocean-blue);
-    font-size: 1.3rem;
     margin: 0.5rem 0;
+    color: var(--ocean-blue);
+    font-family: var(--heading-font);
+    font-size: 1.3rem;
 }
 
 .member-description {
@@ -267,9 +286,9 @@ body {
     font-weight: 700;
 }
 
-/* ------------------------------
-   List View
------------------------------- */
+/* ==============================
+   LIST VIEW
+============================== */
 
 .members-list {
     display: flex;
@@ -299,26 +318,26 @@ body {
     margin-top: 0;
 }
 
-/* ------------------------------
-   Error Message
------------------------------- */
+/* ==============================
+   ERROR MESSAGE
+============================== */
 
 .error-message {
-    background-color: #ffe5e2;
-    border-left: 5px solid var(--coral);
-    padding: 1rem;
     margin-top: 1rem;
+    padding: 1rem;
+    border-left: 5px solid var(--coral);
+    background-color: #ffe5e2;
 }
 
-/* ------------------------------
-   Footer
------------------------------- */
+/* ==============================
+   FOOTER
+============================== */
 
 .site-footer {
+    margin-top: 2rem;
+    padding: 2rem 1rem;
     background-color: var(--ocean-blue);
     color: var(--white);
-    padding: 2rem 1rem;
-    margin-top: 2rem;
 }
 
 .footer-content {
@@ -342,13 +361,13 @@ body {
 }
 
 .development-info {
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
     padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-/* ------------------------------
-   Accessibility
------------------------------- */
+/* ==============================
+   ACCESSIBILITY
+============================== */
 
 a:focus-visible,
 button:focus-visible {
@@ -356,13 +375,11 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-/* =========================================
-   W03 HOME PAGE
-   ========================================= */
+/* ==============================
+   HOME PAGE
+============================== */
 
-/* -----------------------------------------
-   Hero
-   ----------------------------------------- */
+/* Hero */
 
 .hero {
     position: relative;
@@ -374,28 +391,28 @@ button:focus-visible {
 .hero>img {
     width: 100%;
     height: 430px;
-    object-fit: cover;
     display: block;
+    object-fit: cover;
 }
 
 .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(11, 57, 84, 0.48);
+    background-color: rgba(11, 57, 84, 0.48);
 }
 
 .hero-content {
     position: absolute;
     z-index: 1;
     inset: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem;
     color: var(--white);
 }
 
@@ -406,10 +423,10 @@ button:focus-visible {
 .hero-content h1 {
     max-width: 750px;
     margin: 0.25rem 0 1rem;
+    color: var(--white);
     font-family: var(--heading-font);
     font-size: 2rem;
     line-height: 1.15;
-    color: var(--white);
 }
 
 .hero-content p:not(.eyebrow) {
@@ -420,10 +437,10 @@ button:focus-visible {
 .hero-cta {
     display: inline-block;
     padding: 0.8rem 1.4rem;
+    border-radius: 5px;
     background-color: var(--coral);
     color: var(--white);
     text-decoration: none;
-    border-radius: 5px;
     font-weight: 700;
 }
 
@@ -431,9 +448,7 @@ button:focus-visible {
     background-color: var(--turquoise);
 }
 
-/* -----------------------------------------
-   Home Sections
-   ----------------------------------------- */
+/* Home sections */
 
 .home-section {
     max-width: 1200px;
@@ -456,9 +471,7 @@ button:focus-visible {
     margin-bottom: 0;
 }
 
-/* -----------------------------------------
-   Events
-   ----------------------------------------- */
+/* Events */
 
 .events-section {
     background-color: var(--light-gray);
@@ -473,24 +486,24 @@ button:focus-visible {
 
 .event-card,
 .spotlight-card {
-    background-color: var(--white);
+    padding: 1.25rem;
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 1.25rem;
+    background-color: var(--white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .event-card h3,
 .spotlight-card h3 {
+    margin: 0.5rem 0;
     color: var(--ocean-blue);
     font-family: var(--heading-font);
-    margin: 0.5rem 0;
 }
 
 .event-date {
+    margin: 0;
     color: var(--coral);
     font-weight: 700;
-    margin: 0;
 }
 
 .event-card a,
@@ -499,23 +512,22 @@ button:focus-visible {
     font-weight: 700;
 }
 
-/* -----------------------------------------
-   Weather
-   ----------------------------------------- */
+/* Weather */
 
 .weather-section {
     background-color: var(--sand);
 }
 
 .weather-current {
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    background-color: var(--white);
-    border-radius: 8px;
-    padding: 1.25rem;
-    margin-bottom: 1.5rem;
     border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--white);
 }
 
 .weather-icon {
@@ -546,10 +558,10 @@ button:focus-visible {
 }
 
 .forecast-card {
-    background-color: var(--white);
+    padding: 1rem;
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 1rem;
+    background-color: var(--white);
     text-align: center;
 }
 
@@ -564,9 +576,7 @@ button:focus-visible {
     font-weight: 700;
 }
 
-/* -----------------------------------------
-   Business Spotlights
-   ----------------------------------------- */
+/* Business spotlights */
 
 .spotlight-image {
     width: 100%;
@@ -611,9 +621,7 @@ button:focus-visible {
     margin-top: 0.5rem;
 }
 
-/* -----------------------------------------
-   Section Layout
-   ----------------------------------------- */
+/* Alternating full-width sections */
 
 .home-section:nth-child(even) {
     max-width: none;
@@ -621,6 +629,144 @@ button:focus-visible {
 
 .home-section:nth-child(even)>* {
     max-width: 1200px;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
+}
+
+/* ==============================
+   TABLET
+============================== */
+
+@media screen and (min-width: 640px) {
+    .header-content {
+        max-width: 1200px;
+        min-height: 80px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .main-nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        border-top: none;
+    }
+
+    .main-nav a {
+        padding: 1rem 1.25rem;
+    }
+
+    .page-heading {
+        padding: 3rem 1.5rem;
+    }
+
+    .page-heading>div {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .page-heading h1 {
+        font-size: 2.8rem;
+    }
+
+    .directory-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .directory-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .development-info {
+        padding-top: 0;
+        padding-left: 1.5rem;
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero>img {
+        height: 520px;
+    }
+
+    .hero-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .events-grid,
+    .spotlight-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==============================
+   LARGE DESKTOP
+============================== */
+
+@media screen and (min-width: 1000px) {
+    .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .page-heading h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero>img {
+        height: 600px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .member-card,
+    .event-card,
+    .spotlight-card {
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .member-card:hover,
+    .event-card:hover,
+    .spotlight-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
 }

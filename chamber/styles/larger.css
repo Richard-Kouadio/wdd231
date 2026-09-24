@@ -1,3 +1,7 @@
+/* =========================================
+   TABLET AND DESKTOP STYLES
+   ========================================= */
+
 @media screen and (min-width: 640px) {
 
     .header-content {
@@ -62,6 +66,10 @@
     }
 }
 
+/* =========================================
+   LARGE DIRECTORY VIEW
+   ========================================= */
+
 @media screen and (min-width: 1000px) {
 
     .members-grid {
@@ -85,7 +93,7 @@
 }
 
 /* =========================================
-   W03 HOME PAGE - DESKTOP
+   W03 HOME PAGE - TABLET
    ========================================= */
 
 @media screen and (min-width: 640px) {
@@ -124,6 +132,9 @@
     }
 }
 
+/* =========================================
+   W03 HOME PAGE - LARGE DESKTOP
+   ========================================= */
 
 @media screen and (min-width: 1000px) {
 
@@ -149,8 +160,6 @@
     .event-card:hover,
     .spotlight-card:hover {
         transform: translateY(-3px);
-
-        box-shadow:
-            0 6px 16px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     }
 }

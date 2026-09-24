@@ -307,6 +307,7 @@ body {
     background-color: #ffe5e2;
     border-left: 5px solid var(--coral);
     padding: 1rem;
+    margin-top: 1rem;
 }
 
 /* ------------------------------
@@ -359,7 +360,6 @@ button:focus-visible {
    W03 HOME PAGE
    ========================================= */
 
-
 /* -----------------------------------------
    Hero
    ----------------------------------------- */
@@ -389,16 +389,13 @@ button:focus-visible {
     position: absolute;
     z-index: 1;
     inset: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
     max-width: 1200px;
     margin: 0 auto;
     padding: 1.5rem;
-
     color: var(--white);
 }
 
@@ -408,13 +405,10 @@ button:focus-visible {
 
 .hero-content h1 {
     max-width: 750px;
-
     margin: 0.25rem 0 1rem;
-
     font-family: var(--heading-font);
     font-size: 2rem;
     line-height: 1.15;
-
     color: var(--white);
 }
 
@@ -425,16 +419,11 @@ button:focus-visible {
 
 .hero-cta {
     display: inline-block;
-
     padding: 0.8rem 1.4rem;
-
     background-color: var(--coral);
     color: var(--white);
-
     text-decoration: none;
-
     border-radius: 5px;
-
     font-weight: 700;
 }
 
@@ -442,9 +431,8 @@ button:focus-visible {
     background-color: var(--turquoise);
 }
 
-
 /* -----------------------------------------
-   Home sections
+   Home Sections
    ----------------------------------------- */
 
 .home-section {
@@ -459,7 +447,6 @@ button:focus-visible {
 
 .section-heading h2 {
     margin: 0.25rem 0 0.5rem;
-
     color: var(--ocean-blue);
     font-family: var(--heading-font);
     font-size: 2rem;
@@ -468,7 +455,6 @@ button:focus-visible {
 .section-heading p:last-child {
     margin-bottom: 0;
 }
-
 
 /* -----------------------------------------
    Events
@@ -481,49 +467,37 @@ button:focus-visible {
 .events-grid,
 .spotlight-grid {
     display: grid;
-
     grid-template-columns: 1fr;
-
     gap: 1rem;
 }
 
 .event-card,
 .spotlight-card {
     background-color: var(--white);
-
     border: 1px solid var(--border);
     border-radius: 8px;
-
     padding: 1.25rem;
-
-    box-shadow:
-        0 2px 5px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .event-card h3,
 .spotlight-card h3 {
     color: var(--ocean-blue);
-
     font-family: var(--heading-font);
-
     margin: 0.5rem 0;
 }
 
 .event-date {
     color: var(--coral);
-
     font-weight: 700;
-
     margin: 0;
 }
 
 .event-card a,
 .spotlight-card a {
     color: var(--turquoise);
-
     font-weight: 700;
 }
-
 
 /* -----------------------------------------
    Weather
@@ -535,19 +509,12 @@ button:focus-visible {
 
 .weather-current {
     display: flex;
-
     align-items: center;
-
     gap: 1rem;
-
     background-color: var(--white);
-
     border-radius: 8px;
-
     padding: 1.25rem;
-
     margin-bottom: 1.5rem;
-
     border: 1px solid var(--border);
 }
 
@@ -557,60 +524,45 @@ button:focus-visible {
 
 .weather-temperature {
     margin: 0;
-
     color: var(--ocean-blue);
-
     font-size: 2.25rem;
-
     font-weight: 700;
 }
 
 #weather-description {
     margin: 0;
-
     text-transform: capitalize;
 }
 
 .forecast-title {
     color: var(--ocean-blue);
-
     font-family: var(--heading-font);
 }
 
 .forecast-grid {
     display: grid;
-
     grid-template-columns: 1fr;
-
     gap: 0.75rem;
 }
 
 .forecast-card {
     background-color: var(--white);
-
     border: 1px solid var(--border);
-
     border-radius: 8px;
-
     padding: 1rem;
-
     text-align: center;
 }
 
 .forecast-card h4 {
     margin-top: 0;
-
     color: var(--ocean-blue);
 }
 
 .forecast-temperature {
     color: var(--turquoise);
-
     font-size: 1.4rem;
-
     font-weight: 700;
 }
-
 
 /* -----------------------------------------
    Business Spotlights
@@ -618,11 +570,8 @@ button:focus-visible {
 
 .spotlight-image {
     width: 100%;
-
     height: 180px;
-
     object-fit: cover;
-
     border-radius: 5px;
 }
 
@@ -632,7 +581,6 @@ button:focus-visible {
 
 .spotlight-card address {
     margin: 0.75rem 0;
-
     font-style: normal;
 }
 
@@ -642,17 +590,11 @@ button:focus-visible {
 
 .spotlight-membership {
     display: inline-block;
-
     margin-bottom: 0.5rem;
-
     padding: 0.25rem 0.6rem;
-
     border-radius: 20px;
-
     color: var(--white);
-
     font-size: 0.75rem;
-
     font-weight: 700;
 }
 
@@ -666,13 +608,11 @@ button:focus-visible {
 
 .spotlight-card .website-link {
     display: inline-block;
-
     margin-top: 0.5rem;
 }
 
-
 /* -----------------------------------------
-   Section layout
+   Section Layout
    ----------------------------------------- */
 
 .home-section:nth-child(even) {
@@ -681,16 +621,6 @@ button:focus-visible {
 
 .home-section:nth-child(even)>* {
     max-width: 1200px;
-
     margin-left: auto;
     margin-right: auto;
-}
-
-
-/* -----------------------------------------
-   Error messages
-   ----------------------------------------- */
-
-.error-message {
-    margin-top: 1rem;
 }

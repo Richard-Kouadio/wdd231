@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,13 +8,30 @@
     <title>Grand-Bassam Business &amp; Commerce Chamber</title>
 
     <meta name="description"
-        content="Grand-Bassam Business & Commerce Chamber - Connecting businesses, building Grand-Bassam. Discover local businesses, events, and community opportunities.">
+        content="Grand-Bassam Business & Commerce Chamber connects local businesses, entrepreneurs, and community opportunities in Grand-Bassam.">
 
     <meta name="author" content="Kouame Richard Kouadio">
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Grand-Bassam Business & Commerce Chamber">
+
+    <meta property="og:description"
+        content="Connect with local businesses, discover community opportunities, and support commerce in Grand-Bassam.">
+
+    <meta property="og:image" content="https://Richard-Kouadio.github.io/wdd231/chamber/images/hero.jpg">
+
+    <meta property="og:url" content="https://Richard-Kouadio.github.io/wdd231/chamber/">
+
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
@@ -31,98 +47,76 @@
 
 <body>
 
-    <!-- HEADER -->
     <header class="site-header">
 
-        <div class="header-content">
+        <div class="header-container">
 
-            <a class="brand" href="index.html">
-                <span class="brand-name">
-                    Grand-Bassam Business &amp; Commerce Chamber
+            <a class="brand" href="index.html" aria-label="Grand-Bassam Chamber home">
+
+                <span class="brand-logo">GB</span>
+
+                <span class="brand-text">
+                    <strong>Grand-Bassam</strong>
+                    <span class="brand-subtitle">Business &amp; Commerce Chamber</span>
                 </span>
+
             </a>
 
             <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation menu"
-                aria-expanded="false">
+                aria-expanded="false" aria-controls="main-nav">
                 ☰
             </button>
 
+            <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+
+                <a class="active" href="index.html">Home</a>
+
+                <a href="directory.html">Directory</a>
+
+                <a href="#events">Events</a>
+
+                <a href="#weather">Weather</a>
+
+            </nav>
+
         </div>
-
-        <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-
-            <a class="active" href="index.html" aria-current="page">
-                Home
-            </a>
-
-            <a href="directory.html">
-                Directory
-            </a>
-
-            <a href="discover.html">
-                Discover
-            </a>
-
-            <a href="join.html">
-                Join
-            </a>
-
-        </nav>
 
     </header>
 
-
-    <!-- MAIN CONTENT -->
     <main>
 
-        <!-- HERO -->
+        <!-- Hero Section -->
         <section class="hero" aria-labelledby="hero-title">
-
-            <img src="images/hero.jpg" alt="Grand-Bassam coastline and community" width="1600" height="700"
-                fetchpriority="high">
 
             <div class="hero-content">
 
-                <p class="eyebrow">
-                    Grand-Bassam, Côte d'Ivoire
-                </p>
+                <p class="eyebrow">Grand-Bassam Business Community</p>
 
                 <h1 id="hero-title">
                     Connecting Businesses. Building Grand-Bassam.
                 </h1>
 
                 <p>
-                    Discover local businesses, connect with entrepreneurs,
-                    and take part in opportunities that strengthen our
-                    community.
+                    Discover local businesses, community events,
+                    and opportunities that help Grand-Bassam thrive.
                 </p>
 
-                <a class="hero-cta" href="join.html">
-                    Join the Chamber
+                <a class="hero-cta" href="directory.html">
+                    Explore Our Directory
                 </a>
 
             </div>
 
         </section>
 
-
-        <!-- CURRENT EVENTS -->
-        <section class="home-section events-section" aria-labelledby="events-title">
+        <!-- Events Section -->
+        <section id="events" class="events-section" aria-labelledby="events-title">
 
             <div class="section-heading">
 
-                <p class="eyebrow">
-                    Community &amp; Business
-                </p>
+                <p class="eyebrow">What's Happening</p>
 
-                <h2 id="events-title">
-                    Current Events
-                </h2>
-
-                <p>
-                    Connect with local businesses and take part in
-                    upcoming community activities.
-                </p>
+                <h2 id="events-title">Upcoming Events</h2>
 
             </div>
 
@@ -131,68 +125,74 @@
                 <article class="event-card">
 
                     <p class="event-date">
-                        This Month
+                        <strong>OCT</strong>
+                        <span>12</span>
                     </p>
 
-                    <h3>
-                        Grand-Bassam Business Networking
-                    </h3>
+                    <div>
 
-                    <p>
-                        Meet local entrepreneurs, exchange ideas, and
-                        discover opportunities to collaborate with
-                        other businesses.
-                    </p>
+                        <h3>Grand-Bassam Business Forum</h3>
 
-                    <a href="join.html">
-                        Learn about membership
-                    </a>
+                        <p>
+                            Local entrepreneurs and business leaders
+                            gather to discuss opportunities for growth
+                            and collaboration.
+                        </p>
+
+                        <a href="#">
+                            Learn More
+                        </a>
+
+                    </div>
 
                 </article>
-
 
                 <article class="event-card">
 
                     <p class="event-date">
-                        Upcoming
+                        <strong>OCT</strong>
+                        <span>19</span>
                     </p>
 
-                    <h3>
-                        Small Business Workshop
-                    </h3>
+                    <div>
 
-                    <p>
-                        Learn practical strategies for marketing,
-                        customer relationships, and growing a local
-                        business.
-                    </p>
+                        <h3>Community Networking Evening</h3>
 
-                    <a href="join.html">
-                        Get involved
-                    </a>
+                        <p>
+                            Meet local professionals and discover
+                            new partnerships within the Grand-Bassam
+                            business community.
+                        </p>
+
+                        <a href="#">
+                            Learn More
+                        </a>
+
+                    </div>
 
                 </article>
-
 
                 <article class="event-card">
 
                     <p class="event-date">
-                        Community
+                        <strong>NOV</strong>
+                        <span>02</span>
                     </p>
 
-                    <h3>
-                        Local Business Community Forum
-                    </h3>
+                    <div>
 
-                    <p>
-                        Join other community members and business
-                        leaders to discuss opportunities for
-                        Grand-Bassam.
-                    </p>
+                        <h3>Local Commerce Showcase</h3>
 
-                    <a href="discover.html">
-                        Explore Grand-Bassam
-                    </a>
+                        <p>
+                            Explore products and services from
+                            businesses throughout Grand-Bassam.
+                        </p>
+
+                        <a href="#">
+                            Learn More
+                        </a>
+
+                    </div>
 
                 </article>
 
@@ -200,175 +200,178 @@
 
         </section>
 
-
-        <!-- WEATHER -->
-        <section class="home-section weather-section" aria-labelledby="weather-title">
+        <!-- Weather Section -->
+        <section id="weather" class="weather-section" aria-labelledby="weather-title">
 
             <div class="section-heading">
 
-                <p class="eyebrow">
-                    Local Conditions
-                </p>
+                <p class="eyebrow">Grand-Bassam Conditions</p>
 
-                <h2 id="weather-title">
-                    Grand-Bassam Weather
-                </h2>
+                <h2 id="weather-title">Weather</h2>
 
             </div>
 
-            <div class="weather-current">
+            <div class="weather-grid">
 
-                <div id="weather-icon" class="weather-icon" aria-hidden="true">
-                    ☀️
-                </div>
+                <article class="weather-current">
 
-                <div>
+                    <h3>Current Weather</h3>
 
-                    <p class="weather-temperature">
-                        <span id="current-temperature">
-                            Loading...
+                    <div class="weather-current-content">
+
+                        <span id="weather-icon" class="weather-icon" aria-hidden="true">
+                            🌤️
                         </span>
-                    </p>
 
-                    <p id="weather-description">
-                        Loading current weather...
-                    </p>
+                        <div>
+
+                            <p id="current-temperature" class="weather-temperature">
+                                Loading...
+                            </p>
+
+                            <p id="weather-description">
+                                Loading weather information...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <div class="forecast">
+
+                    <h3 class="forecast-title">
+                        Three-Day Forecast
+                    </h3>
+
+                    <div id="forecast-container" class="forecast-grid">
+
+                        <article class="forecast-card">
+                            <h4>Loading</h4>
+                            <p class="weather-icon" aria-hidden="true">
+                                🌤️
+                            </p>
+                            <p class="forecast-temperature">
+                                --°C
+                            </p>
+                            <p>Loading forecast...</p>
+                        </article>
+
+                    </div>
 
                 </div>
 
             </div>
-
-
-            <div>
-
-                <h3 class="forecast-title">
-                    Three-Day Forecast
-                </h3>
-
-                <div id="forecast-container" class="forecast-grid">
-
-                    <p>
-                        Loading forecast...
-                    </p>
-
-                </div>
-
-            </div>
-
 
             <p id="weather-error" class="error-message" hidden>
-                Weather information is temporarily unavailable.
+                Weather information is currently unavailable.
             </p>
 
         </section>
 
-
-        <!-- BUSINESS SPOTLIGHTS -->
-        <section class="home-section spotlight-section" aria-labelledby="spotlight-title">
+        <!-- Member Spotlight Section -->
+        <section class="spotlight-section" aria-labelledby="spotlight-title">
 
             <div class="section-heading">
 
-                <p class="eyebrow">
-                    Member Businesses
-                </p>
+                <p class="eyebrow">Our Members</p>
 
                 <h2 id="spotlight-title">
                     Business Spotlights
                 </h2>
 
-                <p>
-                    Discover some of the businesses helping
-                    Grand-Bassam grow.
-                </p>
-
             </div>
-
 
             <div id="spotlight-container" class="spotlight-grid">
 
-                <p>
-                    Loading member spotlights...
-                </p>
+                <article class="spotlight-card">
+
+                    <p>
+                        Loading member spotlights...
+                    </p>
+
+                </article>
 
             </div>
 
-
             <p id="spotlight-error" class="error-message" hidden>
-                Member spotlight information is temporarily unavailable.
+                Member information is currently unavailable.
             </p>
 
         </section>
 
     </main>
 
-
-    <!-- FOOTER -->
     <footer class="site-footer">
 
-        <div class="footer-content">
+        <div class="footer-container">
 
-            <div>
+            <div class="footer-brand">
 
-                <h2>
-                    Grand-Bassam Business &amp; Commerce Chamber
-                </h2>
+                <span class="brand-logo">GB</span>
 
-                <p>
-                    Connecting Businesses, Building Grand-Bassam
-                </p>
+                <div>
+
+                    <strong>
+                        Grand-Bassam Business &amp; Commerce Chamber
+                    </strong>
+
+                    <p>
+                        Connecting businesses and building community.
+                    </p>
+
+                </div>
 
             </div>
-
 
             <div class="contact-info">
 
                 <p>
-                    <strong>Contact</strong>
-                </p>
-
-                <p>
-                    Grand-Bassam, Côte d'Ivoire
+                    <strong>Grand-Bassam, Côte d'Ivoire</strong>
                 </p>
 
                 <p>
                     Email:
-                    <a href="mailto:info@gbcc.example">
-                        info@gbcc.example
+                    <a href="mailto:info@grandbassamchamber.example">
+                        info@grandbassamchamber.example
                     </a>
                 </p>
 
                 <p>
                     Phone:
-                    <a href="tel:+2250700000000">
-                        +225 07 00 00 00 00
+                    <a href="tel:+2250000000000">
+                        +225 00 00 00 00 00
                     </a>
                 </p>
 
             </div>
 
+            <div class="footer-social">
 
-            <div class="development-info">
+                <a href="#" aria-label="Facebook">
+                    Facebook
+                </a>
 
-                <p>
-                    &copy;
-                    <span id="current-year"></span>
-                    Grand-Bassam Business &amp; Commerce Chamber
-                </p>
+                <a href="#" aria-label="Instagram">
+                    Instagram
+                </a>
 
-                <p>
-                    Kouame Richard Kouadio
-                </p>
-
-                <p>
-                    WDD 231
-                </p>
-
-                <p>
-                    Last Modification:
-                    <span id="last-modified"></span>
-                </p>
+                <a href="#" aria-label="LinkedIn">
+                    LinkedIn
+                </a>
 
             </div>
+
+            <p class="copyright">
+                &copy; <span id="current-year"></span>
+                Grand-Bassam Business &amp; Commerce Chamber
+            </p>
+
+            <p class="last-modified">
+                Last Modified:
+                <span id="last-modified"></span>
+            </p>
 
         </div>
 
@@ -377,4 +380,3 @@
 </body>
 
 </html>
-```

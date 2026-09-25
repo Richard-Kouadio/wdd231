@@ -1,4 +1,4 @@
-:root {
+css:root {
     --ocean-blue: #0b3954;
     --turquoise: #056b76;
     --sand: #f4e1c1;
@@ -273,7 +273,7 @@ button {
 }
 
 .level-2 {
-    background-color: #607d8b;
+    background-color: #546e7a;
 }
 
 .level-3 {
@@ -609,7 +609,7 @@ button:focus-visible {
 }
 
 .spotlight-membership.silver {
-    background-color: #607d8b;
+    background-color: #546e7a;
 }
 
 .spotlight-membership.gold {

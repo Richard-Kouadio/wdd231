@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +14,7 @@
 
     <link rel="icon" href="images/favicon.svg">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Grand-Bassam Business &amp; Commerce Chamber | Business Directory">
     <meta property="og:description"
         content="Explore local businesses, services, and community partners through the Grand-Bassam Business &amp; Commerce Chamber directory.">
@@ -34,108 +33,108 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/directory.js" defer></script>
 </head>
 
 <body>
-
     <header class="site-header">
-        <div class="header-container">
-
+        <div class="header-content">
             <a class="brand" href="index.html">
-                <span class="brand-mark">GB</span>
+                <span class="brand-logo" aria-hidden="true">GB</span>
 
-                <span class="brand-text">
-                    <strong>Grand-Bassam</strong>
-                    <small>Business &amp; Commerce Chamber</small>
+                <span>
+                    <span class="brand-name">
+                        Grand-Bassam Business &amp; Commerce Chamber
+                    </span>
+                    <span class="brand-subtitle">
+                        Connecting Businesses, Building Grand-Bassam
+                    </span>
                 </span>
             </a>
 
-            <button class="menu-button" id="menu-button" aria-label="Open navigation menu" aria-expanded="false"
-                aria-controls="primary-nav">
+            <button class="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false">
                 ☰
             </button>
-
-            <nav id="primary-nav" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-
-                <a class="active" href="directory.html" aria-current="page">
-                    Directory
-                </a>
-
-                <a href="#">Discover</a>
-
-                <a href="#">Join</a>
-            </nav>
-
         </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="directory.html" class="active" aria-current="page">
+                Directory
+            </a>
+            <a href="#">Discover</a>
+            <a href="#">Join</a>
+        </nav>
     </header>
 
     <main>
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">Grand-Bassam Business Community</p>
+
+                <h1>Grand-Bassam Business Directory</h1>
+
+                <p>
+                    Explore local businesses, services, and community partners
+                    serving Grand-Bassam, Côte d'Ivoire.
+                </p>
+            </div>
+        </section>
+
         <section class="directory-section">
+            <div class="directory-header">
+                <div>
+                    <h2>Our Members</h2>
+                    <p>
+                        Discover businesses and organizations that are part of
+                        the Grand-Bassam Business &amp; Commerce Chamber.
+                    </p>
+                </div>
 
-            <h1>Grand-Bassam Business Directory</h1>
+                <div class="view-controls" aria-label="Directory view controls">
+                    <button class="view-button active" id="grid-view" type="button"
+                        aria-label="Display members in grid view" aria-pressed="true">
+                        Grid
+                    </button>
 
-            <div class="directory-controls">
-                <button type="button" id="grid-view" aria-label="Display businesses in grid view">
-                    Grid
-                </button>
-
-                <button type="button" id="list-view" aria-label="Display businesses in list view">
-                    List
-                </button>
+                    <button class="view-button" id="list-view" type="button" aria-label="Display members in list view"
+                        aria-pressed="false">
+                        List
+                    </button>
+                </div>
             </div>
 
-            <div id="members-container" class="members-grid" aria-live="polite"></div>
-
+            <div id="members-container" class="members-grid"></div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-container">
-
-            <div class="footer-contact">
+        <div class="footer-content">
+            <div>
                 <h2>Grand-Bassam Business &amp; Commerce Chamber</h2>
 
                 <p>
                     Connecting Businesses, Building Grand-Bassam.
                 </p>
+            </div>
+
+            <div class="contact-info">
+                <h2>Contact</h2>
 
                 <p>
-                    Email:
-                    <a href="mailto:info@gbcc.example">
-                        info@gbcc.example
-                    </a>
+                    <strong>Email:</strong>
+                    info@gbcc.example
                 </p>
 
                 <p>
-                    Phone:
-                    <a href="tel:+2250700000000">
-                        +225 07 00 00 00 00
-                    </a>
+                    <strong>Phone:</strong>
+                    +225 07 00 00 00 00
                 </p>
             </div>
 
-            <div class="footer-social">
-                <h2>Connect With Us</h2>
-
-                <a href="#" aria-label="Facebook">
-                    Facebook
-                </a>
-
-                <a href="#" aria-label="Instagram">
-                    Instagram
-                </a>
-
-                <a href="#" aria-label="LinkedIn">
-                    LinkedIn
-                </a>
-            </div>
-
-            <div class="footer-course">
-                <p>
-                    WDD 231 Web Frontend Development I
-                </p>
-
+            <div class="development-info">
                 <p>
                     &copy;
                     <span id="current-year"></span>
@@ -143,49 +142,16 @@
                 </p>
 
                 <p>
-                    Last Modification:
-                    <span id="last-modified"></span>
+                    WDD 231 Chamber Directory
                 </p>
 
                 <p>
-                    Kouame Richard Kouadio
+                    Last Modified:
+                    <span id="last-modified"></span>
                 </p>
             </div>
-
         </div>
     </footer>
-
-    <script src="scripts/directory.js" defer></script>
-
 </body>
 
 </html>
-```
-
-[/writing block]
-
-### Before you push
-
-Please replace your current `directory.html` with this version.
-
-Then check these four things:
-
-1. **Home** → `index.html` ✅
-2. **Directory** → `directory.html` ✅
-3. **Discover** → `#` because `discover.html` doesn't exist yet ✅
-4. **Join** → `#` because `join.html` doesn't exist yet ✅
-
-The audit-related improvements are also included:
-
-* More specific page `<title>`
-    * Improved meta description
-    * Improved Open Graph title
-    * Improved Open Graph description
-    * Added `og:type`
-    * H1 now clearly identifies the Grand-Bassam business directory
-    * Home link correctly points to `index.html`
-
-    Your existing `small.css`, `larger.css`, `directory.js`, and `members.json` are **not changed** by this update.
-
-    After saving the file, **push it to GitHub**. Then we can check the live page and work on the remaining **24/30
-    issues**, particularly the Page Audit and Color Contrast items.

@@ -1,37 +1,39 @@
-// Set the timestamp when the page loads
-const timestampField = document.querySelector("#timestamp");
+// Set the current date and time in the hidden timestamp field
+const timestamp = document.querySelector("#timestamp");
 
-if (timestampField) {
-    timestampField.value = new Date().toISOString();
+if (timestamp) {
+    timestamp.value = new Date().toISOString();
 }
 
 // Membership modal functionality
 const membershipButtons = document.querySelectorAll(".membership-info");
-const dialogs = document.querySelectorAll("dialog");
+const modals = document.querySelectorAll("dialog");
 
 membershipButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        const dialogId = button.dataset.dialog;
-        const dialog = document.getElementById(dialogId);
+        const modalId = button.getAttribute("data-dialog");
+        const modal = document.getElementById(modalId);
 
-        if (dialog) {
-            dialog.showModal();
+        if (modal) {
+            modal.showModal();
         }
     });
 });
 
-dialogs.forEach((dialog) => {
-    const closeButton = dialog.querySelector(".close-modal");
+// Close each modal
+modals.forEach((modal) => {
+    const closeButton = modal.querySelector(".close-modal");
 
     if (closeButton) {
         closeButton.addEventListener("click", () => {
-            dialog.close();
+            modal.close();
         });
     }
 
-    dialog.addEventListener("click", (event) => {
-        if (event.target === dialog) {
-            dialog.close();
+    // Close the modal when clicking outside the dialog content
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.close();
         }
     });
 });

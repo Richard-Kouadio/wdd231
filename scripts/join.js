@@ -1,33 +1,28 @@
 // =========================================
-// W04 - CHAMBER JOIN PAGE
+// WDD 231 - Chamber Join Page
 // join.js
 // =========================================
 
-// Wait until the HTML document is ready
 document.addEventListener("DOMContentLoaded", () => {
-    setFormTimestamp();
+    setTimestamp();
     setupMembershipModals();
 });
 
 
 // =========================================
-// TIMESTAMP
+// FORM TIMESTAMP
 // =========================================
 
-/**
- * Stores the current date and time in the
- * hidden timestamp field when the page loads.
- */
-function setFormTimestamp() {
-    const timestampField = document.querySelector("#timestamp");
+function setTimestamp() {
+    const timestamp = document.querySelector("#timestamp");
 
-    if (!timestampField) {
+    if (!timestamp) {
         return;
     }
 
-    const now = new Date();
+    const currentDateTime = new Date();
 
-    timestampField.value = now.toISOString();
+    timestamp.value = currentDateTime.toISOString();
 }
 
 
@@ -35,30 +30,23 @@ function setFormTimestamp() {
 // MEMBERSHIP MODALS
 // =========================================
 
-/**
- * Finds all membership information buttons
- * and connects them to their corresponding
- * dialog elements.
- */
 function setupMembershipModals() {
-    const membershipButtons = document.querySelectorAll(
-        "[data-modal-target]"
-    );
+    const modalButtons = document.querySelectorAll("[data-modal-target]");
 
-    membershipButtons.forEach((button) => {
-        const modalId = button.getAttribute("data-modal-target");
-        const modal = document.querySelector(`#${modalId}`);
+    modalButtons.forEach((button) => {
+        const modalId = button.dataset.modalTarget;
+        const modal = document.getElementById(modalId);
 
         if (!modal) {
             return;
         }
 
-        // Open modal
+        // Open the modal
         button.addEventListener("click", () => {
             modal.showModal();
         });
 
-        // Close buttons inside the modal
+        // Find the close button
         const closeButton = modal.querySelector(".modal-close");
 
         if (closeButton) {
@@ -67,15 +55,15 @@ function setupMembershipModals() {
             });
         }
 
-        // Close modal when clicking outside the dialog content
+        // Close when clicking outside the dialog
         modal.addEventListener("click", (event) => {
-            const dialogRectangle = modal.getBoundingClientRect();
+            const rectangle = modal.getBoundingClientRect();
 
             const clickedOutside =
-                event.clientX < dialogRectangle.left ||
-                event.clientX > dialogRectangle.right ||
-                event.clientY < dialogRectangle.top ||
-                event.clientY > dialogRectangle.bottom;
+                event.clientX < rectangle.left ||
+                event.clientX > rectangle.right ||
+                event.clientY < rectangle.top ||
+                event.clientY > rectangle.bottom;
 
             if (clickedOutside) {
                 modal.close();

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join | Grand-Bassam Business &amp; Commerce Chamber</title>
+
+    <meta name="description"
+        content="Join the Grand-Bassam Business &amp; Commerce Chamber and connect with local businesses, entrepreneurs, and community opportunities.">
+
+    <meta name="author" content="Kouame Richard Kouadio">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Join | Grand-Bassam Business &amp; Commerce Chamber">
+
+    <meta property="og:description"
+        content="Apply for membership with the Grand-Bassam Business &amp; Commerce Chamber.">
+
+    <meta property="og:image" content="https://richard-kouadio.github.io/wdd231/chamber/images/hero.jpg">
+
+    <meta property="og:url" content="https://richard-kouadio.github.io/wdd231/chamber/join.html">
+
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a class="brand" href="index.html" aria-label="Grand-Bassam Chamber home">
+
+                <span class="brand-logo">GB</span>
+
+                <span class="brand-text">
+                    <strong>Grand-Bassam</strong>
+
+                    <span class="brand-subtitle">
+                        Business &amp; Commerce Chamber
+                    </span>
+                </span>
+
+            </a>
+
+            <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation menu"
+                aria-expanded="false" aria-controls="main-nav">
+                ☰
+            </button>
+
+            <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="directory.html">
+                    Directory
+                </a>
+
+                <a href="join.html" class="active">
+                    Join
+                </a>
+
+                <a href="index.html#events">
+                    Events
+                </a>
+
+                <a href="index.html#weather">
+                    Weather
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="join-hero" aria-labelledby="join-title">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    Become a Member
+                </p>
+
+                <h1 id="join-title">
+                    Join the Grand-Bassam Chamber
+                </h1>
+
+                <p>
+                    Connect with local businesses, discover new
+                    opportunities, and become part of the Grand-Bassam
+                    business community.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- JOIN CONTENT -->
+        <section class="join-section" aria-labelledby="application-title">
+
+            <div class="join-content">
+
+                <!-- APPLICATION FORM -->
+                <div class="join-form-container">
+
+                    <h2 id="application-title">
+                        Membership Application
+                    </h2>
+
+                    <form method="get" action="thankyou.html">
+
+                        <!-- FIRST NAME -->
+                        <label for="first-name">
+                            First Name
+
+                            <input type="text" id="first-name" name="firstName" title="Enter your first name"
+                                autocomplete="given-name" required>
+                        </label>
+
+
+                        <!-- LAST NAME -->
+                        <label for="last-name">
+                            Last Name
+
+                            <input type="text" id="last-name" name="lastName" title="Enter your last name"
+                                autocomplete="family-name" required>
+                        </label>
+
+
+                        <!-- ORGANIZATIONAL TITLE -->
+                        <label for="organization-title">
+                            Organizational Title
+
+                            <input type="text" id="organization-title" name="organizationTitle"
+                                title="Enter your title within your organization" autocomplete="organization-title"
+                                pattern="[A-Za-z\s-]{7,}" required>
+                        </label>
+
+
+                        <!-- EMAIL -->
+                        <label for="email">
+                            Email Address
+
+                            <input type="email" id="email" name="email" title="Enter your email address"
+                                autocomplete="email" placeholder="example@email.com" required>
+                        </label>
+
+
+                        <!-- PHONE -->
+                        <label for="phone">
+                            Mobile Phone Number
+
+                            <input type="tel" id="phone" name="phone" title="Enter your mobile phone number"
+                                autocomplete="tel" required>
+                        </label>
+
+
+                        <!-- ORGANIZATION -->
+                        <label for="organization">
+                            Business / Organization Name
+
+                            <input type="text" id="organization" name="organization"
+                                title="Enter your business or organization name" autocomplete="organization" required>
+                        </label>
+
+
+                        <!-- MEMBERSHIP -->
+                        <fieldset>
+
+                            <legend>
+                                Membership Level
+                            </legend>
+
+                            <label for="np">
+                                <input type="radio" id="np" name="membership" value="np" required>
+                                NP Membership — No Fee
+                            </label>
+
+                            <label for="bronze">
+                                <input type="radio" id="bronze" name="membership" value="bronze">
+                                Bronze Membership
+                            </label>
+
+                            <label for="silver">
+                                <input type="radio" id="silver" name="membership" value="silver">
+                                Silver Membership
+                            </label>
+
+                            <label for="gold">
+                                <input type="radio" id="gold" name="membership" value="gold">
+                                Gold Membership
+                            </label>
+
+                        </fieldset>
+
+
+                        <!-- DESCRIPTION -->
+                        <label for="description">
+                            Business / Organization Description
+
+                            <textarea id="description" name="description" title="Describe your business or organization"
+                                rows="6"></textarea>
+                        </label>
+
+
+                        <!-- TIMESTAMP -->
+                        <input type="hidden" id="timestamp" name="timestamp">
+
+
+                        <!-- SUBMIT -->
+                        <input type="submit" value="Submit Membership Application">
+
+                    </form>
+
+                </div>
+
+
+                <!-- MEMBERSHIP CARDS -->
+                <div class="membership-levels">
+
+                    <h2>
+                        Membership Levels
+                    </h2>
+
+
+                    <!-- NP CARD -->
+                    <article class="membership-card">
+
+                        <h3>
+                            NP Membership
+                        </h3>
+
+                        <p>
+                            For non-profit organizations.
+                        </p>
+
+                        <p class="membership-price">
+                            Free
+                        </p>
+
+                        <button type="button" class="membership-link" data-modal="np-modal">
+                            View Benefits
+                        </button>
+
+                    </article>
+
+
+                    <!-- BRONZE CARD -->
+                    <article class="membership-card">
+
+                        <h3>
+                            Bronze Membership
+                        </h3>
+
+                        <p>
+                            Essential benefits for growing businesses.
+                        </p>
+
+                        <p class="membership-price">
+                            $50 / year
+                        </p>
+
+                        <button type="button" class="membership-link" data-modal="bronze-modal">
+                            View Benefits
+                        </button>
+
+                    </article>
+
+
+                    <!-- SILVER CARD -->
+                    <article class="membership-card">
+
+                        <h3>
+                            Silver Membership
+                        </h3>
+
+                        <p>
+                            More visibility and business opportunities.
+                        </p>
+
+                        <p class="membership-price">
+                            $100 / year
+                        </p>
+
+                        <button type="button" class="membership-link" data-modal="silver-modal">
+                            View Benefits
+                        </button>
+
+                    </article>
+
+
+                    <!-- GOLD CARD -->
+                    <article class="membership-card">
+
+                        <h3>
+                            Gold Membership
+                        </h3>
+
+                        <p>
+                            Maximum exposure and premium benefits.
+                        </p>
+
+                        <p class="membership-price">
+                            $200 / year
+                        </p>
+
+                        <button type="button" class="membership-link" data-modal="gold-modal">
+                            View Benefits
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NP MODAL -->
+        <dialog id="np-modal">
+
+            <button class="close-modal" type="button" aria-label="Close NP membership information">
+                &times;
+            </button>
+
+            <h2>
+                NP Membership Benefits
+            </h2>
+
+            <p>
+                The NP Membership is designed for qualifying
+                non-profit organizations.
+            </p>
+
+            <ul>
+                <li>Free chamber membership</li>
+                <li>Business directory listing</li>
+                <li>Access to community events</li>
+                <li>Networking opportunities</li>
+            </ul>
+
+        </dialog>
+
+
+        <!-- BRONZE MODAL -->
+        <dialog id="bronze-modal">
+
+            <button class="close-modal" type="button" aria-label="Close Bronze membership information">
+                &times;
+            </button>
+
+            <h2>
+                Bronze Membership Benefits
+            </h2>
+
+            <p>
+                Bronze membership provides essential support
+                for developing businesses.
+            </p>
+
+            <ul>
+                <li>Everything included with NP benefits</li>
+                <li>Enhanced directory listing</li>
+                <li>Business training opportunities</li>
+                <li>Access to selected chamber events</li>
+                <li>Member event discounts</li>
+            </ul>
+
+        </dialog>
+
+
+        <!-- SILVER MODAL -->
+        <dialog id="silver-modal">
+
+            <button class="close-modal" type="button" aria-label="Close Silver membership information">
+                &times;
+            </button>
+
+            <h2>
+                Silver Membership Benefits
+            </h2>
+
+            <p>
+                Silver membership provides additional visibility
+                and promotional opportunities.
+            </p>
+
+            <ul>
+                <li>Everything included with Bronze benefits</li>
+                <li>Priority business directory placement</li>
+                <li>Additional training opportunities</li>
+                <li>Discounts on chamber events</li>
+                <li>Social media promotion</li>
+                <li>Business networking opportunities</li>
+            </ul>
+
+        </dialog>
+
+
+        <!-- GOLD MODAL -->
+        <dialog id="gold-modal">
+
+            <button class="close-modal" type="button" aria-label="Close Gold membership information">
+                &times;
+            </button>
+
+            <h2>
+                Gold Membership Benefits
+            </h2>
+
+            <p>
+                Gold membership provides premium exposure,
+                networking, and promotional opportunities.
+            </p>
+
+            <ul>
+                <li>Everything included with Silver benefits</li>
+                <li>Premium directory placement</li>
+                <li>Homepage business spotlight opportunities</li>
+                <li>Priority event sponsorship opportunities</li>
+                <li>Premium advertising opportunities</li>
+                <li>Special networking events</li>
+                <li>Exclusive training opportunities</li>
+            </ul>
+
+        </dialog>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <span class="brand-logo">
+                    GB
+                </span>
+
+                <div>
+
+                    <strong>
+                        Grand-Bassam Business &amp; Commerce Chamber
+                    </strong>
+
+                    <p>
+                        Connecting businesses and building community.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-info">
+
+                <p>
+                    <strong>
+                        Grand-Bassam, Côte d'Ivoire
+                    </strong>
+                </p>
+
+                <p>
+                    Email:
+                    <a href="mailto:info@grandbassamchamber.example">
+                        info@grandbassamchamber.example
+                    </a>
+                </p>
+
+                <p>
+                    Phone:
+                    <a href="tel:+2250000000000">
+                        +225 00 00 00 00 00
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="footer-social">
+
+                <a href="#" aria-label="Facebook">
+                    Facebook
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    Instagram
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                    LinkedIn
+                </a>
+
+            </div>
+
+
+            <p class="copyright">
+                &copy;
+                <span id="current-year"></span>
+                Grand-Bassam Business &amp; Commerce Chamber
+            </p>
+
+            <p class="last-modified">
+                Last Modified:
+                <span id="last-modified"></span>
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

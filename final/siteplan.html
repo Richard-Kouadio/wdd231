@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grand-Bassam Cultural Heritage and Tourism Guide | Site Plan</title>
+
+    <meta name="description"
+        content="Site plan for the Grand-Bassam Cultural Heritage and Tourism Guide, an individual WDD 231 website project by Kouame Richard Kouadio.">
+    <meta name="author" content="Kouame Richard Kouadio">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Grand-Bassam Cultural Heritage and Tourism Guide">
+    <meta property="og:description"
+        content="Site plan for a cultural heritage and tourism guide to Grand-Bassam, Côte d'Ivoire.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --teal: #0f4c5c;
+            --sand: #f4e3c1;
+            --terracotta: #c65d3b;
+            --charcoal: #263238;
+            --white: #ffffff;
+            --cream: #fffaf0;
+            --border: #d8c9aa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.7;
+            color: var(--charcoal);
+            background-color: var(--cream);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Playfair Display", serif;
+            line-height: 1.2;
+            color: var(--teal);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            margin-top: 3rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--terracotta);
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        a {
+            color: var(--teal);
+        }
+
+        a:hover,
+        a:focus {
+            color: var(--terracotta);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header */
+
+        header {
+            padding: 2.5rem 1rem;
+            text-align: center;
+            color: var(--white);
+            background-color: var(--teal);
+        }
+
+        header h1 {
+            color: var(--white);
+        }
+
+        header p {
+            margin-bottom: 0;
+            color: var(--sand);
+            font-size: 1.1rem;
+        }
+
+        /* Navigation */
+
+        nav {
+            background-color: var(--charcoal);
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.25rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.75rem 1rem;
+            list-style: none;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: var(--white);
+            background-color: var(--terracotta);
+        }
+
+        /* Main */
+
+        main {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .intro {
+            padding: 1.5rem;
+            border-left: 6px solid var(--terracotta);
+            border-radius: 6px;
+            background-color: var(--sand);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background-color: var(--white);
+            box-shadow: 0 3px 8px rgba(38, 50, 56, 0.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        /* Color Scheme */
+
+        .color-box {
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding: 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        .teal {
+            color: var(--white);
+            background-color: var(--teal);
+        }
+
+        .sand {
+            color: var(--charcoal);
+            background-color: var(--sand);
+        }
+
+        .terracotta {
+            color: var(--white);
+            background-color: var(--terracotta);
+        }
+
+        .charcoal {
+            color: var(--white);
+            background-color: var(--charcoal);
+        }
+
+        /* Site Map */
+
+        .site-map {
+            max-width: 700px;
+            margin: 1rem auto;
+            padding: 1.5rem;
+            border-radius: 8px;
+            color: var(--sand);
+            background-color: var(--charcoal);
+            font-family: monospace;
+            line-height: 2;
+        }
+
+        /* Wireframe Section */
+
+        .wireframe-intro {
+            padding: 1rem;
+            border-left: 5px solid var(--terracotta);
+            background-color: var(--sand);
+        }
+
+        .wireframes {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+
+        /*
+            The wireframes intentionally use only black, white,
+            and gray. They represent structure rather than
+            the final website colors.
+        */
+
+        .wireframe {
+            padding: 1rem;
+            border: 3px solid #000000;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .wireframe h3 {
+            margin-top: 0;
+            color: #000000;
+            text-align: center;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .wf-header {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding: 0.75rem;
+            border: 2px solid #000000;
+            background-color: #ffffff;
+            font-weight: 700;
+        }
+
+        .wf-logo {
+            width: 45%;
+        }
+
+        .wf-menu {
+            width: 35%;
+            text-align: center;
+        }
+
+        .wf-hero {
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+            padding: 1rem;
+            border: 2px solid #000000;
+            background-color: #e6e6e6;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .wf-section {
+            margin-bottom: 0.75rem;
+            padding: 1rem;
+            border: 2px solid #000000;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .wf-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .wf-card {
+            min-height: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem;
+            border: 2px solid #000000;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .wf-image {
+            width: 80%;
+            height: 45px;
+            margin-bottom: 0.5rem;
+            border: 2px solid #000000;
+            background-color: #ffffff;
+        }
+
+        .wf-button {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.35rem 0.75rem;
+            border: 2px solid #000000;
+            background-color: #ffffff;
+            font-weight: 700;
+        }
+
+        .wf-footer {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem;
+            border: 2px solid #000000;
+            background-color: #e6e6e6;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .mobile-menu {
+            width: 30px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .mobile-menu span {
+            height: 3px;
+            background-color: #000000;
+        }
+
+        /* Requirements Table */
+
+        .requirements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background-color: var(--white);
+        }
+
+        .requirements-table th,
+        .requirements-table td {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .requirements-table th {
+            color: var(--white);
+            background-color: var(--teal);
+        }
+
+        .requirements-table tr:nth-child(even) {
+            background-color: var(--sand);
+        }
+
+        /* Code */
+
+        .code {
+            padding: 1.25rem;
+            overflow-x: auto;
+            border-radius: 6px;
+            color: var(--sand);
+            background-color: var(--charcoal);
+            font-family: monospace;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 2rem 1rem;
+            text-align: center;
+            color: var(--white);
+            background-color: var(--teal);
+        }
+
+        footer p {
+            margin: 0.25rem 0;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .wireframes {
+                grid-template-columns: 1fr;
+            }
+
+            .wf-card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .requirements-table {
+                font-size: 0.9rem;
+            }
+
+            .requirements-table th,
+            .requirements-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Grand-Bassam Cultural Heritage and Tourism Guide</h1>
+        <p>WDD 231 — Individual Website Project Site Plan</p>
+        <p>Kouame Richard Kouadio</p>
+    </header>
+
+    <nav aria-label="Site Plan Navigation">
+        <ul>
+            <li><a href="#site-name">Site Name</a></li>
+            <li><a href="#purpose">Purpose</a></li>
+            <li><a href="#scenarios">Scenarios</a></li>
+            <li><a href="#colors">Colors</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#sitemap">Site Map</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="#wireframe">Wireframe</a></li>
+            <li><a href="#javascript">JavaScript</a></li>
+            <li><a href="#testing">Testing</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- PROJECT OVERVIEW -->
+
+        <section class="intro">
+            <h2>Project Overview</h2>
+
+            <p>
+                This site plan provides the design, content, structure, and
+                development plan for the Grand-Bassam Cultural Heritage and
+                Tourism Guide. The website will be developed using semantic
+                HTML, CSS, and JavaScript.
+            </p>
+
+            <p>
+                The goal is to create a responsive, accessible, and informative
+                website that helps visitors discover the history, culture, and
+                important heritage attractions of Grand-Bassam, Côte d'Ivoire.
+            </p>
+        </section>
+
+        <!-- SITE NAME -->
+
+        <section id="site-name">
+            <h2>Site Name</h2>
+
+            <div class="card">
+                <h3>Grand-Bassam Cultural Heritage and Tourism Guide</h3>
+
+                <p>
+                    This name clearly identifies both the location and purpose
+                    of the website. It was selected because the site focuses on
+                    introducing visitors to Grand-Bassam's history, culture,
+                    heritage sites, and tourism opportunities.
+                </p>
+            </div>
+        </section>
+
+        <!-- PURPOSE -->
+
+        <section id="purpose">
+            <h2>Site Purpose</h2>
+
+            <p>
+                The purpose of this website is to provide an informative and
+                easy-to-use guide to Grand-Bassam's cultural and historical
+                heritage. The site will introduce visitors to the city,
+                highlight important historical and cultural attractions, and
+                provide useful information for people interested in exploring
+                Grand-Bassam.
+            </p>
+
+            <p>
+                The website will include images, dynamically generated
+                attraction information, interactive features, and a visitor
+                form. JavaScript will be used to retrieve and display
+                attraction data, manage interactive components, and store
+                visitor preferences.
+            </p>
+
+            <h3>Target Audience</h3>
+
+            <ul>
+                <li>Tourists planning to visit Grand-Bassam.</li>
+                <li>People interested in Côte d'Ivoire's history and culture.</li>
+                <li>Local residents interested in Grand-Bassam's heritage.</li>
+                <li>Students and researchers interested in the city's history.</li>
+            </ul>
+        </section>
+
+        <!-- SCENARIOS -->
+
+        <section id="scenarios">
+            <h2>Scenarios</h2>
+
+            <div class="card-grid">
+
+                <article class="card">
+                    <h3>Scenario 1</h3>
+                    <p>
+                        What historical and cultural places can I visit in
+                        Grand-Bassam?
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Scenario 2</h3>
+                    <p>
+                        What can I learn about the history of Grand-Bassam
+                        before visiting?
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Scenario 3</h3>
+                    <p>
+                        Which attractions should I consider when planning my
+                        visit?
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Scenario 4</h3>
+                    <p>
+                        Where can I find useful information about visiting
+                        Grand-Bassam?
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- COLOR SCHEME -->
+
+        <section id="colors">
+            <h2>Color Scheme</h2>
+
+            <p>
+                The website will use a warm heritage-inspired color palette
+                that reflects Grand-Bassam's coastal environment and cultural
+                character.
+            </p>
+
+            <div class="card-grid">
+
+                <article class="card">
+                    <div class="color-box teal">
+                        Deep Teal — #0F4C5C
+                    </div>
+
+                    <p>
+                        Used for the header, navigation, headings, buttons,
+                        and important interface elements.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="color-box sand">
+                        Sand — #F4E3C1
+                    </div>
+
+                    <p>
+                        Used for backgrounds, cards, and highlighted sections.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="color-box terracotta">
+                        Terracotta — #C65D3B
+                    </div>
+
+                    <p>
+                        Used for accents, borders, hover effects, and calls
+                        to action.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="color-box charcoal">
+                        Charcoal — #263238
+                    </div>
+
+                    <p>
+                        Used for body text, navigation backgrounds, and strong
+                        contrast.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- TYPOGRAPHY -->
+
+        <section id="typography">
+            <h2>Typography</h2>
+
+            <div class="card-grid">
+
+                <article class="card">
+                    <h3>Playfair Display</h3>
+
+                    <p>
+                        Playfair Display will be used for the website title,
+                        headings, and major section headings. Its traditional
+                        appearance supports the historical and cultural theme
+                        of the project.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Open Sans</h3>
+
+                    <p>
+                        Open Sans will be used for paragraphs, navigation,
+                        buttons, forms, and general interface content. It
+                        provides a clean and readable appearance on different
+                        screen sizes.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SITE MAP -->
+
+        <section id="sitemap">
+            <h2>Site Map</h2>
+
+            <div class="site-map">
+                Grand-Bassam Cultural Heritage and Tourism Guide<br>
+                │<br>
+                ├── Home — index.html<br>
+                │<br>
+                ├── Heritage &amp; Attractions — attractions.html<br>
+                │<br>
+                └── Visitor Guide — visitor.html
+            </div>
+
+            <p>
+                The three main pages will be connected through the main
+                navigation. The current page will be identified using
+                wayfinding.
+            </p>
+
+            <p>
+                Additional supporting pages such as the form action page and
+                attribution page will support the website but will not count
+                toward the required three primary pages.
+            </p>
+        </section>
+
+        <!-- PAGE CONTENT -->
+
+        <section id="pages">
+            <h2>Page Content</h2>
+
+            <div class="card-grid">
+
+                <article class="card">
+                    <h3>Home — index.html</h3>
+
+                    <ul>
+                        <li>Grand-Bassam introduction.</li>
+                        <li>Hero image.</li>
+                        <li>Short history.</li>
+                        <li>Cultural heritage overview.</li>
+                        <li>Featured attractions.</li>
+                        <li>Call-to-action.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Heritage &amp; Attractions — attractions.html</h3>
+
+                    <ul>
+                        <li>Historical and cultural attractions.</li>
+                        <li>Dynamic attraction cards.</li>
+                        <li>Images and descriptions.</li>
+                        <li>Attraction categories.</li>
+                        <li>Modal dialogs with additional details.</li>
+                        <li>At least 15 data items.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Visitor Guide — visitor.html</h3>
+
+                    <ul>
+                        <li>Visitor information.</li>
+                        <li>Suggested activities.</li>
+                        <li>Planning information.</li>
+                        <li>Useful visitor tips.</li>
+                        <li>Visitor form.</li>
+                        <li>Local storage feature.</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- JAVASCRIPT -->
+
+        <section id="javascript">
+            <h2>JavaScript Functionality</h2>
+
+            <table class="requirements-table">
+                <thead>
+                    <tr>
+                        <th>Requirement</th>
+                        <th>Planned Implementation</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Fetch API</td>
+                        <td>
+                            Attraction information will be retrieved from a
+                            local JSON file using the Fetch API.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Try...Catch</td>
+                        <td>
+                            Asynchronous requests will use try...catch error
+                            handling so errors can be handled appropriately.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Dynamic Content</td>
+                        <td>
+                            At least fifteen attraction items will be
+                            dynamically generated from the data source. Each
+                            item will display at least four data properties.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Modal Dialog</td>
+                        <td>
+                            Visitors will be able to open a modal containing
+                            additional information about an attraction.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Local Storage</td>
+                        <td>
+                            Local storage will save an appropriate visitor
+                            preference on the user's device.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>DOM Manipulation</td>
+                        <td>
+                            JavaScript will select and modify DOM elements and
+                            respond to user events such as clicks, changes,
+                            and form submissions.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Array Methods</td>
+                        <td>
+                            Methods such as map(), filter(), or forEach() will
+                            be used to process attraction data.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Template Literals</td>
+                        <td>
+                            Template literals will be used to construct
+                            dynamic HTML content.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>ES Modules</td>
+                        <td>
+                            JavaScript will be organized using ES modules to
+                            improve code organization and maintainability.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- RESPONSIVE DESIGN -->
+
+        <section>
+            <h2>Responsive Design</h2>
+
+            <p>
+                The website will be responsive on mobile, tablet, and desktop
+                screens. On small screens, navigation links will be placed
+                behind a hamburger menu. On larger screens, navigation links
+                will appear horizontally.
+            </p>
+
+            <p>
+                CSS Grid, Flexbox, flexible images, and media queries will be
+                used to support different screen sizes and prevent horizontal
+                scrolling. The site will support a minimum viewport width of
+                320 pixels.
+            </p>
+        </section>
+
+        <!-- ACCESSIBILITY -->
+
+        <section>
+            <h2>Accessibility</h2>
+
+            <ul>
+                <li>Semantic HTML elements will be used.</li>
+                <li>Images will include meaningful alt text.</li>
+                <li>Headings will follow an appropriate hierarchy.</li>
+                <li>Forms will use descriptive labels.</li>
+                <li>Interactive elements will support keyboard use.</li>
+                <li>Color contrast will be tested.</li>
+                <li>Modal dialogs will have accessible controls.</li>
+                <li>Links and buttons will have meaningful text.</li>
+            </ul>
+        </section>
+
+        <!-- WIREFRAMES -->
+
+        <section id="wireframe">
+
+            <h2>Wireframe</h2>
+
+            <div class="wireframe-intro">
+                <p>
+                    The following black-and-white wireframes show the planned
+                    structure of the home page for small and large viewports.
+                    The wireframes focus on layout, content placement, and
+                    functionality rather than final colors, images, and
+                    decorative design.
+                </p>
+            </div>
+
+            <div class="wireframes">
+
+                <!-- MOBILE WIREFRAME -->
+
+                <article class="wireframe">
+                    <h3>Small Viewport — Mobile</h3>
+
+                    <div class="wf-header">
+                        <div class="wf-logo">
+                            LOGO / SITE TITLE
+                        </div>
+
+                        <div class="mobile-menu" aria-label="Mobile menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="wf-hero">
+                        HERO IMAGE
+                        <br>
+                        GRAND-BASSAM HERITAGE
+                    </div>
+
+                    <div class="wf-section">
+                        <strong>GRAND-BASSAM INTRODUCTION</strong>
+                        <br>
+                        Short Introduction
+                        <br>
+                        <span class="wf-button">
+                            Explore Heritage
+                        </span>
+                    </div>
+
+                    <div class="wf-section">
+                        <strong>FEATURED ATTRACTIONS</strong>
+
+                        <div class="wf-card-grid">
+
+                            <div class="wf-card">
+                                <div class="wf-image">
+                                    IMAGE
+                                </div>
+                                Attraction
+                                <br>
+                                <span class="wf-button">
+                                    Details
+                                </span>
+                            </div>
+
+                            <div class="wf-card">
+                                <div class="wf-image">
+                                    IMAGE
+                                </div>
+                                Attraction
+                                <br>
+                                <span class="wf-button">
+                                    Details
+                                </span>
+                            </div>
+
+                            <div class="wf-card">
+                                <div class="wf-image">
+                                    IMAGE
+                                </div>
+                                Attraction
+                                <br>
+                                <span class="wf-button">
+                                    Details
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="wf-footer">
+                        FOOTER
+                        <br>
+                        ATTRIBUTIONS | VIDEO
+                    </div>
+                </article>
+
+                <!-- DESKTOP WIREFRAME -->
+
+                <article class="wireframe">
+                    <h3>Large Viewport — Desktop</h3>
+
+                    <div class="wf-header">
+                        <div class="wf-logo">
+                            LOGO / SITE TITLE
+                        </div>
+
+                        <div>
+                            HOME &nbsp; | &nbsp; HERITAGE &nbsp; | &nbsp;
+                            VISITOR GUIDE
+                        </div>
+                    </div>
+
+                    <div class="wf-hero">
+                        HERO IMAGE / BANNER
+                        <br>
+                        GRAND-BASSAM HERITAGE
+                        <br>
+                        SHORT INTRODUCTION
+                    </div>
+
+                    <div class="wf-section">
+                        <strong>WELCOME TO GRAND-BASSAM</strong>
+                        <br>
+                        Introduction to the city and its cultural heritage.
+                        <br>
+                        <span class="wf-button">
+                            Explore Heritage
+                        </span>
+                    </div>
+
+                    <div class="wf-section">
+                        <strong>FEATURED ATTRACTIONS</strong>
+
+                        <div class="wf-card-grid">
+
+                            <div class="wf-card">
+                                <div class="wf-image">
+                                    IMAGE
+                                </div>
+                                Attraction
+                                <br>
+                                Description
+                                <br>
+                                <span class="wf-button">
+                                    Details
+                                </span>
+                            </div>
+
+                            <div class="wf-card">
+                                <div class="wf-image">
+                                    IMAGE
+                                </div>
+                                Attraction
+                                <br>
+                                Description
+                                <br>
+                                <span class="wf-button">
+                                    Details
+                                </span>
+                            </div>
+
+                            <div class="wf-card">
+                                <div class="wf-image">
+                                    IMAGE
+                                </div>
+                                Attraction
+                                <br>
+                                Description
+                                <br>
+                                <span class="wf-button">
+                                    Details
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="wf-section">
+                        <strong>EXPLORE GRAND-BASSAM</strong>
+                        <br>
+                        Heritage information and visitor resources.
+                        <br>
+                        <span class="wf-button">
+                            View All Heritage
+                        </span>
+                    </div>
+
+                    <div class="wf-footer">
+                        FOOTER &nbsp; | &nbsp;
+                        ATTRIBUTIONS &nbsp; | &nbsp;
+                        PROJECT VIDEO
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- FILE STRUCTURE -->
+
+        <section>
+            <h2>File and Folder Structure</h2>
+
+            <div class="code">
+                final/<br>
+                ├── index.html<br>
+                ├── attractions.html<br>
+                ├── visitor.html<br>
+                ├── siteplan.html<br>
+                ├── form-action.html<br>
+                ├── attributions.html<br>
+                ├── css/<br>
+                │&nbsp;&nbsp;&nbsp;└── site.css<br>
+                ├── js/<br>
+                │&nbsp;&nbsp;&nbsp;├── main.js<br>
+                │&nbsp;&nbsp;&nbsp;└── attractions.js<br>
+                ├── data/<br>
+                │&nbsp;&nbsp;&nbsp;└── attractions.json<br>
+                └── images/
+            </div>
+
+            <p>
+                All files and folders will use lowercase names without spaces
+                and will follow meaningful naming conventions.
+            </p>
+        </section>
+
+        <!-- IMAGES -->
+
+        <section>
+            <h2>Images</h2>
+
+            <p>
+                Images will represent Grand-Bassam's historical buildings,
+                cultural attractions, streets, and coastal environment.
+                Images will be optimized for web use and will maintain their
+                intrinsic aspect ratios.
+            </p>
+
+            <p>
+                The loading="lazy" attribute will be used for appropriate
+                images to improve page performance. External images and
+                information will be acknowledged on the attribution page.
+            </p>
+        </section>
+
+        <!-- HTML FORM -->
+
+        <section>
+            <h2>HTML Form</h2>
+
+            <p>
+                The Visitor Guide page will include an HTML form that allows
+                visitors to provide information about their interests.
+            </p>
+
+            <ul>
+                <li>Visitor name.</li>
+                <li>Email address.</li>
+                <li>Preferred attraction category.</li>
+                <li>Visit interests.</li>
+                <li>Additional comments.</li>
+            </ul>
+
+            <p>
+                The submitted form information will be displayed on
+                <strong>form-action.html</strong>. This page will not count as
+                one of the three primary website pages.
+            </p>
+        </section>
+
+        <!-- SEO -->
+
+        <section>
+            <h2>SEO and Metadata</h2>
+
+            <ul>
+                <li>Each page will have a unique and descriptive title.</li>
+                <li>Each page will have a unique meta description.</li>
+                <li>Each page will include an author meta tag.</li>
+                <li>Open Graph metadata will be included.</li>
+                <li>A consistent favicon will be used.</li>
+                <li>Semantic HTML will be used throughout the site.</li>
+            </ul>
+        </section>
+
+        <!-- TESTING -->
+
+        <section id="testing">
+            <h2>Testing Plan</h2>
+
+            <div class="card-grid">
+
+                <article class="card">
+                    <h3>HTML Validation</h3>
+                    <p>
+                        The W3C Markup Validator will be used to identify HTML
+                        errors.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Accessibility</h3>
+                    <p>
+                        WAVE will be used to identify accessibility problems.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Performance and SEO</h3>
+                    <p>
+                        Google PageSpeed Insights and Chrome DevTools
+                        Lighthouse will be used to test performance,
+                        accessibility, best practices, and SEO.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Color Contrast</h3>
+                    <p>
+                        WebAIM Contrast Checker will be used to verify
+                        sufficient color contrast.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Browser Testing</h3>
+                    <p>
+                        The website will be tested in multiple browsers and on
+                        different screen sizes.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>JavaScript Testing</h3>
+                    <p>
+                        Browser DevTools will be used to check for JavaScript
+                        runtime errors.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PROJECT VIDEO -->
+
+        <section>
+            <h2>Project Video</h2>
+
+            <p>
+                A 3–5 minute demonstration video will be recorded showing how
+                the required JavaScript features were implemented. The video
+                will demonstrate the data integration, dynamic output, and
+                asynchronous functionality using a try...catch block.
+            </p>
+
+            <p>
+                The completed video will be uploaded to a public video-hosting
+                service and linked in the footer of each website page.
+            </p>
+        </section>
+
+        <!-- ATTRIBUTIONS -->
+
+        <section>
+            <h2>Sources and Attributions</h2>
+
+            <p>
+                External images, information, and other resources used in the
+                project will be acknowledged on an attribution page. The
+                attribution page will be linked from the footer of the home
+                page.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Grand-Bassam Cultural Heritage and Tourism Guide
+        </p>
+
+        <p>
+            WDD 231 — Individual Website Project
+        </p>
+
+        <p>
+            Kouame Richard Kouadio
+        </p>
+    </footer>
+
+</body>
+
+</html>

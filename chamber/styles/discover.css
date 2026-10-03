@@ -1,38 +1,46 @@
 /* =========================================================
-   WDD 231 - Chamber of Commerce
-   Discover Page
+   DISCOVER PAGE - GRAND-BASSAM CHAMBER OF COMMERCE
+   WDD 231 - Web Frontend Development I
    ========================================================= */
+
+/* ---------- COLOR VARIABLES ---------- */
 
 :root {
-    --ocean-blue: #0b3954;
-    --turquoise: #056b76;
-    --coral: #b83b32;
-    --sand: #f4e1c1;
-    --light-gray: #f4f6f7;
-    --dark-text: #17202a;
-    --white: #ffffff;
+    --ocean-blue: rgb(11, 57, 84);
+    --turquoise: rgb(5, 107, 118);
+    --coral: rgb(184, 59, 50);
+    --sand: rgb(244, 225, 193);
+    --light-gray: rgb(244, 246, 247);
+    --dark-text: rgb(23, 32, 42);
+    --white: rgb(255, 255, 255);
 }
 
-/* =========================================================
-   BASE
-   ========================================================= */
+/* ---------- BASE ---------- */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
+    font-family: "Open Sans", sans-serif;
     background-color: var(--light-gray);
     color: var(--dark-text);
-    font-family: "Open Sans", sans-serif;
     line-height: 1.6;
 }
 
-a:focus-visible {
-    outline: 3px solid var(--coral);
-    outline-offset: 2px;
+/* Explicitly remove the browser's default blue link color. */
+a {
+    color: var(--turquoise);
+    text-decoration: none;
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+a:hover,
+a:focus-visible {
+    color: var(--coral);
+}
+
+/* ---------- HEADER ---------- */
 
 .site-header,
 header {
@@ -43,15 +51,22 @@ header {
 .header-container {
     width: min(1100px, 92%);
     margin: 0 auto;
-    padding: 1rem 0;
+    min-height: 100px;
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding: 1rem 0;
 }
 
 .logo-link {
     display: block;
     flex-shrink: 0;
+    color: var(--white);
+}
+
+.logo-link:hover,
+.logo-link:focus-visible {
+    color: var(--white);
 }
 
 .logo-link img {
@@ -70,25 +85,25 @@ header {
     color: var(--white);
     font-family: "Playfair Display", serif;
     font-size: 1.8rem;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .site-title p {
-    margin: 0.2rem 0 0;
+    margin: 0.25rem 0 0;
     color: var(--sand);
     font-size: 0.95rem;
 }
 
-/* =========================================================
-   MENU BUTTON
-   ========================================================= */
+/* ---------- MENU BUTTON ---------- */
 
 .menu-button {
-    border: 0;
-    padding: 0.5rem;
+    display: none;
+    border: 2px solid var(--white);
+    border-radius: 5px;
+    padding: 0.5rem 0.75rem;
     background-color: var(--ocean-blue);
     color: var(--white);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 1;
     cursor: pointer;
 }
@@ -99,14 +114,7 @@ header {
     color: var(--white);
 }
 
-.menu-button:focus-visible {
-    outline: 3px solid var(--sand);
-    outline-offset: 2px;
-}
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+/* ---------- NAVIGATION ---------- */
 
 .navigation {
     background-color: var(--ocean-blue);
@@ -116,16 +124,18 @@ header {
     width: min(1100px, 92%);
     margin: 0 auto;
     padding: 0;
+    display: flex;
+    justify-content: center;
     list-style: none;
 }
 
 .navigation a {
     display: block;
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1.25rem;
     background-color: var(--ocean-blue);
     color: var(--white);
-    text-decoration: none;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .navigation a:hover,
@@ -135,14 +145,13 @@ header {
     color: var(--white);
 }
 
-.navigation a:focus-visible {
-    outline: 3px solid var(--sand);
-    outline-offset: -3px;
+/* ---------- MAIN ---------- */
+
+main {
+    min-height: 60vh;
 }
 
-/* =========================================================
-   PAGE HEADING
-   ========================================================= */
+/* ---------- PAGE HEADING ---------- */
 
 .page-heading {
     padding: 2.5rem 1rem;
@@ -151,12 +160,10 @@ header {
 }
 
 .page-heading h1 {
-    max-width: 900px;
-    margin: 0 auto 0.75rem;
+    margin: 0 0 0.75rem;
     color: var(--ocean-blue);
     font-family: "Playfair Display", serif;
     font-size: clamp(2rem, 5vw, 3rem);
-    line-height: 1.2;
 }
 
 .page-heading p {
@@ -165,29 +172,24 @@ header {
     color: var(--dark-text);
 }
 
-/* =========================================================
-   VISIT MESSAGE
-   ========================================================= */
+/* ---------- VISIT MESSAGE ---------- */
 
 .visit-message {
     width: min(1100px, 92%);
     margin: 1.5rem auto 0;
-    padding: 1rem;
-    box-sizing: border-box;
+    padding: 1rem 1.25rem;
+    border-left: 5px solid var(--coral);
     background-color: var(--sand);
     color: var(--dark-text);
-    border-left: 5px solid var(--coral);
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-/* =========================================================
-   DISCOVER CONTENT
-   ========================================================= */
+/* ---------- DISCOVER CONTENT ---------- */
 
 .discover-content {
     width: min(1100px, 92%);
     margin: 0 auto;
-    padding: 2.5rem 0 3rem;
+    padding: 2.5rem 0;
 }
 
 .discover-content>h2 {
@@ -198,9 +200,7 @@ header {
     text-align: center;
 }
 
-/* =========================================================
-   DISCOVER GRID
-   ========================================================= */
+/* ---------- DISCOVER GRID ---------- */
 
 .discover-grid {
     display: grid;
@@ -208,15 +208,15 @@ header {
     gap: 1.5rem;
 }
 
-/* =========================================================
-   DISCOVER CARDS
-   ========================================================= */
+/* ---------- DISCOVER CARD ---------- */
 
 .discover-card {
+    display: grid;
+    grid-template-columns: 1fr;
     overflow: hidden;
     background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 12%);
 }
 
 .discover-card img {
@@ -231,31 +231,26 @@ header {
 }
 
 .discover-card h3 {
-    margin: 0 0 0.6rem;
+    margin: 0 0 0.5rem;
     color: var(--ocean-blue);
     font-family: "Playfair Display", serif;
     font-size: 1.4rem;
-    line-height: 1.3;
-}
-
-.discover-card address {
-    margin-bottom: 0.8rem;
-    color: var(--dark-text);
-    font-style: normal;
-    font-size: 0.95rem;
 }
 
 .discover-card p {
-    margin: 0 0 1rem;
+    margin: 0 0 0.75rem;
 }
 
-/* =========================================================
-   CARD LINKS
-   ========================================================= */
+.discover-card address {
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+    font-style: normal;
+}
 
 .discover-card a {
     color: var(--turquoise);
-    font-weight: 700;
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 .discover-card a:hover,
@@ -263,16 +258,13 @@ header {
     color: var(--coral);
 }
 
-/* =========================================================
-   CARD BUTTON
-   ========================================================= */
+/* ---------- CARD BUTTON ---------- */
 
 .discover-card button {
     border: 0;
-    padding: 0.7rem 1rem;
+    padding: 0.75rem 1rem;
     background-color: var(--ocean-blue);
     color: var(--white);
-    border-radius: 4px;
     font-family: inherit;
     font-weight: 700;
     cursor: pointer;
@@ -284,17 +276,11 @@ header {
     color: var(--white);
 }
 
-.discover-card button:focus-visible {
-    outline: 3px solid var(--ocean-blue);
-    outline-offset: 2px;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* ---------- FOOTER ---------- */
 
 .site-footer,
 footer {
+    margin-top: 2rem;
     background-color: var(--ocean-blue);
     color: var(--white);
 }
@@ -302,9 +288,9 @@ footer {
 .footer-content {
     width: min(1100px, 92%);
     margin: 0 auto;
-    padding: 2.5rem 0;
+    padding: 2rem 0;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -312,18 +298,13 @@ footer {
     margin-top: 0;
     color: var(--white);
     font-family: "Playfair Display", serif;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 .footer-content p {
-    margin: 0.35rem 0;
+    margin: 0.4rem 0;
 }
 
-/*
- * Footer links are explicitly white.
- * This prevents the turquoise global-link color
- * from causing a contrast problem on the dark footer.
- */
 .footer-content a {
     color: var(--white);
     text-decoration: underline;
@@ -334,90 +315,136 @@ footer {
     color: var(--sand);
 }
 
-/* =========================================================
-   FOOTER BOTTOM
-   ========================================================= */
-
 .footer-bottom {
-    border-top: 1px solid rgb(255 255 255 / 25%);
     padding: 1rem;
+    border-top: 1px solid rgb(255 255 255 / 30%);
     text-align: center;
 }
 
 .footer-bottom p {
-    margin: 0.2rem 0;
+    margin: 0.25rem 0;
+    color: var(--white);
 }
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* ---------- TABLET ---------- */
 
 @media (min-width: 600px) {
-    .navigation ul {
-        display: flex;
-        justify-content: center;
-    }
-
-    .navigation a {
-        padding: 0.8rem 1.25rem;
-    }
-
     .discover-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
+    .discover-card {
+        grid-template-columns: 1fr;
+    }
+
+    .discover-card img {
+        height: 230px;
     }
 }
 
-/* =========================================================
-   DESKTOP
-   ========================================================= */
+/* ---------- DESKTOP ---------- */
 
 @media (min-width: 900px) {
-    .header-container {
-        padding: 1.25rem 0;
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 
-    .site-title h1 {
-        font-size: 2.1rem;
+    .discover-card {
+        grid-template-columns: 1fr 1fr;
+        min-height: 300px;
     }
 
+    .discover-card img {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+    }
+
+    .discover-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ---------- LARGE DESKTOP ---------- */
+
+@media (min-width: 1100px) {
     .discover-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
     .discover-card {
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .discover-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 16px rgb(0 0 0 / 16%);
+        grid-template-columns: 1fr;
     }
 
     .discover-card img {
-        transition: transform 0.3s ease;
-    }
-
-    .discover-card:hover img {
-        transform: scale(1.03);
-    }
-
-    .footer-content {
-        grid-template-columns: 2fr 1fr 1.5fr;
+        height: 220px;
+        min-height: 220px;
     }
 }
 
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
+/* ---------- MOBILE NAVIGATION ---------- */
+
+@media (max-width: 599px) {
+    .header-container {
+        min-height: 80px;
+    }
+
+    .logo-link img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .site-title h1 {
+        font-size: 1.35rem;
+    }
+
+    .site-title p {
+        font-size: 0.8rem;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .navigation.open {
+        display: block;
+    }
+
+    .navigation ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navigation a {
+        padding: 0.85rem 1rem;
+        text-align: center;
+        border-top: 1px solid rgb(255 255 255 / 15%);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .discover-card,
-    .discover-card img {
-        transition: none;
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto;
     }
 }

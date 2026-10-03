@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Discover Grand-Bassam | Chamber of Commerce</title>
 
     <meta name="description"
@@ -11,12 +12,16 @@
 
     <meta name="author" content="Kouame Richard Kouadio">
 
-    <!-- Open Graph Metadata -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Discover Grand-Bassam | Chamber of Commerce">
+
     <meta property="og:description"
         content="Explore eight places of interest in Grand-Bassam, Côte d'Ivoire, including cultural, historical, and recreational attractions.">
+
     <meta property="og:type" content="website">
+
     <meta property="og:image" content="https://richard-kouadio.github.io/wdd231/chamber/images/og-image.jpg">
+
     <meta property="og:url" content="https://richard-kouadio.github.io/wdd231/chamber/discover.html">
 
     <!-- Favicon -->
@@ -30,7 +35,7 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
@@ -38,21 +43,26 @@
 
     <!-- JavaScript -->
     <script type="module" src="scripts/discover.js"></script>
-
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
 
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="Grand-Bassam Chamber of Commerce logo" width="80" height="80">
+    <header class="site-header">
+
+        <div class="header-content">
+
+            <a href="index.html" class="brand">
+
+                <span class="brand-logo">
+                    GB
+                </span>
+
+                <span>
+                    <span class="brand-name">Grand-Bassam</span>
+                    <span class="brand-subtitle">Chamber of Commerce</span>
+                </span>
+
             </a>
-
-            <div class="site-title">
-                <p class="site-name">Grand-Bassam</p>
-                <p>Chamber of Commerce</p>
-            </div>
 
             <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation menu"
                 aria-expanded="false">
@@ -61,68 +71,91 @@
 
         </div>
 
-        <nav id="navigation" class="navigation" aria-label="Main navigation">
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
+        <nav id="navigation" class="main-nav" aria-label="Main navigation">
 
-                <li>
-                    <a href="discover.html" class="active" aria-current="page">
-                        Discover
-                    </a>
-                </li>
+            <a href="index.html">Home</a>
 
-                <li>
-                    <a href="directory.html">Directory</a>
-                </li>
+            <a href="discover.html" class="active" aria-current="page">
+                Discover
+            </a>
 
-                <li>
-                    <a href="join.html">Join</a>
-                </li>
+            <a href="directory.html">Directory</a>
 
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
+            <a href="join.html">Join</a>
+
+            <a href="contact.html">Contact</a>
+
         </nav>
+
     </header>
 
-    <main class="discover-page">
+    <main>
 
         <section class="page-heading">
-            <h1>Discover Grand-Bassam</h1>
 
-            <p>
-                Explore the history, culture, landmarks, and places of interest
-                that make Grand-Bassam a unique destination in Côte d'Ivoire.
-            </p>
+            <div>
+
+                <p class="eyebrow">Explore Grand-Bassam</p>
+
+                <h1>Discover Grand-Bassam</h1>
+
+                <p>
+                    Explore the history, culture, landmarks, and places of
+                    interest that make Grand-Bassam a unique destination in
+                    Côte d'Ivoire.
+                </p>
+
+            </div>
+
         </section>
 
         <section id="visit-message" class="visit-message" aria-live="polite">
         </section>
 
-        <section class="discover-content">
+        <section class="home-section discover-content">
 
-            <h2>Places of Interest</h2>
+            <div class="section-heading">
+
+                <p class="eyebrow">Places to Visit</p>
+
+                <h2>Places of Interest</h2>
+
+                <p>
+                    Discover some of the cultural, historical, and recreational
+                    attractions found throughout Grand-Bassam.
+                </p>
+
+            </div>
 
             <div id="discover-grid" class="discover-grid">
-                <!-- Cards will be generated here with JavaScript -->
             </div>
 
         </section>
 
     </main>
 
-    <footer>
+    <footer class="site-footer">
 
         <div class="footer-content">
 
             <div>
                 <h2>Grand-Bassam Chamber of Commerce</h2>
+
                 <p>Grand-Bassam, Côte d'Ivoire</p>
-                <p>Email: info@example.com</p>
-                <p>Phone: +225 00 00 00 00 00</p>
+
+                <p>
+                    Email:
+                    <a href="mailto:info@example.com">
+                        info@example.com
+                    </a>
+                </p>
+
+                <p>
+                    Phone:
+                    <a href="tel:+2250000000000">
+                        +225 00 00 00 00 00
+                    </a>
+                </p>
             </div>
 
             <div>
@@ -145,25 +178,37 @@
                 </p>
             </div>
 
-            <div>
+            <div class="development-info">
+
                 <h2>Project Information</h2>
 
-                <p>WDD 231 Web Frontend Development I</p>
+                <p>
+                    WDD 231 Web Frontend Development I
+                </p>
 
                 <p>
                     <a href="https://github.com/Richard-Kouadio/wdd231" target="_blank" rel="noopener noreferrer">
                         GitHub Repository
                     </a>
                 </p>
+
             </div>
 
         </div>
 
         <div class="footer-bottom">
 
-            <p>&copy; 2026 Grand-Bassam Chamber of Commerce</p>
-            <p>Kouame Richard Kouadio</p>
-            <p>WDD 231</p>
+            <p>
+                &copy; 2026 Grand-Bassam Chamber of Commerce
+            </p>
+
+            <p>
+                Kouame Richard Kouadio
+            </p>
+
+            <p>
+                WDD 231
+            </p>
 
         </div>
 

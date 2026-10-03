@@ -1,16 +1,27 @@
 /* =========================================
-DISCOVER PAGE
+   DISCOVER PAGE
+   WDD 231 - Chamber of Commerce
 ========================================= */
 
 /* =========================================
-GENERAL DISCOVER STYLES
+   DISCOVER MAIN LAYOUT
 ========================================= */
 
-.discover-page {
-    width: min(1200px, 92%);
-    margin: 0 auto;
-    padding: 2rem 0 4rem;
+.discover-content {
+    width: 100%;
 }
+
+.discover-content>h2 {
+    margin: 0 0 1.5rem;
+    color: var(--ocean-blue);
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* =========================================
+   VISITOR MESSAGE
+========================================= */
 
 .visit-message {
     margin-bottom: 2rem;
@@ -21,68 +32,22 @@ GENERAL DISCOVER STYLES
     font-weight: 700;
 }
 
-.discover-content>h2 {
-    margin-bottom: 1.5rem;
-    color: var(--ocean-blue);
-    text-align: center;
-}
-
 /* =========================================
-SMALL SCREEN GRID
-320px - 640px
+   DISCOVER GRID
 ========================================= */
 
 .discover-grid {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    grid-template-areas:
-        "card1"
-        "card2"
-        "card3"
-        "card4"
-        "card5"
-        "card6"
-        "card7"
-        "card8";
-}
-
-.discover-card:nth-child(1) {
-    grid-area: card1;
-}
-
-.discover-card:nth-child(2) {
-    grid-area: card2;
-}
-
-.discover-card:nth-child(3) {
-    grid-area: card3;
-}
-
-.discover-card:nth-child(4) {
-    grid-area: card4;
-}
-
-.discover-card:nth-child(5) {
-    grid-area: card5;
-}
-
-.discover-card:nth-child(6) {
-    grid-area: card6;
-}
-
-.discover-card:nth-child(7) {
-    grid-area: card7;
-}
-
-.discover-card:nth-child(8) {
-    grid-area: card8;
 }
 
 /* =========================================
-DISCOVER CARDS
+   DISCOVER CARDS
 ========================================= */
 
 .discover-card {
+    overflow: hidden;
     padding: 1rem;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -91,13 +56,15 @@ DISCOVER CARDS
 }
 
 .discover-card h2 {
-    margin-top: 0;
+    margin: 0;
     color: var(--ocean-blue);
+    font-family: var(--heading-font);
     font-size: 1.4rem;
 }
 
 .discover-card figure {
     margin: 1rem 0;
+    overflow: hidden;
 }
 
 .discover-card img {
@@ -107,23 +74,25 @@ DISCOVER CARDS
 }
 
 .discover-card address {
-    margin-bottom: 0.75rem;
+    margin: 0 0 0.75rem;
+    color: var(--dark-text);
     font-style: normal;
     font-weight: 700;
-    color: var(--dark-text);
 }
 
 .discover-card p {
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
 }
 
 .discover-card button {
     padding: 0.65rem 1rem;
     border: 0;
     border-radius: 5px;
-    color: var(--white);
     background-color: var(--ocean-blue);
+    color: var(--white);
     cursor: pointer;
+    font: inherit;
+    font-weight: 600;
 }
 
 .discover-card button:hover,
@@ -132,11 +101,63 @@ DISCOVER CARDS
 }
 
 /* =========================================
-MEDIUM SCREEN
-641px - 1024px
+   SMALL SCREEN
+   320px - 640px
 ========================================= */
 
-@media (min-width: 641px) and (max-width: 1024px) {
+@media screen and (max-width: 640px) {
+
+    .discover-grid {
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6"
+            "card7"
+            "card8";
+    }
+
+    .discover-card:nth-child(1) {
+        grid-area: card1;
+    }
+
+    .discover-card:nth-child(2) {
+        grid-area: card2;
+    }
+
+    .discover-card:nth-child(3) {
+        grid-area: card3;
+    }
+
+    .discover-card:nth-child(4) {
+        grid-area: card4;
+    }
+
+    .discover-card:nth-child(5) {
+        grid-area: card5;
+    }
+
+    .discover-card:nth-child(6) {
+        grid-area: card6;
+    }
+
+    .discover-card:nth-child(7) {
+        grid-area: card7;
+    }
+
+    .discover-card:nth-child(8) {
+        grid-area: card8;
+    }
+}
+
+/* =========================================
+   MEDIUM SCREEN
+   641px - 1024px
+========================================= */
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
 
     .discover-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -146,19 +167,45 @@ MEDIUM SCREEN
             "card7 card8 card8 card6";
     }
 
-    .discover-card img {
-        aspect-ratio: 3 / 2;
+    .discover-card:nth-child(1) {
+        grid-area: card1;
     }
 
+    .discover-card:nth-child(2) {
+        grid-area: card2;
+    }
 
+    .discover-card:nth-child(3) {
+        grid-area: card3;
+    }
+
+    .discover-card:nth-child(4) {
+        grid-area: card4;
+    }
+
+    .discover-card:nth-child(5) {
+        grid-area: card5;
+    }
+
+    .discover-card:nth-child(6) {
+        grid-area: card6;
+    }
+
+    .discover-card:nth-child(7) {
+        grid-area: card7;
+    }
+
+    .discover-card:nth-child(8) {
+        grid-area: card8;
+    }
 }
 
 /* =========================================
-LARGE SCREEN
-1025px AND ABOVE
+   LARGE SCREEN
+   1025px AND ABOVE
 ========================================= */
 
-@media (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
 
     .discover-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -168,7 +215,38 @@ LARGE SCREEN
             "card7 card5 card8 card8";
     }
 
-    /* Image hover effect */
+    .discover-card:nth-child(1) {
+        grid-area: card1;
+    }
+
+    .discover-card:nth-child(2) {
+        grid-area: card2;
+    }
+
+    .discover-card:nth-child(3) {
+        grid-area: card3;
+    }
+
+    .discover-card:nth-child(4) {
+        grid-area: card4;
+    }
+
+    .discover-card:nth-child(5) {
+        grid-area: card5;
+    }
+
+    .discover-card:nth-child(6) {
+        grid-area: card6;
+    }
+
+    .discover-card:nth-child(7) {
+        grid-area: card7;
+    }
+
+    .discover-card:nth-child(8) {
+        grid-area: card8;
+    }
+
     .discover-card img {
         transition:
             transform 0.3s ease,
@@ -176,42 +254,9 @@ LARGE SCREEN
             box-shadow 0.3s ease;
     }
 
-    .discover-card figure {
-        overflow: hidden;
-    }
-
     .discover-card img:hover {
         transform: scale(1.05);
         filter: brightness(0.85);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     }
-
-
-}
-
-/* =========================================
-DISCOVER FOOTER ADDITIONS
-========================================= */
-
-.footer-bottom {
-    padding: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    text-align: center;
-}
-
-.footer-bottom p {
-    margin: 0.25rem 0;
-}
-
-/* =========================================
-FOOTER RESPONSIVE
-========================================= */
-
-@media (min-width: 641px) {
-
-    .footer-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-
 }

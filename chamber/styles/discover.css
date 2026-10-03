@@ -2,52 +2,12 @@
    DISCOVER PAGE
 ========================================= */
 
-:root {
-    --primary-color: #0f4c5c;
-    --secondary-color: #f4e3c1;
-    --accent-color: #a9472b;
-    --dark-color: #263238;
-    --white: #ffffff;
-    --light-gray: #f4f4f4;
-    --border-color: #d5d5d5;
-}
-
-/* =========================================
-   GENERAL
-========================================= */
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--dark-color);
-    background-color: #ffffff;
-    line-height: 1.6;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-a {
-    color: var(--primary-color);
-}
-
-button {
-    font: inherit;
-}
-
 /* =========================================
    HEADER
 ========================================= */
 
 header {
-    background-color: var(--primary-color);
+    background-color: var(--ocean-blue);
     color: var(--white);
 }
 
@@ -83,7 +43,7 @@ header {
 ========================================= */
 
 .navigation {
-    background-color: var(--dark-color);
+    background-color: var(--dark-text);
 }
 
 .navigation ul {
@@ -109,11 +69,11 @@ header {
 
 .navigation a:hover,
 .navigation a:focus {
-    background-color: var(--accent-color);
+    background-color: var(--coral);
 }
 
 .navigation a.active {
-    background-color: var(--accent-color);
+    background-color: var(--coral);
     font-weight: 700;
 }
 
@@ -121,19 +81,9 @@ header {
    MENU BUTTON
 ========================================= */
 
-.menu-button {
-    padding: 0.5rem 0.75rem;
-    border: 2px solid var(--white);
-    border-radius: 5px;
-    color: var(--white);
-    background-color: transparent;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
 .menu-button:hover,
 .menu-button:focus {
-    background-color: var(--accent-color);
+    background-color: var(--coral);
 }
 
 /* =========================================
@@ -153,7 +103,7 @@ main {
 
 .page-heading h2 {
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--ocean-blue);
     font-size: 2rem;
 }
 
@@ -169,9 +119,9 @@ main {
 .visit-message {
     margin-bottom: 2rem;
     padding: 1rem;
-    border-left: 5px solid var(--accent-color);
-    background-color: var(--secondary-color);
-    color: var(--dark-color);
+    border-left: 5px solid var(--coral);
+    background-color: var(--sand);
+    color: var(--dark-text);
     font-weight: 700;
 }
 
@@ -181,16 +131,13 @@ main {
 
 .discover-content>h2 {
     margin-bottom: 1.5rem;
-    color: var(--primary-color);
+    color: var(--ocean-blue);
     text-align: center;
 }
 
 /* =========================================
    SMALL SCREEN GRID
    320px - 640px
-
-   Named grid areas are intentionally
-   stacked vertically.
 ========================================= */
 
 .discover-grid {
@@ -241,12 +188,12 @@ main {
 }
 
 /* =========================================
-   CARD
+   DISCOVER CARD
 ========================================= */
 
 .discover-card {
     padding: 1rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     border-radius: 8px;
     background-color: var(--white);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -254,7 +201,7 @@ main {
 
 .discover-card h2 {
     margin-top: 0;
-    color: var(--primary-color);
+    color: var(--ocean-blue);
     font-size: 1.4rem;
 }
 
@@ -272,7 +219,7 @@ main {
     margin-bottom: 0.75rem;
     font-style: normal;
     font-weight: 700;
-    color: var(--dark-color);
+    color: var(--dark-text);
 }
 
 .discover-card p {
@@ -284,20 +231,18 @@ main {
     border: 0;
     border-radius: 5px;
     color: var(--white);
-    background-color: var(--primary-color);
+    background-color: var(--ocean-blue);
     cursor: pointer;
 }
 
 .discover-card button:hover,
 .discover-card button:focus {
-    background-color: var(--accent-color);
+    background-color: var(--coral);
 }
 
 /* =========================================
    MEDIUM SCREEN
    641px - 1024px
-
-   DIFFERENT NAMED GRID AREAS
 ========================================= */
 
 @media (min-width: 641px) and (max-width: 1024px) {
@@ -333,8 +278,6 @@ main {
 /* =========================================
    LARGE SCREEN
    1025px AND ABOVE
-
-   ANOTHER DIFFERENT NAMED GRID LAYOUT
 ========================================= */
 
 @media (min-width: 1025px) {
@@ -358,11 +301,7 @@ main {
             "card7 card5 card8 card8";
     }
 
-    /* =====================================
-       IMAGE HOVER EFFECT
-
-       Only enabled on large screens.
-    ===================================== */
+    /* IMAGE HOVER EFFECT */
 
     .discover-card img {
         transition:
@@ -388,15 +327,7 @@ main {
 
 footer {
     color: var(--white);
-    background-color: var(--primary-color);
-}
-
-.footer-content {
-    display: grid;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    background-color: var(--ocean-blue);
 }
 
 .footer-content h2 {
@@ -410,7 +341,7 @@ footer {
 
 .footer-content a:hover,
 .footer-content a:focus {
-    color: var(--secondary-color);
+    color: var(--sand);
 }
 
 .footer-bottom {

@@ -21,6 +21,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: "Open Sans", sans-serif;
@@ -29,14 +33,16 @@ body {
     line-height: 1.6;
 }
 
-/* Explicitly remove the browser's default blue link color. */
-a {
-    color: var(--turquoise);
-    text-decoration: none;
+/* Links on the normal light page background.
+   Do not use turquoise globally because navigation has
+   a dark blue background. */
+main a {
+    color: var(--ocean-blue);
+    text-decoration: underline;
 }
 
-a:hover,
-a:focus-visible {
+main a:hover,
+main a:focus-visible {
     color: var(--coral);
 }
 
@@ -62,11 +68,13 @@ header {
     display: block;
     flex-shrink: 0;
     color: var(--white);
+    text-decoration: none;
 }
 
 .logo-link:hover,
 .logo-link:focus-visible {
     color: var(--white);
+    text-decoration: none;
 }
 
 .logo-link img {
@@ -247,8 +255,10 @@ main {
     font-style: normal;
 }
 
+/* Card links use dark blue on white.
+   This gives strong WCAG contrast. */
 .discover-card a {
-    color: var(--turquoise);
+    color: var(--ocean-blue);
     font-weight: 600;
     text-decoration: underline;
 }
@@ -305,6 +315,7 @@ footer {
     margin: 0.4rem 0;
 }
 
+/* Footer links are explicitly white on dark blue. */
 .footer-content a {
     color: var(--white);
     text-decoration: underline;
@@ -441,10 +452,7 @@ footer {
 /* ---------- REDUCED MOTION ---------- */
 
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
+    html {
         scroll-behavior: auto;
     }
 }

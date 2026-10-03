@@ -5,18 +5,17 @@ const visitMessage = document.querySelector("#visit-message");
 const menuButton = document.querySelector("#menu-button");
 const navigation = document.querySelector("#navigation");
 
-/* =========================================
+/* ==============================
    BUILD DISCOVER CARDS
-========================================= */
+============================== */
 
 function displayDiscoverItems(items) {
     discoverGrid.innerHTML = "";
 
-    items.forEach((item, index) => {
+    items.forEach((item) => {
         const card = document.createElement("article");
 
         card.classList.add("discover-card");
-        card.style.gridArea = `card${index + 1}`;
 
         card.innerHTML = `
             <h3>${item.name}</h3>
@@ -44,15 +43,15 @@ function displayDiscoverItems(items) {
     });
 }
 
-/* =========================================
-   LOCAL STORAGE - LAST VISIT
-========================================= */
+/* ==============================
+   LAST VISIT MESSAGE
+============================== */
 
 function displayVisitMessage() {
     const currentTime = Date.now();
     const lastVisit = localStorage.getItem("discoverLastVisit");
 
-    let message = "";
+    let message;
 
     if (!lastVisit) {
         message = "Welcome! Let us know if you have any questions.";
@@ -64,7 +63,6 @@ function displayVisitMessage() {
             message = "Back so soon! Awesome!";
         } else {
             const days = Math.floor(difference / oneDay);
-
             const dayText = days === 1 ? "day" : "days";
 
             message = `You last visited ${days} ${dayText} ago.`;
@@ -73,12 +71,15 @@ function displayVisitMessage() {
 
     visitMessage.textContent = message;
 
-    localStorage.setItem("discoverLastVisit", currentTime.toString());
+    localStorage.setItem(
+        "discoverLastVisit",
+        currentTime.toString()
+    );
 }
 
-/* =========================================
-   RESPONSIVE NAVIGATION
-========================================= */
+/* ==============================
+   MOBILE NAVIGATION
+============================== */
 
 function toggleNavigation() {
     const isOpen = navigation.classList.toggle("open");
@@ -96,11 +97,12 @@ function toggleNavigation() {
     );
 }
 
-menuButton.addEventListener("click", toggleNavigation);
+/* ==============================
+   INITIALIZE
+============================== */
 
-/* =========================================
-   INITIALIZE PAGE
-========================================= */
+menuButton.addEventListener("click", toggleNavigation);
 
 displayDiscoverItems(discoverItems);
 displayVisitMessage();
+

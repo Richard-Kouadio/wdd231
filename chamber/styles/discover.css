@@ -1,120 +1,16 @@
 /* =========================================
-   DISCOVER PAGE
+DISCOVER PAGE
 ========================================= */
 
 /* =========================================
-   HEADER
+GENERAL DISCOVER STYLES
 ========================================= */
 
-header {
-    background-color: var(--ocean-blue);
-    color: var(--white);
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-.logo-link img {
-    width: 70px;
-    height: 70px;
-}
-
-.site-title {
-    flex: 1;
-}
-
-.site-title h1 {
-    margin: 0;
-    font-size: 1.6rem;
-}
-
-.site-title p {
-    margin: 0;
-}
-
-/* =========================================
-   NAVIGATION
-========================================= */
-
-.navigation {
-    background-color: var(--dark-text);
-}
-
-.navigation ul {
-    display: none;
-    flex-direction: column;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-}
-
-.navigation.open ul {
-    display: flex;
-}
-
-.navigation a {
-    display: block;
-    padding: 0.9rem 1rem;
-    color: var(--white);
-    text-decoration: none;
-    text-align: center;
-}
-
-.navigation a:hover,
-.navigation a:focus {
-    background-color: var(--coral);
-}
-
-.navigation a.active {
-    background-color: var(--coral);
-    font-weight: 700;
-}
-
-/* =========================================
-   MENU BUTTON
-========================================= */
-
-.menu-button:hover,
-.menu-button:focus {
-    background-color: var(--coral);
-}
-
-/* =========================================
-   MAIN
-========================================= */
-
-main {
+.discover-page {
     width: min(1200px, 92%);
     margin: 0 auto;
     padding: 2rem 0 4rem;
 }
-
-.page-heading {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.page-heading h2 {
-    margin-bottom: 0.5rem;
-    color: var(--ocean-blue);
-    font-size: 2rem;
-}
-
-.page-heading p {
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-/* =========================================
-   VISITOR MESSAGE
-========================================= */
 
 .visit-message {
     margin-bottom: 2rem;
@@ -125,10 +21,6 @@ main {
     font-weight: 700;
 }
 
-/* =========================================
-   DISCOVER SECTION
-========================================= */
-
 .discover-content>h2 {
     margin-bottom: 1.5rem;
     color: var(--ocean-blue);
@@ -136,14 +28,13 @@ main {
 }
 
 /* =========================================
-   SMALL SCREEN GRID
-   320px - 640px
+SMALL SCREEN GRID
+320px - 640px
 ========================================= */
 
 .discover-grid {
     display: grid;
     gap: 1.5rem;
-
     grid-template-areas:
         "card1"
         "card2"
@@ -188,7 +79,7 @@ main {
 }
 
 /* =========================================
-   DISCOVER CARD
+DISCOVER CARDS
 ========================================= */
 
 .discover-card {
@@ -241,29 +132,14 @@ main {
 }
 
 /* =========================================
-   MEDIUM SCREEN
-   641px - 1024px
+MEDIUM SCREEN
+641px - 1024px
 ========================================= */
 
 @media (min-width: 641px) and (max-width: 1024px) {
 
-    .menu-button {
-        display: none;
-    }
-
-    .navigation ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .navigation li {
-        flex: 0 1 auto;
-    }
-
     .discover-grid {
         grid-template-columns: repeat(4, 1fr);
-
         grid-template-areas:
             "card1 card1 card2 card3"
             "card4 card5 card5 card6"
@@ -273,36 +149,26 @@ main {
     .discover-card img {
         aspect-ratio: 3 / 2;
     }
+
+
 }
 
 /* =========================================
-   LARGE SCREEN
-   1025px AND ABOVE
+LARGE SCREEN
+1025px AND ABOVE
 ========================================= */
 
 @media (min-width: 1025px) {
 
-    .menu-button {
-        display: none;
-    }
-
-    .navigation ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
     .discover-grid {
         grid-template-columns: repeat(4, 1fr);
-
         grid-template-areas:
             "card1 card2 card2 card3"
             "card4 card5 card6 card6"
             "card7 card5 card8 card8";
     }
 
-    /* IMAGE HOVER EFFECT */
-
+    /* Image hover effect */
     .discover-card img {
         transition:
             transform 0.3s ease,
@@ -319,30 +185,13 @@ main {
         filter: brightness(0.85);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     }
+
+
 }
 
 /* =========================================
-   FOOTER
+DISCOVER FOOTER ADDITIONS
 ========================================= */
-
-footer {
-    color: var(--white);
-    background-color: var(--ocean-blue);
-}
-
-.footer-content h2 {
-    margin-top: 0;
-    font-size: 1.2rem;
-}
-
-.footer-content a {
-    color: var(--white);
-}
-
-.footer-content a:hover,
-.footer-content a:focus {
-    color: var(--sand);
-}
 
 .footer-bottom {
     padding: 1rem;
@@ -355,11 +204,14 @@ footer {
 }
 
 /* =========================================
-   FOOTER RESPONSIVE
+FOOTER RESPONSIVE
 ========================================= */
 
 @media (min-width: 641px) {
+
     .footer-content {
         grid-template-columns: repeat(3, 1fr);
     }
+
+
 }

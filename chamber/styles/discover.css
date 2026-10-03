@@ -1,9 +1,7 @@
 /* =========================================================
-   Discover Page Styles
    WDD 231 - Chamber of Commerce
+   Discover Page
    ========================================================= */
-
-/* ---------- Color Variables ---------- */
 
 :root {
     --ocean-blue: #0b3954;
@@ -15,7 +13,9 @@
     --white: #ffffff;
 }
 
-/* ---------- Base Page ---------- */
+/* =========================================================
+   BASE
+   ========================================================= */
 
 body {
     margin: 0;
@@ -25,16 +25,14 @@ body {
     line-height: 1.6;
 }
 
-a {
-    color: var(--turquoise);
-}
-
 a:focus-visible {
     outline: 3px solid var(--coral);
     outline-offset: 2px;
 }
 
-/* ---------- Header ---------- */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .site-header,
 header {
@@ -81,15 +79,17 @@ header {
     font-size: 0.95rem;
 }
 
-/* ---------- Mobile Menu Button ---------- */
+/* =========================================================
+   MENU BUTTON
+   ========================================================= */
 
 .menu-button {
     border: 0;
+    padding: 0.5rem;
     background-color: var(--ocean-blue);
     color: var(--white);
     font-size: 1.8rem;
     line-height: 1;
-    padding: 0.5rem;
     cursor: pointer;
 }
 
@@ -104,7 +104,9 @@ header {
     outline-offset: 2px;
 }
 
-/* ---------- Navigation ---------- */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .navigation {
     background-color: var(--ocean-blue);
@@ -138,11 +140,13 @@ header {
     outline-offset: -3px;
 }
 
-/* ---------- Page Heading ---------- */
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
 
 .page-heading {
-    background-color: var(--sand);
     padding: 2.5rem 1rem;
+    background-color: var(--sand);
     text-align: center;
 }
 
@@ -161,20 +165,24 @@ header {
     color: var(--dark-text);
 }
 
-/* ---------- Visit Message ---------- */
+/* =========================================================
+   VISIT MESSAGE
+   ========================================================= */
 
 .visit-message {
     width: min(1100px, 92%);
     margin: 1.5rem auto 0;
     padding: 1rem;
+    box-sizing: border-box;
     background-color: var(--sand);
     color: var(--dark-text);
     border-left: 5px solid var(--coral);
     border-radius: 4px;
-    box-sizing: border-box;
 }
 
-/* ---------- Discover Content ---------- */
+/* =========================================================
+   DISCOVER CONTENT
+   ========================================================= */
 
 .discover-content {
     width: min(1100px, 92%);
@@ -190,7 +198,9 @@ header {
     text-align: center;
 }
 
-/* ---------- Discover Grid ---------- */
+/* =========================================================
+   DISCOVER GRID
+   ========================================================= */
 
 .discover-grid {
     display: grid;
@@ -198,7 +208,9 @@ header {
     gap: 1.5rem;
 }
 
-/* ---------- Discover Cards ---------- */
+/* =========================================================
+   DISCOVER CARDS
+   ========================================================= */
 
 .discover-card {
     overflow: hidden;
@@ -237,7 +249,9 @@ header {
     margin: 0 0 1rem;
 }
 
-/* ---------- Discover Card Links ---------- */
+/* =========================================================
+   CARD LINKS
+   ========================================================= */
 
 .discover-card a {
     color: var(--turquoise);
@@ -249,7 +263,9 @@ header {
     color: var(--coral);
 }
 
-/* ---------- Discover Card Button ---------- */
+/* =========================================================
+   CARD BUTTON
+   ========================================================= */
 
 .discover-card button {
     border: 0;
@@ -273,7 +289,9 @@ header {
     outline-offset: 2px;
 }
 
-/* ---------- Footer ---------- */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .site-footer,
 footer {
@@ -301,6 +319,11 @@ footer {
     margin: 0.35rem 0;
 }
 
+/*
+ * Footer links are explicitly white.
+ * This prevents the turquoise global-link color
+ * from causing a contrast problem on the dark footer.
+ */
 .footer-content a {
     color: var(--white);
     text-decoration: underline;
@@ -310,6 +333,10 @@ footer {
 .footer-content a:focus-visible {
     color: var(--sand);
 }
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
 
 .footer-bottom {
     border-top: 1px solid rgb(255 255 255 / 25%);
@@ -321,7 +348,9 @@ footer {
     margin: 0.2rem 0;
 }
 
-/* ---------- Tablet ---------- */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (min-width: 600px) {
     .navigation ul {
@@ -342,7 +371,9 @@ footer {
     }
 }
 
-/* ---------- Desktop ---------- */
+/* =========================================================
+   DESKTOP
+   ========================================================= */
 
 @media (min-width: 900px) {
     .header-container {
@@ -379,7 +410,9 @@ footer {
     }
 }
 
-/* ---------- Reduced Motion ---------- */
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 

@@ -1,0 +1,434 @@
+/* =========================================
+   DISCOVER PAGE
+========================================= */
+
+:root {
+    --primary-color: #0f4c5c;
+    --secondary-color: #f4e3c1;
+    --accent-color: #c65d3b;
+    --dark-color: #263238;
+    --white: #ffffff;
+    --light-gray: #f4f4f4;
+    --border-color: #d5d5d5;
+}
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark-color);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+button {
+    font: inherit;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.logo-link img {
+    width: 70px;
+    height: 70px;
+}
+
+.site-title {
+    flex: 1;
+}
+
+.site-title h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.site-title p {
+    margin: 0;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+    background-color: var(--dark-color);
+}
+
+.navigation ul {
+    display: none;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation.open ul {
+    display: flex;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.9rem 1rem;
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+}
+
+.navigation a:hover,
+.navigation a:focus {
+    background-color: var(--accent-color);
+}
+
+.navigation a.active {
+    background-color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* =========================================
+   MENU BUTTON
+========================================= */
+
+.menu-button {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--white);
+    border-radius: 5px;
+    color: var(--white);
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu-button:hover,
+.menu-button:focus {
+    background-color: var(--accent-color);
+}
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+}
+
+.page-heading {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.page-heading h2 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.page-heading p {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   VISITOR MESSAGE
+========================================= */
+
+.visit-message {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-left: 5px solid var(--accent-color);
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+/* =========================================
+   DISCOVER SECTION
+========================================= */
+
+.discover-content>h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* =========================================
+   SMALL SCREEN GRID
+   320px - 640px
+
+   Named grid areas are intentionally
+   stacked vertically.
+========================================= */
+
+.discover-grid {
+    display: grid;
+    gap: 1.5rem;
+
+    grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+        "card5"
+        "card6"
+        "card7"
+        "card8";
+}
+
+.discover-card:nth-child(1) {
+    grid-area: card1;
+}
+
+.discover-card:nth-child(2) {
+    grid-area: card2;
+}
+
+.discover-card:nth-child(3) {
+    grid-area: card3;
+}
+
+.discover-card:nth-child(4) {
+    grid-area: card4;
+}
+
+.discover-card:nth-child(5) {
+    grid-area: card5;
+}
+
+.discover-card:nth-child(6) {
+    grid-area: card6;
+}
+
+.discover-card:nth-child(7) {
+    grid-area: card7;
+}
+
+.discover-card:nth-child(8) {
+    grid-area: card8;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.discover-card {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.discover-card h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+.discover-card figure {
+    margin: 1rem 0;
+}
+
+.discover-card img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.discover-card address {
+    margin-bottom: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.discover-card p {
+    margin-bottom: 1rem;
+}
+
+.discover-card button {
+    padding: 0.65rem 1rem;
+    border: 0;
+    border-radius: 5px;
+    color: var(--white);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.discover-card button:hover,
+.discover-card button:focus {
+    background-color: var(--accent-color);
+}
+
+/* =========================================
+   MEDIUM SCREEN
+   641px - 1024px
+
+   DIFFERENT NAMED GRID AREAS
+========================================= */
+
+@media (min-width: 641px) and (max-width: 1024px) {
+
+    .menu-button {
+        display: none;
+    }
+
+    .navigation ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .navigation li {
+        flex: 0 1 auto;
+    }
+
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+
+        grid-template-areas:
+            "card1 card1 card2 card3"
+            "card4 card5 card5 card6"
+            "card7 card8 card8 card6";
+    }
+
+    .discover-card img {
+        aspect-ratio: 3 / 2;
+    }
+}
+
+/* =========================================
+   LARGE SCREEN
+   1025px AND ABOVE
+
+   ANOTHER DIFFERENT NAMED GRID LAYOUT
+========================================= */
+
+@media (min-width: 1025px) {
+
+    .menu-button {
+        display: none;
+    }
+
+    .navigation ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+
+        grid-template-areas:
+            "card1 card2 card2 card3"
+            "card4 card5 card6 card6"
+            "card7 card5 card8 card8";
+    }
+
+    /* =====================================
+       IMAGE HOVER EFFECT
+
+       Only enabled on large screens.
+    ===================================== */
+
+    .discover-card img {
+        transition:
+            transform 0.3s ease,
+            filter 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .discover-card figure {
+        overflow: hidden;
+    }
+
+    .discover-card img:hover {
+        transform: scale(1.05);
+        filter: brightness(0.85);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+.footer-content {
+    display: grid;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.footer-content h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.footer-content a {
+    color: var(--white);
+}
+
+.footer-content a:hover,
+.footer-content a:focus {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0.25rem 0;
+}
+
+/* =========================================
+   FOOTER RESPONSIVE
+========================================= */
+
+@media (min-width: 641px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

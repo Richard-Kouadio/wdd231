@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visitor Form Submitted | Grand-Bassam Guide</title>
+
+    <meta name="description" content="Confirmation page for the Grand-Bassam visitor interest form.">
+
+    <meta name="author" content="Kouame Richard Kouadio">
+
+    <link rel="icon" href="images/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
+
+    <link rel="stylesheet" href="styles/large.css">
+
+    <script type="module" src="scripts/main.js"></script>
+
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="nav-container">
+
+                <a class="logo-link" href="index.html">
+
+                    <img class="logo" src="images/logo.webp" alt="Grand-Bassam Cultural Heritage logo" width="50"
+                        height="50">
+
+                    <span class="logo-text">
+                        Grand-Bassam Heritage
+                    </span>
+
+                </a>
+
+
+                <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation menu"
+                    aria-expanded="false" aria-controls="navigation">
+                    <span class="menu-icon"></span>
+                </button>
+
+
+                <nav id="navigation" class="navigation" aria-label="Main navigation">
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="attractions.html">
+                                Heritage & Attractions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="visitor.html">
+                                Visitor Guide
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main id="main-content">
+
+        <section class="page-header">
+
+            <h1>
+                Visitor Form Submitted
+            </h1>
+
+            <p>
+                Thank you for sharing your interests in Grand-Bassam.
+            </p>
+
+        </section>
+
+
+        <section class="form-container">
+
+            <h2>
+                Your Submitted Information
+            </h2>
+
+            <div id="form-results">
+
+                <p>
+                    Loading your submitted information...
+                </p>
+
+            </div>
+
+
+            <p>
+                <a class="button" href="visitor.html">
+                    Return to Visitor Guide
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 Grand-Bassam Cultural Heritage & Tourism Guide
+        </p>
+
+        <p>
+            Created by Kouame Richard Kouadio
+        </p>
+
+        <p>
+            <a href="attributions.html">
+                Attributions & Sources
+            </a>
+        </p>
+
+        <p>
+            <a href="#" target="_blank" rel="noopener">
+                Project Video
+            </a>
+        </p>
+
+    </footer>
+
+    <script type="module">
+        const resultsContainer =
+            document.querySelector("#form-results");
+
+        const parameters =
+            new URLSearchParams(window.location.search);
+
+        const name =
+            parameters.get("name");
+
+        const email =
+            parameters.get("email");
+
+        const interest =
+            parameters.get("interest");
+
+        const visitDate =
+            parameters.get("visit-date");
+
+        const message =
+            parameters.get("message");
+
+        if (name || email || interest || visitDate || message) {
+
+            resultsContainer.innerHTML = `
+                <p><strong>Name:</strong> ${name || "Not provided"}</p>
+
+                <p><strong>Email:</strong> ${email || "Not provided"}</p>
+
+                <p><strong>Main Interest:</strong> ${interest || "Not provided"}</p>
+
+                <p><strong>Planned Visit Date:</strong> ${visitDate || "Not provided"}</p>
+
+                <p><strong>Message:</strong> ${message || "Not provided"}</p>
+            `;
+
+        } else {
+
+            resultsContainer.innerHTML = `
+                <p>
+                    No form information was submitted.
+                </p>
+            `;
+        }
+    </script>
+
+</body>
+
+</html>

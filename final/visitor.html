@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visitor Guide | Grand-Bassam Cultural Heritage</title>
+
+    <meta name="description"
+        content="Plan your Grand-Bassam visit with practical visitor information, travel interests, and a simple contact form.">
+
+    <meta name="author" content="Kouame Richard Kouadio">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Visitor Guide | Grand-Bassam Cultural Heritage">
+
+    <meta property="og:description"
+        content="Prepare for your visit to Grand-Bassam with practical information and a visitor interest form.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://richard-kouadio.github.io/wdd231/final/visitor.html">
+
+    <meta property="og:image" content="https://richard-kouadio.github.io/wdd231/final/images/hero-grand-bassam.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <!-- JavaScript -->
+    <script type="module" src="scripts/main.js"></script>
+
+    <script type="module" src="scripts/visitor.js"></script>
+</head>
+
+<body>
+
+    <!-- Skip link -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="header-container">
+
+            <div class="nav-container">
+
+                <a class="logo-link" href="index.html">
+
+                    <img class="logo" src="images/logo.webp" alt="Grand-Bassam Cultural Heritage logo" width="50"
+                        height="50">
+
+                    <span class="logo-text">
+                        Grand-Bassam Heritage
+                    </span>
+
+                </a>
+
+
+                <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation menu"
+                    aria-expanded="false" aria-controls="navigation">
+                    <span class="menu-icon"></span>
+                </button>
+
+
+                <nav id="navigation" class="navigation" aria-label="Main navigation">
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="attractions.html">
+                                Heritage & Attractions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="visitor.html">
+                                Visitor Guide
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main id="main-content">
+
+        <!-- PAGE INTRO -->
+        <section class="page-header">
+
+            <h1>
+                Visitor Guide
+            </h1>
+
+            <p>
+                Prepare for your visit to Grand-Bassam and discover ways
+                to explore its history, culture, architecture, and coastal
+                environment.
+            </p>
+
+        </section>
+
+
+        <!-- VISITOR INFORMATION -->
+        <section class="intro-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    Before You Visit
+                </h2>
+
+            </div>
+
+
+            <div class="card-grid">
+
+                <article class="card">
+
+                    <div class="card-content">
+
+                        <h3>
+                            Explore the Historic Town
+                        </h3>
+
+                        <p>
+                            Take time to observe the historic urban landscape,
+                            architecture, streets, and cultural features of
+                            Grand-Bassam.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-content">
+
+                        <h3>
+                            Discover Local Culture
+                        </h3>
+
+                        <p>
+                            Learn about the cultural traditions and communities
+                            that contribute to Grand-Bassam's identity.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-content">
+
+                        <h3>
+                            Respect Heritage
+                        </h3>
+
+                        <p>
+                            Help preserve historic places by respecting
+                            buildings, cultural sites, local communities,
+                            and the surrounding environment.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- VISITOR INTEREST FORM -->
+        <section class="intro-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    Tell Us About Your Visit
+                </h2>
+
+                <p>
+                    Use the form below to share your interests in Grand-Bassam.
+                </p>
+
+            </div>
+
+
+            <div class="form-container">
+
+                <form id="visitor-form" action="form-action.html" method="get">
+
+                    <!-- NAME -->
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+
+                    </div>
+
+
+                    <!-- INTEREST -->
+                    <div class="form-group">
+
+                        <label for="interest">
+                            Main Interest
+                        </label>
+
+                        <select id="interest" name="interest" required>
+
+                            <option value="">
+                                Select an interest
+                            </option>
+
+                            <option value="history">
+                                History
+                            </option>
+
+                            <option value="architecture">
+                                Architecture
+                            </option>
+
+                            <option value="culture">
+                                Culture
+                            </option>
+
+                            <option value="nature">
+                                Nature
+                            </option>
+
+                            <option value="tourism">
+                                Tourism
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- VISIT DATE -->
+                    <div class="form-group">
+
+                        <label for="visit-date">
+                            Planned Visit Date
+                        </label>
+
+                        <input type="date" id="visit-date" name="visit-date">
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+                    <div class="form-group">
+
+                        <label for="message">
+                            What would you like to discover?
+                        </label>
+
+                        <textarea id="message" name="message"
+                            placeholder="Tell us what interests you about Grand-Bassam."></textarea>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+                    <button class="button" type="submit">
+                        Submit Visitor Form
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- SAVED VISITOR INTEREST -->
+        <section class="intro-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    Your Saved Interest
+                </h2>
+
+            </div>
+
+            <p id="saved-interest">
+                Your visitor preferences will appear here after you submit
+                the form.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 Grand-Bassam Cultural Heritage & Tourism Guide
+        </p>
+
+        <p>
+            Created by Kouame Richard Kouadio
+        </p>
+
+        <p>
+            <a href="attributions.html">
+                Attributions & Sources
+            </a>
+        </p>
+
+        <p>
+            <a href="#" target="_blank" rel="noopener">
+                Project Video
+            </a>
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

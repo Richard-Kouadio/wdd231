@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Grand-Bassam Beach",
+        "description": "Une magnifique plage située à Grand-Bassam, idéale pour se détendre et profiter de la mer.",
+        "location": "Grand-Bassam, Côte d'Ivoire",
+        "image": "grand-bassam-beach.jpg"
+    },
+    {
+        "name": "Musée National du Costume",
+        "description": "Un musée consacré aux costumes traditionnels et à la culture de la Côte d'Ivoire.",
+        "location": "Grand-Bassam, Côte d'Ivoire",
+        "image": "musee-costume.jpg"
+    },
+    {
+        "name": "Phare de Grand-Bassam",
+        "description": "Un phare historique offrant un aperçu du patrimoine de Grand-Bassam.",
+        "location": "Grand-Bassam, Côte d'Ivoire",
+        "image": "phare-grand-bassam.jpg"
+    },
+    {
+        "name": "Quartier colonial",
+        "description": "Un quartier historique connu pour ses bâtiments coloniaux et son architecture ancienne.",
+        "location": "Grand-Bassam, Côte d'Ivoire",
+        "image": "quartier-colonial.jpg"
+    },
+    {
+        "name": "Maison Ganamet",
+        "description": "Une ancienne maison historique qui témoigne du patrimoine architectural de Grand-Bassam.",
+        "location": "Grand-Bassam, Côte d'Ivoire",
+        "image": "maison-ganamet.jpg"
+    }
+]

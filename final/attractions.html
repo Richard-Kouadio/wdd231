@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Heritage & Attractions | Grand-Bassam Guide</title>
+
+    <meta name="description"
+        content="Explore historic places, cultural heritage, architecture, and attractions in Grand-Bassam, Côte d'Ivoire.">
+
+    <meta name="author" content="Kouame Richard Kouadio">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Heritage & Attractions | Grand-Bassam Guide">
+
+    <meta property="og:description"
+        content="Explore the historic places, cultural heritage, architecture, and attractions of Grand-Bassam.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://richard-kouadio.github.io/wdd231/final/attractions.html">
+
+    <meta property="og:image" content="https://richard-kouadio.github.io/wdd231/final/images/hero-grand-bassam.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <!-- JavaScript -->
+    <script type="module" src="scripts/main.js"></script>
+
+    <script type="module" src="scripts/attractions.js"></script>
+</head>
+
+<body>
+
+    <!-- Skip link -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="header-container">
+
+            <div class="nav-container">
+
+                <a class="logo-link" href="index.html">
+
+                    <img class="logo" src="images/logo.webp" alt="Grand-Bassam Cultural Heritage logo" width="50"
+                        height="50">
+
+                    <span class="logo-text">
+                        Grand-Bassam Heritage
+                    </span>
+
+                </a>
+
+
+                <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation menu"
+                    aria-expanded="false" aria-controls="navigation">
+                    <span class="menu-icon"></span>
+                </button>
+
+
+                <nav id="navigation" class="navigation" aria-label="Main navigation">
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="attractions.html">
+                                Heritage & Attractions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="visitor.html">
+                                Visitor Guide
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main id="main-content">
+
+        <section class="page-header">
+
+            <h1>
+                Heritage & Attractions
+            </h1>
+
+            <p>
+                Explore historic places, cultural features, architecture,
+                and natural environments connected to Grand-Bassam.
+            </p>
+
+        </section>
+
+
+        <!-- FILTER -->
+        <section class="filter-container">
+
+            <label for="category-filter">
+                Filter by category
+            </label>
+
+            <select id="category-filter">
+
+                <option value="all">
+                    All categories
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- STATUS MESSAGE -->
+        <p id="loading-message" class="message">
+            Loading heritage information...
+        </p>
+
+
+        <!-- DYNAMIC CONTENT -->
+        <section id="attractions-container" class="card-grid" aria-live="polite">
+            <!-- JavaScript will generate attraction cards here -->
+        </section>
+
+
+        <!-- MODAL -->
+        <dialog id="attraction-modal">
+
+            <div class="modal-content">
+
+                <button id="modal-close" class="modal-close" type="button" aria-label="Close attraction details">
+                    &times;
+                </button>
+
+                <div id="modal-content">
+
+                    <!-- JavaScript will insert modal content here -->
+
+                </div>
+
+            </div>
+
+        </dialog>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 Grand-Bassam Cultural Heritage & Tourism Guide
+        </p>
+
+        <p>
+            Created by Kouame Richard Kouadio
+        </p>
+
+        <p>
+            <a href="attributions.html">
+                Attributions & Sources
+            </a>
+        </p>
+
+        <p>
+            <a href="#" target="_blank" rel="noopener">
+                Project Video
+            </a>
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

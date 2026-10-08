@@ -1,0 +1,103 @@
+/* ------------------------------
+   Large Screen Styles
+--------------------------------- */
+
+@media screen and (min-width: 700px) {
+
+    /* Header */
+
+    .site-header {
+        padding: 1rem 2rem;
+    }
+
+    .site-header img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .site-header span {
+        font-size: 1.5rem;
+    }
+
+    /* Hide hamburger on larger screens */
+
+    #menu-button {
+        display: none;
+    }
+
+    /* Navigation */
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #0b2545;
+    }
+
+    nav a {
+        padding: 1rem 2rem;
+        min-width: 120px;
+    }
+
+    /* Main */
+
+    main {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Sections */
+
+    section {
+        padding: 2rem;
+    }
+
+    /* Course filters */
+
+    .course-filters {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .course-filters button {
+        flex: 0 1 180px;
+    }
+
+    /* Course cards */
+
+    .course-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    /* Footer */
+
+    footer {
+        padding: 2rem;
+    }
+}
+
+/* ------------------------------
+   Extra Large Screens
+--------------------------------- */
+
+@media screen and (min-width: 1000px) {
+
+    main {
+        max-width: 1200px;
+        padding: 2.5rem;
+    }
+
+    .course-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    nav a {
+        padding: 1rem 2.5rem;
+    }
+}

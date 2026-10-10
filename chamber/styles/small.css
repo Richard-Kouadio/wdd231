@@ -1,40 +1,6 @@
+css
 /* =========================================
-   GRAND-BASSAM CHAMBER
-   MOBILE-FIRST STYLES
-   ========================================= */
-
-/* COLOR VARIABLES */
-
-:root {
-    /* Brand colors */
-    --ocean-blue: #0b3954;
-    --turquoise: #056b76;
-    --sand: #f4e1c1;
-    --coral: #b83b32;
-    --white: #ffffff;
-
-    /* Text colors */
-    --dark-text: #17202a;
-    --muted-text: #4c5963;
-    --footer-text: #f1f3f4;
-    --error-text: #541710;
-
-    /* Background and border colors */
-    --light-gray: #f4f6f7;
-    --border: #d6dfe3;
-    --error-background: #ffe5e2;
-
-    /* Membership colors */
-    --silver: #465a64;
-    --gold: #8b3028;
-
-    /* Fonts */
-    --heading-font: "Playfair Display", Georgia, serif;
-    --body-font: "DM Sans", Arial, sans-serif;
-}
-
-/* =========================================
-   GLOBAL STYLES
+   ROOT AND GENERAL STYLES
    ========================================= */
 
 * {
@@ -48,9 +14,9 @@ html {
 
 body {
     margin: 0;
-    background-color: var(--light-gray);
-    color: var(--dark-text);
-    font-family: var(--body-font);
+    font-family: "DM Sans", Arial, sans-serif;
+    color: #17202a;
+    background-color: #f4f6f7;
     line-height: 1.6;
 }
 
@@ -75,12 +41,12 @@ button {
 
 a:focus-visible,
 button:focus-visible {
-    outline: 3px solid var(--coral);
+    outline: 3px solid #b83b32;
     outline-offset: 3px;
 }
 
 [hidden] {
-    display: none !important;
+    display: none;
 }
 
 h1,
@@ -93,7 +59,7 @@ h4 {
 h1,
 h2,
 h3 {
-    font-family: var(--heading-font);
+    font-family: "Playfair Display", Georgia, serif;
 }
 
 /* =========================================
@@ -106,8 +72,8 @@ h3 {
     left: 1rem;
     z-index: 100;
     padding: 0.75rem 1rem;
-    background-color: var(--white);
-    color: var(--ocean-blue);
+    background-color: #ffffff;
+    color: #0b3954;
 }
 
 .skip-link:focus {
@@ -115,12 +81,12 @@ h3 {
 }
 
 /* =========================================
-   HEADER
+   HEADER AND BRAND
    ========================================= */
 
 .site-header {
-    background-color: var(--ocean-blue);
-    color: var(--white);
+    background-color: #0b3954;
+    color: #ffffff;
 }
 
 .header-content {
@@ -137,7 +103,7 @@ h3 {
     align-items: center;
     gap: 0.75rem;
     min-width: 0;
-    color: var(--white);
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -148,31 +114,28 @@ h3 {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: var(--coral);
-    color: var(--white);
-    font-family: var(--heading-font);
+    background-color: #b83b32;
+    color: #ffffff;
+    font-family: "Playfair Display", Georgia, serif;
     font-size: 1.15rem;
     font-weight: 700;
 }
 
-.brand-text,
-.brand-name,
-.brand-subtitle {
-    display: block;
-}
-
 .brand-text {
+    display: block;
     min-width: 0;
 }
 
 .brand-name {
-    font-family: var(--heading-font);
+    display: block;
+    font-family: "Playfair Display", Georgia, serif;
     font-size: 1.1rem;
     font-weight: 700;
 }
 
 .brand-subtitle {
-    color: var(--sand);
+    display: block;
+    color: #f4e1c1;
     font-size: 0.75rem;
 }
 
@@ -185,10 +148,10 @@ h3 {
     min-width: 44px;
     min-height: 44px;
     padding: 0.35rem 0.65rem;
-    border: 2px solid var(--white);
+    border: 2px solid #ffffff;
     border-radius: 5px;
     background-color: transparent;
-    color: var(--white);
+    color: #ffffff;
     font-size: 1.5rem;
 }
 
@@ -204,19 +167,28 @@ h3 {
 
 .main-nav a {
     padding: 0.85rem 1rem;
-    color: var(--white);
+    color: #ffffff;
     font-weight: 700;
     text-decoration: none;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-    background-color: var(--turquoise);
+    background-color: #056b76;
 }
 
 /* =========================================
    GENERAL PAGE CONTENT
    ========================================= */
+
+.eyebrow {
+    margin: 0 0 0.5rem;
+    color: #056b76;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
 
 .home-section {
     width: 100%;
@@ -225,22 +197,13 @@ h3 {
     padding: 3rem 1rem;
 }
 
-.eyebrow {
-    margin: 0 0 0.5rem;
-    color: var(--turquoise);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
 .section-heading {
     margin-bottom: 1.5rem;
 }
 
 .section-heading h2 {
     margin: 0.25rem 0 0.75rem;
-    color: var(--ocean-blue);
+    color: #0b3954;
     font-size: 2rem;
 }
 
@@ -257,7 +220,7 @@ h3 {
     position: relative;
     min-height: 430px;
     overflow: hidden;
-    background-color: var(--ocean-blue);
+    background-color: #0b3954;
 }
 
 .hero>img {
@@ -290,17 +253,18 @@ h3 {
     min-height: 430px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    color: var(--white);
+    color: #ffffff;
 }
 
-.hero-content .eyebrow {
-    color: var(--sand);
+.hero-content .eyebrow,
+.join-content .eyebrow {
+    color: #f4e1c1;
 }
 
 .hero-content h1 {
     max-width: 760px;
     margin: 0.25rem 0 1rem;
-    color: var(--white);
+    color: #ffffff;
     font-size: 2.1rem;
     line-height: 1.15;
 }
@@ -310,17 +274,19 @@ h3 {
     margin: 0 0 1.5rem;
 }
 
-/* CALL-TO-ACTION LINKS */
+/* =========================================
+   BUTTONS AND CALLS TO ACTION
+   ========================================= */
 
 .hero-cta,
 .secondary-cta {
     display: inline-block;
     min-height: 44px;
     padding: 0.75rem 1.25rem;
-    border: 2px solid var(--coral);
+    border: 2px solid #b83b32;
     border-radius: 5px;
-    background-color: var(--coral);
-    color: var(--white);
+    background-color: #b83b32;
+    color: #ffffff;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
@@ -328,8 +294,9 @@ h3 {
 
 .hero-cta:hover,
 .secondary-cta:hover {
-    border-color: var(--turquoise);
-    background-color: var(--turquoise);
+    border-color: #ffffff;
+    background-color: #056b76;
+    color: #ffffff;
 }
 
 /* =========================================
@@ -337,7 +304,7 @@ h3 {
    ========================================= */
 
 .events-section {
-    background-color: var(--light-gray);
+    background-color: #f4f6f7;
 }
 
 .events-grid {
@@ -351,20 +318,20 @@ h3 {
     grid-template-columns: 64px minmax(0, 1fr);
     gap: 1rem;
     padding: 1.25rem;
-    border: 1px solid var(--border);
+    border: 1px solid #d6dfe3;
     border-radius: 8px;
-    background-color: var(--white);
+    background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
 }
 
 .event-date {
-    align-self: start;
     min-width: 0;
     margin: 0;
+    align-self: start;
     padding: 0.65rem 0.25rem;
     border-radius: 5px;
-    background-color: var(--ocean-blue);
-    color: var(--white);
+    background-color: #0b3954;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -384,7 +351,7 @@ h3 {
 
 .event-content h3 {
     margin: 0 0 0.75rem;
-    color: var(--ocean-blue);
+    color: #0b3954;
     font-size: 1.2rem;
 }
 
@@ -393,7 +360,7 @@ h3 {
 }
 
 .event-content .event-location {
-    color: var(--muted-text);
+    color: #4c5963;
     font-size: 0.9rem;
     font-weight: 600;
 }
@@ -404,7 +371,7 @@ h3 {
 
 .weather-section {
     max-width: none;
-    background-color: var(--sand);
+    background-color: #f4e1c1;
 }
 
 .weather-section>.section-heading,
@@ -422,18 +389,17 @@ h3 {
     gap: 1.5rem;
 }
 
-.weather-current,
-.forecast-card {
+.weather-current {
     min-width: 0;
     padding: 1.25rem;
-    border: 1px solid var(--border);
+    border: 1px solid #d6dfe3;
     border-radius: 8px;
-    background-color: var(--white);
+    background-color: #ffffff;
 }
 
 .weather-current h3 {
     margin: 0 0 1rem;
-    color: var(--ocean-blue);
+    color: #0b3954;
     font-size: 1.25rem;
 }
 
@@ -450,7 +416,7 @@ h3 {
 
 .weather-temperature {
     margin: 0;
-    color: var(--ocean-blue);
+    color: #0b3954;
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.2;
@@ -464,7 +430,7 @@ h3 {
 .weather-detail,
 .weather-updated {
     margin: 0.5rem 0 0;
-    color: var(--muted-text);
+    color: #4c5963;
     font-size: 0.85rem;
 }
 
@@ -474,7 +440,7 @@ h3 {
 
 .forecast-title {
     margin: 0 0 1rem;
-    color: var(--ocean-blue);
+    color: #0b3954;
     font-size: 1.35rem;
 }
 
@@ -485,12 +451,17 @@ h3 {
 }
 
 .forecast-card {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #d6dfe3;
+    border-radius: 8px;
+    background-color: #ffffff;
     text-align: center;
 }
 
 .forecast-card h4 {
     margin: 0 0 0.5rem;
-    color: var(--ocean-blue);
+    color: #0b3954;
     font-size: 1rem;
 }
 
@@ -501,7 +472,7 @@ h3 {
 
 .forecast-temperature {
     margin: 0.5rem 0;
-    color: var(--turquoise);
+    color: #056b76;
     font-size: 1.5rem;
     font-weight: 700;
 }
@@ -517,7 +488,7 @@ h3 {
    ========================================= */
 
 .spotlight-section {
-    background-color: var(--light-gray);
+    background-color: #f4f6f7;
 }
 
 .spotlight-grid {
@@ -529,9 +500,9 @@ h3 {
 .spotlight-card {
     min-width: 0;
     padding: 1.25rem;
-    border: 1px solid var(--border);
+    border: 1px solid #d6dfe3;
     border-radius: 8px;
-    background-color: var(--white);
+    background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
 }
 
@@ -540,13 +511,13 @@ h3 {
     height: 190px;
     margin-bottom: 1rem;
     border-radius: 5px;
-    background-color: var(--white);
     object-fit: contain;
+    background-color: #ffffff;
 }
 
 .spotlight-card h3 {
     margin: 0.5rem 0;
-    color: var(--ocean-blue);
+    color: #0b3954;
     font-size: 1.3rem;
 }
 
@@ -562,37 +533,34 @@ h3 {
 
 .spotlight-card a,
 .member-information a {
-    color: var(--turquoise);
+    color: #056b76;
     font-weight: 700;
     overflow-wrap: anywhere;
 }
 
-.spotlight-card a:hover {
-    color: var(--ocean-blue);
-}
-
-.spotlight-membership,
-.membership-badge {
-    display: inline-block;
-    border-radius: 20px;
-    color: var(--white);
-    font-weight: 700;
+.spotlight-card a:hover,
+.member-information a:hover {
+    color: #0b3954;
 }
 
 .spotlight-membership {
+    display: inline-block;
     margin: 0.25rem 0;
     padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    color: #ffffff;
     font-size: 0.8rem;
+    font-weight: 700;
 }
 
 .spotlight-membership.silver,
 .level-2 {
-    background-color: var(--silver);
+    background-color: #465a64;
 }
 
 .spotlight-membership.gold,
 .level-3 {
-    background-color: var(--gold);
+    background-color: #8b3028;
 }
 
 .directory-link {
@@ -606,8 +574,8 @@ h3 {
 
 .join-section {
     padding: 3rem 1rem;
-    background-color: var(--ocean-blue);
-    color: var(--white);
+    background-color: #0b3954;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -616,13 +584,9 @@ h3 {
     margin: 0 auto;
 }
 
-.join-content .eyebrow {
-    color: var(--sand);
-}
-
 .join-content h2 {
     margin: 0.5rem 0 1rem;
-    color: var(--white);
+    color: #ffffff;
     font-size: 2rem;
 }
 
@@ -631,12 +595,12 @@ h3 {
 }
 
 /* =========================================
-   PAGE HEADINGS
+   DIRECTORY PAGE
    ========================================= */
 
 .page-heading {
     padding: 2rem 1rem;
-    background-color: var(--sand);
+    background-color: #f4e1c1;
 }
 
 .page-heading>div {
@@ -646,17 +610,13 @@ h3 {
 
 .page-heading h1 {
     margin: 0.25rem 0 0.75rem;
-    color: var(--ocean-blue);
+    color: #0b3954;
     font-size: 2rem;
 }
 
 .page-heading p:last-child {
     margin-bottom: 0;
 }
-
-/* =========================================
-   BUSINESS DIRECTORY
-   ========================================= */
 
 .directory-section {
     max-width: 1200px;
@@ -673,7 +633,7 @@ h3 {
 
 .directory-header h2 {
     margin: 0 0 0.5rem;
-    color: var(--ocean-blue);
+    color: #0b3954;
 }
 
 .directory-header p {
@@ -682,23 +642,24 @@ h3 {
 
 .view-controls {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 
 .view-button {
     min-height: 44px;
     padding: 0.6rem 1rem;
-    border: 2px solid var(--turquoise);
+    border: 2px solid #056b76;
     border-radius: 5px;
-    background-color: var(--white);
-    color: var(--ocean-blue);
+    background-color: #ffffff;
+    color: #0b3954;
     font-weight: 700;
 }
 
 .view-button:hover,
 .view-button.active {
-    background-color: var(--turquoise);
-    color: var(--white);
+    background-color: #056b76;
+    color: #ffffff;
 }
 
 .members-grid {
@@ -710,15 +671,15 @@ h3 {
 .member-card {
     min-width: 0;
     overflow: hidden;
-    border: 1px solid var(--border);
+    border: 1px solid #d6dfe3;
     border-radius: 8px;
-    background-color: var(--white);
+    background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
 }
 
 .member-image-container {
     min-height: 180px;
-    background-color: var(--sand);
+    background-color: #f4e1c1;
 }
 
 .member-image-container img {
@@ -733,12 +694,12 @@ h3 {
 
 .member-information h3 {
     margin: 0.5rem 0;
-    color: var(--ocean-blue);
+    color: #0b3954;
     font-size: 1.3rem;
 }
 
 .member-description {
-    color: var(--muted-text);
+    color: #4c5963;
 }
 
 .member-information address {
@@ -746,17 +707,17 @@ h3 {
     font-style: normal;
 }
 
-.member-information a {
-    font-weight: 600;
-}
-
 .membership-badge {
+    display: inline-block;
     padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    color: #ffffff;
     font-size: 0.75rem;
+    font-weight: 700;
 }
 
 .level-1 {
-    background-color: var(--ocean-blue);
+    background-color: #0b3954;
 }
 
 .website-link {
@@ -764,7 +725,9 @@ h3 {
     margin-top: 0.5rem;
 }
 
-/* DIRECTORY LIST VIEW */
+/* =========================================
+   DIRECTORY LIST VIEW
+   ========================================= */
 
 .members-list {
     display: flex;
@@ -797,9 +760,9 @@ h3 {
 .error-message {
     margin-top: 1rem;
     padding: 1rem;
-    border-left: 5px solid var(--coral);
-    background-color: var(--error-background);
-    color: var(--error-text);
+    border-left: 5px solid #b83b32;
+    background-color: #ffe5e2;
+    color: #541710;
 }
 
 /* =========================================
@@ -808,8 +771,8 @@ h3 {
 
 .site-footer {
     padding: 2rem 1rem;
-    background-color: var(--ocean-blue);
-    color: var(--white);
+    background-color: #0b3954;
+    color: #ffffff;
 }
 
 .footer-content {
@@ -835,16 +798,16 @@ h3 {
 
 .footer-brand-name {
     display: block;
-    font-family: var(--heading-font);
+    font-family: "Playfair Display", Georgia, serif;
     font-weight: 700;
 }
 
 .footer-brand p {
-    color: var(--footer-text);
+    color: #f1f3f4;
 }
 
 .site-footer .brand-subtitle {
-    color: var(--sand);
+    color: #f4e1c1;
 }
 
 .site-footer address {
@@ -853,11 +816,11 @@ h3 {
 }
 
 .site-footer a:not(.brand) {
-    color: var(--white);
+    color: #ffffff;
 }
 
 .site-footer a:hover {
-    color: var(--sand);
+    color: #f4e1c1;
 }
 
 .footer-navigation ul {
@@ -876,7 +839,7 @@ h3 {
 }
 
 /* =========================================
-   ACCESSIBILITY
+   REDUCED MOTION ACCESSIBILITY
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -887,7 +850,7 @@ h3 {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+        animation: none;
+        transition: none;
     }
 }

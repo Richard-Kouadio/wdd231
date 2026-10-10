@@ -1,13 +1,18 @@
-/* =========================================
-   TABLET AND DESKTOP STYLES
-   ========================================= */
+/* TABLET AND DESKTOP */
 
 @media screen and (min-width: 640px) {
 
+    /* Header and navigation */
+
     .header-content {
         max-width: 1200px;
+        min-height: 90px;
         margin: 0 auto;
         padding: 1rem 1.5rem;
+    }
+
+    .brand-name {
+        font-size: 1.25rem;
     }
 
     .menu-button {
@@ -20,6 +25,7 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        flex-wrap: wrap;
         border-top: none;
     }
 
@@ -27,13 +33,72 @@
         padding: 1rem 1.25rem;
     }
 
-    .page-heading {
-        padding: 3rem 1.5rem;
+    /* Hero */
+
+    .hero {
+        min-height: 520px;
     }
 
-    .page-heading>div {
-        max-width: 1200px;
-        margin: 0 auto;
+    .hero>img {
+        min-height: 520px;
+    }
+
+    .hero-content {
+        min-height: 520px;
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    /* General section spacing */
+
+    .home-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .section-heading h2 {
+        font-size: 2.3rem;
+    }
+
+    /* Events */
+
+    .events-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Weather */
+
+    .weather-layout {
+        grid-template-columns: minmax(250px, 0.85fr) minmax(0, 1.5fr);
+        align-items: start;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .weather-current {
+        height: 100%;
+    }
+
+    /* Business spotlights */
+
+    .spotlight-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Join section */
+
+    .join-section {
+        padding: 4rem 1.5rem;
+    }
+
+    /* Directory */
+
+    .page-heading {
+        padding: 3rem 1.5rem;
     }
 
     .page-heading h1 {
@@ -46,119 +111,108 @@
 
     .directory-header {
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
     }
 
     .members-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .members-list .member-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Footer */
+
     .footer-content {
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
     }
 
     .development-info {
-        border-top: none;
-        border-left: 1px solid rgba(255, 255, 255, 0.25);
-        padding-top: 0;
-        padding-left: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
     }
 }
 
-/* =========================================
-   LARGE DIRECTORY VIEW
-   ========================================= */
+/* LARGE DESKTOP */
 
 @media screen and (min-width: 1000px) {
 
-    .members-grid {
-        grid-template-columns: repeat(3, 1fr);
+    /* Header */
+
+    .brand-name {
+        font-size: 1.35rem;
     }
 
-    .page-heading h1 {
-        font-size: 3.2rem;
-    }
-
-    .member-card {
-        transition:
-            transform 0.2s ease,
-            box-shadow 0.2s ease;
-    }
-
-    .member-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    }
-}
-
-/* =========================================
-   W03 HOME PAGE - TABLET
-   ========================================= */
-
-@media screen and (min-width: 640px) {
-
-    .hero {
-        min-height: 520px;
-    }
-
-    .hero>img {
-        height: 520px;
-    }
-
-    .hero-content {
-        padding: 2rem 1.5rem;
-    }
-
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-
-    .home-section {
-        padding: 4rem 1.5rem;
-    }
-
-    .events-grid,
-    .spotlight-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .forecast-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .weather-current {
-        max-width: 500px;
-    }
-}
-
-/* =========================================
-   W03 HOME PAGE - LARGE DESKTOP
-   ========================================= */
-
-@media screen and (min-width: 1000px) {
+    /* Hero */
 
     .hero {
         min-height: 600px;
     }
 
     .hero>img {
-        height: 600px;
+        min-height: 600px;
+    }
+
+    .hero-content {
+        min-height: 600px;
+        padding: 3rem 1.5rem;
     }
 
     .hero-content h1 {
         font-size: 3.5rem;
     }
 
+    /* Events */
+
+    .events-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    /* Business spotlights */
+
+    .spotlight-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    /* Directory */
+
+    .page-heading h1 {
+        font-size: 3.2rem;
+    }
+
+    .members-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    /* Footer */
+
+    .footer-content {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .development-info {
+        grid-column: 1 / -1;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Hover effects */
+
     .event-card,
-    .spotlight-card {
+    .spotlight-card,
+    .member-card {
         transition:
             transform 0.2s ease,
             box-shadow 0.2s ease;
     }
 
     .event-card:hover,
-    .spotlight-card:hover {
+    .spotlight-card:hover,
+    .member-card:hover {
         transform: translateY(-3px);
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     }

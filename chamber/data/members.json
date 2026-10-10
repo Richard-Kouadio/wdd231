@@ -2,8 +2,8 @@
     "members": [
         {
             "name": "Grand-Bassam Heritage Tours",
-            "address": "12 Rue de la Lagune, Grand-Bassam, Côte d'Ivoire",
-            "phone": "+225 07 11 22 33 44",
+            "address": "Chateau, Grand-Bassam, Côte d'Ivoire",
+            "phone": "+225 01 72 16 72 22",
             "website": "https://example.com",
             "image": "heritage-tours.jpg",
             "membership": 3,
@@ -12,7 +12,7 @@
         {
             "name": "Bassam Coastal Hotel",
             "address": "25 Boulevard de la Plage, Grand-Bassam, Côte d'Ivoire",
-            "phone": "+225 05 22 33 44 55",
+            "phone": "+225 07 07 40 84 40",
             "website": "https://example.com",
             "image": "coastal-hotel.jpg",
             "membership": 2,

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Grand-Bassam Heritage</title>
+
+    <meta name="description"
+        content="Contact the Grand-Bassam Cultural Heritage and Tourism Guide with your questions, suggestions, and interests in exploring Grand-Bassam.">
+    <meta name="author" content="Kouame Richard Kouadio">
+
+    <meta property="og:title" content="Contact Us | Grand-Bassam Heritage">
+    <meta property="og:description"
+        content="Get in touch with the Grand-Bassam Cultural Heritage and Tourism Guide to share questions, suggestions, and travel interests.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://richard-kouadio.github.io/wdd231/final/contact.html">
+    <meta property="og:image" content="https://richard-kouadio.github.io/wdd231/final/images/grand-bassam-beach.webp">
+
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/site.css">
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/contact.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="header-content">
+            <a class="site-title" href="index.html">
+                Grand-Bassam Heritage
+            </a>
+
+            <button id="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="navigation">
+                ☰
+            </button>
+
+            <nav id="navigation" aria-label="Main navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="attractions.html">
+                            Heritage &amp; Attractions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="visitor.html">Visitor Guide</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" aria-current="page">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="page-intro">
+            <h1>Contact Us</h1>
+
+            <p>
+                Welcome to the Grand-Bassam Cultural Heritage and Tourism
+                Guide. Have a question, suggestion, or idea to share?
+                We would love to hear from you.
+            </p>
+        </section>
+
+        <section class="contact-section">
+            <h2>Get in Touch</h2>
+
+            <p>
+                Use the form below to share your questions about
+                Grand-Bassam's history, cultural attractions, architecture,
+                and coastal environment.
+            </p>
+
+            <form id="contact-form" action="contact.html" method="get">
+                <div class="form-group">
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" minlength="2" maxlength="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" autocomplete="email" maxlength="150" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="heritage">
+                            Historical and cultural heritage
+                        </option>
+                        <option value="attractions">
+                            Attractions and places to visit
+                        </option>
+                        <option value="visitor-information">
+                            Visitor information
+                        </option>
+                        <option value="website-feedback">
+                            Website feedback
+                        </option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your message</label>
+                    <textarea id="message" name="message" rows="6" minlength="10" maxlength="2000"
+                        placeholder="Write your question or suggestion here..." required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <p id="contact-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="contact-information">
+            <h2>About This Project</h2>
+
+            <p>
+                The Grand-Bassam Cultural Heritage and Tourism Guide is
+                an educational website project created to help visitors
+                discover the history, traditions, architecture, and
+                attractions of Grand-Bassam, Côte d'Ivoire.
+            </p>
+
+            <p>
+                <strong>Project author:</strong> Kouame Richard Kouadio
+            </p>
+
+            <p>
+                <strong>Course:</strong> WDD 231 — Web Frontend
+                Development I
+            </p>
+
+            <p>
+                Please note that this is a student project. The contact
+                form demonstrates client-side form handling and does
+                not send messages to an email inbox or external server.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Grand-Bassam Cultural Heritage &amp; Tourism Guide
+        </p>
+
+        <p>
+            Created by Kouame Richard Kouadio | WDD 231
+        </p>
+
+        <p>
+            <a href="attributions.html">Attributions &amp; Sources</a>
+            |
+            <a href="contact.html" aria-current="page">Contact</a>
+        </p>
+    </footer>
+</body>
+
+</html>

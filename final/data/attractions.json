@@ -1,32 +1,107 @@
 [
     {
+        "name": "Historic Town of Grand-Bassam",
+        "category": "History",
+        "location": "Historic district, Grand-Bassam",
+        "description": "Explore the historic urban landscape recognized for its role in the history of Côte d'Ivoire and its colonial-era architecture.",
+        "image": "images/historic-town.webp"
+    },
+    {
+        "name": "National Costume Museum",
+        "category": "Culture",
+        "location": "Grand-Bassam",
+        "description": "Discover traditional clothing, textiles, and cultural expressions associated with communities in Côte d'Ivoire.",
+        "image": "images/musee-costume.webp"
+    },
+    {
+        "name": "Colonial Historic District",
+        "category": "Architecture",
+        "location": "Historic district, Grand-Bassam",
+        "description": "Observe the historic streetscape and architectural details that reflect Grand-Bassam's colonial-era urban development.",
+        "image": "images/colonial-district.webp"
+    },
+    {
         "name": "Grand-Bassam Beach",
-        "description": "Une magnifique plage située à Grand-Bassam, idéale pour se détendre et profiter de la mer.",
-        "location": "Grand-Bassam, Côte d'Ivoire",
-        "image": "grand-bassam-beach.jpg"
+        "category": "Nature",
+        "location": "Atlantic coast, Grand-Bassam",
+        "description": "Experience the Atlantic coastline and enjoy the beach while respecting local safety advice and the marine environment.",
+        "image": "images/grand-bassam-beach.webp"
     },
     {
-        "name": "Musée National du Costume",
-        "description": "Un musée consacré aux costumes traditionnels et à la culture de la Côte d'Ivoire.",
-        "location": "Grand-Bassam, Côte d'Ivoire",
-        "image": "musee-costume.jpg"
+        "name": "Historic Administrative Buildings",
+        "category": "Architecture",
+        "location": "Historic district, Grand-Bassam",
+        "description": "Learn about the historic administrative role of Grand-Bassam by observing surviving buildings and their architectural features.",
+        "image": "images/administrative-buildings.webp"
     },
     {
-        "name": "Phare de Grand-Bassam",
-        "description": "Un phare historique offrant un aperçu du patrimoine de Grand-Bassam.",
-        "location": "Grand-Bassam, Côte d'Ivoire",
-        "image": "phare-grand-bassam.jpg"
+        "name": "Traditional Fishing Activities",
+        "category": "Culture",
+        "location": "Coastal areas of Grand-Bassam",
+        "description": "Learn about the importance of fishing and coastal livelihoods to local communities.",
+        "image": "images/fishing-activities.webp"
     },
     {
-        "name": "Quartier colonial",
-        "description": "Un quartier historique connu pour ses bâtiments coloniaux et son architecture ancienne.",
-        "location": "Grand-Bassam, Côte d'Ivoire",
-        "image": "quartier-colonial.jpg"
+        "name": "Local Craft Traditions",
+        "category": "Culture",
+        "location": "Grand-Bassam",
+        "description": "Discover craft traditions and locally made objects that express artistic skills and cultural identity.",
+        "image": "images/local-crafts.webp"
     },
     {
-        "name": "Maison Ganamet",
-        "description": "Une ancienne maison historique qui témoigne du patrimoine architectural de Grand-Bassam.",
-        "location": "Grand-Bassam, Côte d'Ivoire",
-        "image": "maison-ganamet.jpg"
+        "name": "Historic Commercial Streets",
+        "category": "History",
+        "location": "Historic district, Grand-Bassam",
+        "description": "Explore streets associated with the town's historical commercial life and urban development.",
+        "image": "images/commercial-streets.webp"
+    },
+    {
+        "name": "Traditional Coastal Cuisine",
+        "category": "Culture",
+        "location": "Grand-Bassam",
+        "description": "Discover regional food traditions and coastal dishes offered by local food businesses.",
+        "image": "images/coastal-cuisine.webp"
+    },
+    {
+        "name": "Lagoon Environment",
+        "category": "Nature",
+        "location": "Grand-Bassam area",
+        "description": "Learn about the lagoon environment, its landscapes, and its importance to the surrounding communities.",
+        "image": "images/lagoon-environment.webp"
+    },
+    {
+        "name": "Historic Residential Architecture",
+        "category": "Architecture",
+        "location": "Historic district, Grand-Bassam",
+        "description": "Observe the designs and construction details of historic residential buildings from different periods.",
+        "image": "images/residential-architecture.webp"
+    },
+    {
+        "name": "Grand-Bassam Cultural Heritage",
+        "category": "Culture",
+        "location": "Grand-Bassam",
+        "description": "Explore the living traditions, community practices, and cultural expressions that shape the town's identity.",
+        "image": "images/cultural-heritage.webp"
+    },
+    {
+        "name": "Coastal Landscape",
+        "category": "Nature",
+        "location": "Atlantic coast, Grand-Bassam",
+        "description": "Observe the coastal landscape and learn about the importance of protecting beaches and marine habitats.",
+        "image": "images/coastal-landscape.webp"
+    },
+    {
+        "name": "Historic Urban Streetscape",
+        "category": "History",
+        "location": "Historic district, Grand-Bassam",
+        "description": "Study the arrangement of streets and buildings that contribute to the character of the historic town.",
+        "image": "images/historic-streetscape.webp"
+    },
+    {
+        "name": "Local Art and Creative Work",
+        "category": "Culture",
+        "location": "Grand-Bassam",
+        "description": "Discover local creative work and artistic expressions that connect contemporary life with cultural traditions.",
+        "image": "images/local-art.webp"
     }
-]  
+]

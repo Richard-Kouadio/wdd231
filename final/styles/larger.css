@@ -1,103 +1,85 @@
-/* ------------------------------
-   Large Screen Styles
---------------------------------- */
-
 @media screen and (min-width: 700px) {
-
-    /* Header */
-
-    .site-header {
-        padding: 1rem 2rem;
+    .nav-container {
+        flex-wrap: nowrap;
+        padding: 1rem 0;
     }
 
-    .site-header img {
-        width: 65px;
-        height: 65px;
+    .logo {
+        width: 52px;
+        height: 52px;
     }
 
-    .site-header span {
-        font-size: 1.5rem;
-    }
-
-    /* Hide hamburger on larger screens */
-
-    #menu-button {
+    .menu-button {
         display: none;
     }
 
-    /* Navigation */
+    .navigation,
+    .navigation.open {
+        display: block;
+        flex-basis: auto;
+        width: auto;
+        margin-left: auto;
+    }
 
-    nav {
-        display: flex;
+    .navigation ul {
         flex-direction: row;
-        justify-content: center;
         align-items: center;
-        background-color: #0b2545;
+        justify-content: flex-end;
+        gap: 0.35rem;
     }
 
-    nav a {
-        padding: 1rem 2rem;
-        min-width: 120px;
+    .navigation a {
+        padding: 0.8rem 1rem;
+        white-space: nowrap;
     }
-
-    /* Main */
 
     main {
+        padding-top: 2.5rem;
+        padding-bottom: 4rem;
+    }
+
+    .page-header {
+        padding: 2.25rem;
+    }
+
+    .intro-section,
+    .form-container {
         padding: 2rem;
     }
 
-    h1 {
-        font-size: 2.2rem;
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
     }
 
-    /* Sections */
-
-    section {
-        padding: 2rem;
-    }
-
-    /* Course filters */
-
-    .course-filters {
-        flex-direction: row;
-        justify-content: center;
+    .filter-container {
+        grid-template-columns: auto minmax(200px, 320px);
+        align-items: center;
+        justify-content: start;
         gap: 1rem;
-    }
-
-    .course-filters button {
-        flex: 0 1 180px;
-    }
-
-    /* Course cards */
-
-    .course-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
-    }
-
-    /* Footer */
-
-    footer {
-        padding: 2rem;
     }
 }
 
-/* ------------------------------
-   Extra Large Screens
---------------------------------- */
-
 @media screen and (min-width: 1000px) {
-
-    main {
-        max-width: 1200px;
-        padding: 2.5rem;
+    .card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .course-list {
-        grid-template-columns: repeat(3, 1fr);
+    .hero-layout {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        align-items: center;
+        gap: 2rem;
     }
 
-    nav a {
-        padding: 1rem 2.5rem;
+    .hero-layout>* {
+        min-width: 0;
+    }
+
+    .visitor-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 2rem;
     }
 }

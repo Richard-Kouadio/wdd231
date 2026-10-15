@@ -1,523 +1,223 @@
-// Grand-Bassam Cultural Heritage & Tourism Guide
-// Attractions page JavaScript module
-
-const dataUrl = "../data/attractions.json";
-
-const attractionsContainer =
-    document.querySelector("#attractions-container");
-
-const categoryFilter =
-    document.querySelector("#category-filter");
-
-const loadingMessage =
-    document.querySelector("#loading-message");
-
-const modal =
-    document.querySelector("#attraction-modal");
-
-const modalContent =
-    document.querySelector("#modal-content");
-
-const modalClose =
-    document.querySelector("#modal-close");
-
-
-// Local storage key
-const favoritesKey = "grandBassamFavorites";
-
-
-// Get saved favorites from localStorage
-function getFavorites() {
-    const savedFavorites =
-        localStorage.getItem(favoritesKey);
-
-    if (!savedFavorites) {
-        return [];
-    }
-
-    try {
-        return JSON.parse(savedFavorites);
-    } catch (error) {
-        console.error(
-            "Unable to read saved favorites:",
-            error
-        );
-
-        return [];
-    }
-}
-
-
-// Save favorites to localStorage
-function saveFavorites(favorites) {
-    localStorage.setItem(
-        favoritesKey,
-        JSON.stringify(favorites)
-    );
-}
-
-
-// Add or remove a favorite attraction
-function toggleFavorite(id) {
-
-    const favorites = getFavorites();
-
-    const favoriteIndex =
-        favorites.indexOf(id);
-
-    if (favoriteIndex === -1) {
-
-        favorites.push(id);
-
-    } else {
-
-        favorites.splice(
-            favoriteIndex,
-            1
-        );
-    }
-
-    saveFavorites(favorites);
-
-    return favorites;
-}
-
-
-// Check whether an attraction is a favorite
-function isFavorite(id) {
-
-    const favorites = getFavorites();
-
-    return favorites.includes(id);
-}
-
-
-// Create an attraction card
-function createAttractionCard(attraction) {
-
-    const favoriteText =
-        isFavorite(attraction.id)
-            ? "Remove from favorites"
-            : "Save to favorites";
-
-    const favoriteLabel =
-        isFavorite(attraction.id)
-            ? "★ Saved"
-            : "☆ Save";
-
-    return `
-        <article class="card">
-
-            <img
-                class="card-image"
-                src="${attraction.image}"
-                alt="${attraction.name}"
-                width="800"
-                height="500"
-                loading="lazy"
-            >
-
-            <div class="card-content">
-
-                <span class="category">
-                    ${attraction.category}
-                </span>
-
-                <h2>
-                    ${attraction.name}
-                </h2>
-
-                <p>
-                    <strong>Location:</strong>
-                    ${attraction.location}
-                </p>
-
-                <p>
-                    ${attraction.description}
-                </p>
-
-                <button
-                    class="button attraction-details"
-                    type="button"
-                    data-id="${attraction.id}"
-                >
-                    View Details
-                </button>
-
-                <button
-                    class="button favorite-button"
-                    type="button"
-                    data-id="${attraction.id}"
-                    aria-label="${favoriteText}"
-                >
-                    ${favoriteLabel}
-                </button>
-
-            </div>
-
-        </article>
-    `;
-}
-
-
-// Display attractions on the page
-function displayAttractions(attractions) {
-
-    if (attractions.length === 0) {
-
-        attractionsContainer.innerHTML = `
-            <p class="message">
-                No heritage places were found for this category.
-            </p>
-        `;
-
-        return;
-    }
-
-
-    attractionsContainer.innerHTML =
-        attractions
-            .map(createAttractionCard)
-            .join("");
-
-
-    // Details buttons
-    const detailButtons =
-        document.querySelectorAll(
-            ".attraction-details"
-        );
-
-    detailButtons.forEach((button) => {
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                const id =
-                    Number(button.dataset.id);
-
-                openAttractionModal(
-                    id,
-                    attractions
-                );
-            }
-        );
-    });
-
-
-    // Favorite buttons
-    const favoriteButtons =
-        document.querySelectorAll(
-            ".favorite-button"
-        );
-
-    favoriteButtons.forEach((button) => {
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                const id =
-                    Number(button.dataset.id);
-
-                toggleFavorite(id);
-
-                updateDisplayedAttractions(
-                    attractions
-                );
-            }
-        );
+const attractionsContainer = document.querySelector("#attractions-container");
+const loadingMessage = document.querySelector("#loading-message");
+const categoryFilter = document.querySelector("#category-filter");
+const attractionModal = document.querySelector("#attraction-modal");
+const modalContent = document.querySelector("#modal-content");
+const modalClose = document.querySelector("#modal-close");
+
+let attractions = [];
+let lastFocusedElement = null;
+
+function hideBrokenImages(container) {
+    container.querySelectorAll("img").forEach((image) => {
+        image.addEventListener("error", () => {
+            image.hidden = true;
+        }, { once: true });
     });
 }
 
+function createAttractionCard(attraction, index) {
+    const article = document.createElement("article");
+    article.className = "card";
 
-// Update the displayed attraction cards
-function updateDisplayedAttractions(
-    allAttractions
-) {
+    const image = document.createElement("img");
+    image.className = "card-image";
+    image.src = attraction.image;
+    image.alt = `View related to ${attraction.name}`;
+    image.loading = "lazy";
+    image.width = 640;
+    image.height = 420;
 
-    const selectedCategory =
-        categoryFilter.value;
+    const content = document.createElement("div");
+    content.className = "card-content";
 
+    const title = document.createElement("h2");
+    title.textContent = attraction.name;
 
-    let filteredAttractions =
-        allAttractions;
+    const category = document.createElement("p");
+    category.className = "card-meta";
+    category.textContent = `Category: ${attraction.category}`;
 
+    const location = document.createElement("p");
+    location.className = "card-meta";
+    location.textContent = `Location: ${attraction.location}`;
 
-    if (selectedCategory !== "all") {
+    const description = document.createElement("p");
+    description.textContent = attraction.description;
 
-        filteredAttractions =
-            allAttractions.filter(
-                (attraction) =>
-                    attraction.category ===
-                    selectedCategory
-            );
-    }
+    const button = document.createElement("button");
+    button.className = "button";
+    button.type = "button";
+    button.textContent = "View details";
+    button.setAttribute("aria-haspopup", "dialog");
+    button.setAttribute("aria-label", `View details about ${attraction.name}`);
 
+    button.addEventListener("click", () => {
+        openAttractionModal(attraction, button);
+    });
 
-    displayAttractions(
-        filteredAttractions
-    );
+    content.append(title, category, location, description, button);
+    article.append(image, content);
+
+    // Keep a stable data identifier available for inspection.
+    article.dataset.attractionIndex = String(index);
+
+    return article;
 }
 
+function displayAttractions(items) {
+    attractionsContainer.replaceChildren();
 
-// Open attraction modal
-function openAttractionModal(
-    id,
-    attractions
-) {
-
-    const attraction =
-        attractions.find(
-            (item) => item.id === id
-        );
-
-
-    if (!attraction) {
+    if (items.length === 0) {
+        const message = document.createElement("p");
+        message.className = "message";
+        message.textContent = "No attractions match this category.";
+        attractionsContainer.append(message);
         return;
     }
 
+    const cards = items.map((attraction) => {
+        const index = attractions.indexOf(attraction);
+        return createAttractionCard(attraction, index);
+    });
 
-    const favoriteStatus =
-        isFavorite(attraction.id)
-            ? "This place is saved in your favorites."
-            : "This place is not currently saved.";
-
-
-    modalContent.innerHTML = `
-        <img
-            class="modal-image"
-            src="${attraction.image}"
-            alt="${attraction.name}"
-            width="800"
-            height="500"
-        >
-
-        <span class="category">
-            ${attraction.category}
-        </span>
-
-        <h2>
-            ${attraction.name}
-        </h2>
-
-        <p>
-            <strong>Location:</strong>
-            ${attraction.location}
-        </p>
-
-        <p>
-            ${attraction.description}
-        </p>
-
-        <p>
-            <strong>Favorites:</strong>
-            ${favoriteStatus}
-        </p>
-    `;
-
-
-    modal.showModal();
+    attractionsContainer.append(...cards);
+    hideBrokenImages(attractionsContainer);
 }
 
+function populateCategoryFilter(items) {
+    const categories = [...new Set(items.map((item) => item.category))];
 
-// Close modal
-function closeModal() {
+    categoryFilter.replaceChildren();
 
-    if (modal.open) {
-        modal.close();
+    const allOption = document.createElement("option");
+    allOption.value = "all";
+    allOption.textContent = "All categories";
+    categoryFilter.append(allOption);
+
+    categories.sort().forEach((category) => {
+        const option = document.createElement("option");
+        option.value = category;
+        option.textContent = category;
+        categoryFilter.append(option);
+    });
+}
+
+function openAttractionModal(attraction, trigger) {
+    lastFocusedElement = trigger;
+    modalContent.replaceChildren();
+
+    const title = document.createElement("h2");
+    title.id = "modal-heading";
+    title.textContent = attraction.name;
+
+    const image = document.createElement("img");
+    image.className = "modal-image";
+    image.src = attraction.image;
+    image.alt = `View related to ${attraction.name}`;
+    image.width = 640;
+    image.height = 420;
+
+    const category = document.createElement("p");
+    category.textContent = `Category: ${attraction.category}`;
+
+    const location = document.createElement("p");
+    location.textContent = `Location: ${attraction.location}`;
+
+    const description = document.createElement("p");
+    description.textContent = attraction.description;
+
+    modalContent.append(title, image, category, location, description);
+    hideBrokenImages(modalContent);
+
+    if (!attractionModal.open) {
+        attractionModal.showModal();
+    }
+
+    modalClose.focus();
+}
+
+function closeAttractionModal() {
+    if (attractionModal.open) {
+        attractionModal.close();
     }
 }
 
+categoryFilter.addEventListener("change", () => {
+    const selectedCategory = categoryFilter.value;
 
-// Create category filter options
-function createCategoryOptions(
-    attractions
-) {
+    // filter() is an array method required by the project rubric.
+    const filteredAttractions = selectedCategory === "all"
+        ? attractions
+        : attractions.filter((item) => item.category === selectedCategory);
 
-    /*
-     * map() creates an array of categories.
-     * Set removes duplicate categories.
-     * sort() keeps them alphabetically organized.
-     */
+    displayAttractions(filteredAttractions);
+});
 
-    const categories =
-        [
-            ...new Set(
-                attractions.map(
-                    (attraction) =>
-                        attraction.category
-                )
-            )
-        ].sort();
+modalClose.addEventListener("click", closeAttractionModal);
 
+attractionModal.addEventListener("click", (event) => {
+    if (event.target === attractionModal) {
+        closeAttractionModal();
+    }
+});
 
-    categories.forEach(
-        (category) => {
+attractionModal.addEventListener("close", () => {
+    if (lastFocusedElement) {
+        lastFocusedElement.focus();
+    }
+});
 
-            const option =
-                document.createElement(
-                    "option"
-                );
-
-            option.value =
-                category;
-
-            option.textContent =
-                category;
-
-            categoryFilter.appendChild(
-                option
-            );
-        }
-    );
-}
-
-
-// Fetch attraction data
-async function getAttractions() {
+async function loadAttractions() {
+    loadingMessage.textContent = "Loading heritage information...";
 
     try {
-
-        loadingMessage.textContent =
-            "Loading heritage information...";
-
-
-        const response =
-            await fetch(dataUrl);
-
+        const response = await fetch("./data/attractions.json");
 
         if (!response.ok) {
-
-            throw new Error(
-                `HTTP error: ${response.status}`
-            );
+            throw new Error(`Request failed with status ${response.status}`);
         }
 
+        const data = await response.json();
 
-        const attractions =
-            await response.json();
-
-
-        /*
-         * Make sure we have enough records
-         * for the W06 project requirement.
-         */
-
-        if (attractions.length < 15) {
-
-            throw new Error(
-                "The data source must contain at least 15 items."
-            );
+        if (!Array.isArray(data) || data.length < 15) {
+            throw new Error("The attraction data must contain at least 15 records.");
         }
 
+        const requiredProperties = [
+            "name",
+            "category",
+            "location",
+            "description",
+            "image"
+        ];
 
-        createCategoryOptions(
-            attractions
+        const validData = data.filter((item) =>
+            requiredProperties.every((property) =>
+                typeof item[property] === "string" &&
+                item[property].trim().length > 0
+            )
         );
 
+        if (validData.length < 15) {
+            throw new Error("At least 15 complete attraction records are required.");
+        }
 
-        displayAttractions(
-            attractions
-        );
+        attractions = validData;
 
-
-        loadingMessage.remove();
-
-
-    } catch (error) {
-
-        console.error(
-            "Error loading attraction data:",
-            error
-        );
-
+        populateCategoryFilter(attractions);
+        displayAttractions(attractions);
 
         loadingMessage.textContent =
-            "We could not load the heritage information. Please try again later.";
+            `Loaded ${attractions.length} heritage and visitor records.`;
+        loadingMessage.classList.remove("error");
+    } catch (error) {
+        console.error("Unable to load attractions:", error);
+
+        loadingMessage.textContent =
+            "We could not load the attraction information. Please check your connection or try again later.";
+        loadingMessage.classList.add("error");
     }
 }
 
-
-// Filter change event
-categoryFilter.addEventListener(
-    "change",
-    async () => {
-
-        try {
-
-            /*
-             * Fetch the data again so the filter
-             * always works with the original data.
-             */
-
-            const response =
-                await fetch(dataUrl);
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    `HTTP error: ${response.status}`
-                );
-            }
-
-
-            const attractions =
-                await response.json();
-
-
-            updateDisplayedAttractions(
-                attractions
-            );
-
-        } catch (error) {
-
-            console.error(
-                "Unable to filter attractions:",
-                error
-            );
-
-            attractionsContainer.innerHTML = `
-                <p class="message">
-                    We could not filter the heritage information.
-                </p>
-            `;
-        }
-    }
-);
-
-
-// Close button event
-modalClose.addEventListener(
-    "click",
-    closeModal
-);
-
-
-// Close modal when clicking outside the content
-modal.addEventListener(
-    "click",
-    (event) => {
-
-        if (event.target === modal) {
-            closeModal();
-        }
-    }
-);
-
-
-// Close modal with Escape key
-modal.addEventListener(
-    "cancel",
-    (event) => {
-
-        event.preventDefault();
-
-        closeModal();
-    }
-);
-
-
-// Start the application
-getAttractions();
+loadAttractions();

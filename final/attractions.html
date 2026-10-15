@@ -3,209 +3,347 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Heritage & Attractions | Grand-Bassam Guide</title>
-
+    <title>Attractions in Grand-Bassam | Discover Grand-Bassam</title>
     <meta name="description"
-        content="Explore historic places, cultural heritage, architecture, and attractions in Grand-Bassam, Côte d'Ivoire.">
+        content="Explore the beaches, colonial architecture, cultural heritage, lagoon, and historic attractions of Grand-Bassam, Côte d'Ivoire.">
+    <meta name="author" content="WDD 231 Student">
 
-    <meta name="author" content="Kouame Richard Kouadio">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Heritage & Attractions | Grand-Bassam Guide">
-
+    <meta property="og:title" content="Attractions in Grand-Bassam">
     <meta property="og:description"
-        content="Explore the historic places, cultural heritage, architecture, and attractions of Grand-Bassam.">
-
+        content="Discover the beaches, history, architecture, and culture of Grand-Bassam, Côte d'Ivoire.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="images/grand-bassam-beach.webp">
 
-    <meta property="og:url" content="https://richard-kouadio.github.io/wdd231/final/attractions.html">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles/styles.css">
 
-    <meta property="og:image" content="https://richard-kouadio.github.io/wdd231/final/images/hero-grand-bassam.webp">
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.svg">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
-
-    <!-- JavaScript -->
     <script type="module" src="scripts/main.js"></script>
-
     <script type="module" src="scripts/attractions.js"></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Skip link -->
-    <a class="skip-link" href="#main-content">
-        Skip to main content
-    </a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html" aria-label="Discover Grand-Bassam home">
+                <img src="images/logo.webp" alt="" width="64" height="64">
+                <span>Discover Grand-Bassam</span>
+            </a>
 
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="primary-navigation">
+                <span aria-hidden="true">&#9776;</span>
+            </button>
 
-    <!-- HEADER -->
-    <header>
-
-        <div class="header-container">
-
-            <div class="nav-container">
-
-                <a class="logo-link" href="index.html">
-
-                    <img class="logo" src="images/logo.webp" alt="Grand-Bassam Cultural Heritage logo" width="50"
-                        height="50">
-
-                    <span class="logo-text">
-                        Grand-Bassam Heritage
-                    </span>
-
-                </a>
-
-
-                <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation menu"
-                    aria-expanded="false" aria-controls="navigation">
-                    <span class="menu-icon"></span>
-                </button>
-
-
-                <nav id="navigation" class="navigation" aria-label="Main navigation">
-
-                    <ul>
-
-                        <li>
-                            <a href="index.html">
-                                Home
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="attractions.html">
-                                Heritage & Attractions
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="visitor.html">
-                                Visitor Guide
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </nav>
-
-            </div>
-
+            <nav id="primary-navigation" class="primary-navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="attraction.html" aria-current="page">Attractions</a></li>
+                    <li><a href="contact.html">Plan Your Visit</a></li>
+                </ul>
+            </nav>
         </div>
-
     </header>
 
-
-    <!-- MAIN -->
     <main id="main-content">
-
-        <section class="page-header">
-
-            <h1>
-                Heritage & Attractions
-            </h1>
-
-            <p>
-                Explore historic places, cultural features, architecture,
-                and natural environments connected to Grand-Bassam.
-            </p>
-
-        </section>
-
-
-        <!-- FILTER -->
-        <section class="filter-container">
-
-            <label for="category-filter">
-                Filter by category
-            </label>
-
-            <select id="category-filter">
-
-                <option value="all">
-                    All categories
-                </option>
-
-            </select>
-
-        </section>
-
-
-        <!-- STATUS MESSAGE -->
-        <p id="loading-message" class="message">
-            Loading heritage information...
-        </p>
-
-
-        <!-- DYNAMIC CONTENT -->
-        <section id="attractions-container" class="card-grid" aria-live="polite">
-            <!-- JavaScript will generate attraction cards here -->
-        </section>
-
-
-        <!-- MODAL -->
-        <dialog id="attraction-modal">
-
-            <div class="modal-content">
-
-                <button id="modal-close" class="modal-close" type="button" aria-label="Close attraction details">
-                    &times;
-                </button>
-
-                <div id="modal-content">
-
-                    <!-- JavaScript will insert modal content here -->
-
-                </div>
-
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <p class="eyebrow">Explore Côte d'Ivoire</p>
+                <h1>Discover the Attractions of Grand-Bassam</h1>
+                <p>
+                    From beautiful beaches and peaceful lagoon views to historic
+                    architecture and vibrant cultural traditions, discover the places
+                    that make Grand-Bassam special.
+                </p>
+                <a class="button" href="#attractions">Explore the attractions</a>
             </div>
 
-        </dialog>
+            <img class="hero-image" src="images/historic-town.webp" alt="Historic surroundings in Grand-Bassam"
+                width="1200" height="675" fetchpriority="high">
+        </section>
 
+        <section class="intro-section" aria-labelledby="intro-heading">
+            <div class="section-heading">
+                <p class="eyebrow">History, nature and culture</p>
+                <h2 id="intro-heading">A destination with many stories</h2>
+            </div>
+            <p>
+                Grand-Bassam offers a rich combination of coastal scenery, architectural
+                heritage, local craftsmanship, and community traditions. Use this
+                guide to explore its different attractions and plan your visit.
+            </p>
+        </section>
+
+        <section id="attractions" class="attractions-section" aria-labelledby="attractions-heading">
+            <div class="section-heading">
+                <p class="eyebrow">Find your next stop</p>
+                <h2 id="attractions-heading">Places to Explore</h2>
+                <p>
+                    Discover the town's natural beauty, historical landmarks, and cultural
+                    experiences.
+                </p>
+            </div>
+
+            <div class="attraction-grid">
+                <article class="attraction-card">
+                    <img src="images/grand-bassam-beach.webp" alt="Coastal beach scenery in Grand-Bassam" width="800"
+                        height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Grand-Bassam Beach</h3>
+                        <p>
+                            Enjoy the Atlantic coastline, fresh sea air, and the natural
+                            beauty of this popular coastal destination.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="grand-bassam-beach">Learn
+                            more</button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/grand-bassam-lagoon.webp" alt="Lagoon landscape in Grand-Bassam" width="800"
+                        height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Grand-Bassam Lagoon</h3>
+                        <p>
+                            Appreciate the quieter waterside scenery and the connection
+                            between the lagoon and local life.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="grand-bassam-lagoon">Learn
+                            more</button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/colonial-architecture.webp"
+                        alt="Colonial-era architectural details in Grand-Bassam" width="800" height="600"
+                        loading="lazy">
+                    <div class="card-content">
+                        <h3>Colonial Architecture</h3>
+                        <p>
+                            Observe historic buildings and architectural details that
+                            reflect the town's past.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="colonial-architecture">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/historic-town.webp" alt="Historic townscape of Grand-Bassam" width="800"
+                        height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Historic Town</h3>
+                        <p>
+                            Explore the historic atmosphere of a town recognized for its
+                            cultural and architectural heritage.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="historic-town">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/quartier-colonial.webp" alt="Historic buildings in the colonial quarter"
+                        width="800" height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Colonial Quarter</h3>
+                        <p>
+                            Walk through a historic district and discover the buildings
+                            and streets that give the town its distinctive character.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="quartier-colonial">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/palais-justice.webp" alt="Palace of Justice building in Grand-Bassam" width="800"
+                        height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Palais de Justice</h3>
+                        <p>
+                            Discover an architectural landmark associated with the town's
+                            administrative and colonial history.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="palais-justice">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/phare-grand-bassam.webp" alt="Grand-Bassam lighthouse" width="800" height="600"
+                        loading="lazy">
+                    <div class="card-content">
+                        <h3>Grand-Bassam Lighthouse</h3>
+                        <p>
+                            Learn about the coastal landmark and the role that navigation
+                            and the sea play in the area's identity.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="phare-grand-bassam">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/lighthouse.webp" alt="Lighthouse and coastal surroundings" width="800" height="600"
+                        loading="lazy">
+                    <div class="card-content">
+                        <h3>Coastal Lighthouse Views</h3>
+                        <p>
+                            Take in the coastal setting and explore another view of
+                            Grand-Bassam's maritime heritage.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="lighthouse">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/maison-ganamet.webp" alt="Maison Ganamet historic building" width="800"
+                        height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Maison Ganamet</h3>
+                        <p>
+                            Discover a historic residence and appreciate the architectural
+                            character of the old town.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="maison-ganamet">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/maison-varlet.webp" alt="Maison Varlet historic architecture" width="800"
+                        height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Maison Varlet</h3>
+                        <p>
+                            Explore another historic building and look for details that
+                            reflect the architectural heritage of Grand-Bassam.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="maison-varlet">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/cultural-festival.webp" alt="Cultural celebration in Grand-Bassam" width="800"
+                        height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Cultural Festivals</h3>
+                        <p>
+                            Experience the importance of celebrations, music, performance,
+                            and community traditions in local culture.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="cultural-festival">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/nzima-community.webp" alt="Nzima community and cultural life" width="800"
+                        height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Nzima Community</h3>
+                        <p>
+                            Learn about the Nzima people and their contribution to the
+                            area's cultural identity and living traditions.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="nzima-community">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/art-craft.webp" alt="Traditional art and craftwork" width="800" height="600"
+                        loading="lazy">
+                    <div class="card-content">
+                        <h3>Local Art and Crafts</h3>
+                        <p>
+                            Discover artistic expression and handmade crafts that showcase
+                            local creativity and cultural knowledge.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="art-craft">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+
+                <article class="attraction-card">
+                    <img src="images/commercial-buildings.webp" alt="Historic commercial buildings in Grand-Bassam"
+                        width="800" height="600" loading="lazy">
+                    <div class="card-content">
+                        <h3>Historic Commercial Buildings</h3>
+                        <p>
+                            See buildings connected with trade and commerce that helped
+                            shape Grand-Bassam's historical development.
+                        </p>
+                        <button class="details-button" type="button" data-attraction="commercial-buildings">
+                            Learn more
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="visit-cta" aria-labelledby="visit-heading">
+            <div>
+                <p class="eyebrow">Make your plans</p>
+                <h2 id="visit-heading">Ready to Discover Grand-Bassam?</h2>
+                <p>
+                    Prepare for your visit and choose the experiences you would most
+                    like to explore.
+                </p>
+            </div>
+            <a class="button" href="contact.html">Plan Your Visit</a>
+        </section>
+
+        <dialog id="attraction-dialog" aria-labelledby="dialog-title">
+            <div class="dialog-content">
+                <button class="dialog-close" type="button" aria-label="Close attraction details">&times;</button>
+                <h2 id="dialog-title">Attraction details</h2>
+                <p id="dialog-description"></p>
+                <p id="dialog-extra"></p>
+            </div>
+        </dialog>
     </main>
 
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <a class="footer-brand" href="index.html">Discover Grand-Bassam</a>
+                <p>Explore the heritage, culture, and coastline of Côte d'Ivoire.</p>
+            </div>
 
-    <!-- FOOTER -->
-    <footer>
+            <nav aria-label="Footer navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="attraction.html" aria-current="page">Attractions</a></li>
+                    <li><a href="contact.html">Plan Your Visit</a></li>
+                    <li><a href="attributions.html">Attributions</a></li>
+                </ul>
+            </nav>
 
-        <p>
-            &copy; 2026 Grand-Bassam Cultural Heritage & Tourism Guide
-        </p>
+            <p class="copyright">
+                &copy; <span id="current-year"></span> Discover Grand-Bassam
+            </p>
 
-        <p>
-            Created by Kouame Richard Kouadio
-        </p>
-
-        <p>
-            <a href="attributions.html">
-                Attributions & Sources
-            </a>
-        </p>
-
-        <p>
-            <a href="#" target="_blank" rel="noopener">
-                Project Video
-            </a>
-        </p>
-
+            <p><a href="video.html">Project demonstration video</a></p>
+        </div>
     </footer>
-
 </body>
 
 </html>

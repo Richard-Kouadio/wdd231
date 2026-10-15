@@ -5,16 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Attributions and Sources | Grand-Bassam Guide</title>
+    <title>Attractions in Grand-Bassam | History, Culture and Beaches</title>
+
     <meta name="description"
-        content="References and image credits for the Grand-Bassam Cultural Heritage and Tourism Guide.">
+        content="Explore Grand-Bassam's historic colonial architecture, beautiful beaches, cultural heritage, museums, lagoon, and traditional communities in Côte d'Ivoire.">
+
     <meta name="author" content="Kouame Richard Kouadio">
 
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <!-- SEO and Social Media Metadata -->
+    <meta property="og:title" content="Discover the Historic Attractions of Grand-Bassam">
 
+    <meta property="og:description"
+        content="Explore the historic streets, colonial architecture, cultural heritage, lagoon, and beautiful Atlantic beaches of Grand-Bassam, Côte d'Ivoire.">
+
+    <meta property="og:image" content="https://richard-kouadio.github.io/wdd231/final/images/grand-bassam-beach.webp">
+
+    <meta property="og:url" content="https://richard-kouadio.github.io/wdd231/final/attraction.html">
+
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- External JavaScript -->
     <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/attractions.js"></script>
 </head>
 
 <body>
@@ -23,6 +49,7 @@
     <header>
         <div class="header-container">
             <div class="nav-container">
+
                 <a class="logo-link" href="index.html">
                     <img class="logo" src="images/logo.webp" alt="" width="52" height="52">
                     <span class="logo-text">Grand-Bassam Heritage</span>
@@ -30,100 +57,362 @@
 
                 <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation menu"
                     aria-expanded="false" aria-controls="navigation">
+
                     <span class="menu-icon" aria-hidden="true"></span>
                 </button>
 
                 <nav id="navigation" class="navigation" aria-label="Main navigation">
+
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="attractions.html">Heritage &amp; Attractions</a></li>
-                        <li><a href="visitor.html">Visitor Guide</a></li>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="attraction.html" aria-current="page">
+                                Attractions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Plan Your Visit</a>
+                        </li>
                     </ul>
                 </nav>
+
             </div>
         </div>
     </header>
 
     <main id="main-content">
+
+        <!-- Page Introduction -->
         <section class="page-header">
-            <h1>Attributions and Sources</h1>
+            <h1>Discover the Attractions of Grand-Bassam</h1>
+
             <p>
-                This page identifies external references and credits
-                used to research and develop the website.
+                Explore the history, architecture, culture, and natural
+                beauty of Grand-Bassam, one of Côte d'Ivoire's most
+                significant historic coastal towns.
             </p>
         </section>
 
+        <!-- Introduction -->
         <section class="intro-section">
-            <h2>Historical and Heritage Information</h2>
+            <h2>A Town Rich in History and Culture</h2>
 
-            <article>
-                <h3>UNESCO World Heritage Centre</h3>
-                <p>
-                    Reference for the World Heritage inscription and
-                    historical significance of the Historic Town of Grand-Bassam.
-                </p>
-                <p>
-                    <a href="https://whc.unesco.org/en/list/1322/" target="_blank" rel="noopener noreferrer">
-                        UNESCO — Historic Town of Grand-Bassam
-                    </a>
-                </p>
-            </article>
+            <p>
+                Grand-Bassam is known for its historic colonial quarter,
+                traditional communities, cultural heritage, and Atlantic
+                coastline. Its architecture and cultural traditions
+                provide a glimpse into the history and identity of
+                Côte d'Ivoire.
+            </p>
+
+            <p>
+                Whether you enjoy exploring historic buildings, learning
+                about local traditions, discovering traditional crafts,
+                or relaxing by the sea, Grand-Bassam offers a variety
+                of attractions to explore.
+            </p>
+
+            <img src="images/historic-town.webp" alt="Historic townscape and traditional architecture in Grand-Bassam"
+                width="800" height="450" loading="lazy">
         </section>
 
+        <!-- Natural Attractions -->
+        <section class="intro-section" id="attractions">
+            <h2>Natural Attractions</h2>
+
+            <div class="card-container">
+
+                <article class="card">
+                    <img class="card-image" src="images/grand-bassam-beach.webp"
+                        alt="Sandy Atlantic coastline and beach in Grand-Bassam" width="800" height="450"
+                        loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Grand-Bassam Beach</h3>
+
+                        <p>
+                            Enjoy the coastal scenery and the relaxing
+                            atmosphere along the Atlantic Ocean.
+                            The beach is a popular place to experience
+                            the natural beauty of the town.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card-image" src="images/grand-bassam-lagoon.webp"
+                        alt="Peaceful lagoon landscape near Grand-Bassam" width="800" height="450" loading="lazy">
+
+                    <div class="card-content">
+                        <h3>The Lagoon</h3>
+
+                        <p>
+                            Discover the lagoon landscape and its
+                            importance to the local environment,
+                            livelihoods, and coastal communities.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Historic Architecture -->
         <section class="intro-section">
-            <h2>Image Credits</h2>
+            <h2>Historic Architecture and Landmarks</h2>
+
             <p>
-                Replace the examples below with the actual title, creator,
-                source URL, and license for each external image used.
+                Grand-Bassam's historic district preserves architectural
+                features associated with its development as an important
+                coastal settlement. Its historic buildings provide
+                insight into the town's urban and cultural history.
             </p>
-            <ul>
-                <li>
-                    <strong>Historic town image:</strong>
-                    Add the original creator, source link, and license.
-                </li>
-                <li>
-                    <strong>Museum and cultural images:</strong>
-                    Add the original creator, source link, and license.
-                </li>
-                <li>
-                    <strong>Coastal and architecture images:</strong>
-                    Add the original creator, source link, and license.
-                </li>
-            </ul>
+
+            <div class="card-container">
+
+                <article class="card">
+                    <img class="card-image" src="images/colonial-architecture.webp"
+                        alt="Historic colonial-era architectural details in Grand-Bassam" width="800" height="450"
+                        loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Colonial Architecture</h3>
+
+                        <p>
+                            Observe the distinctive facades, balconies,
+                            windows, and other architectural details
+                            that characterize historic buildings.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card-image" src="images/quartier-colonial.webp"
+                        alt="Historic buildings in the colonial quarter of Grand-Bassam" width="800" height="450"
+                        loading="lazy">
+
+                    <div class="card-content">
+                        <h3>The Historic Quarter</h3>
+
+                        <p>
+                            Explore the historic quarter and learn
+                            about the buildings and streets that
+                            contribute to Grand-Bassam's heritage.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card-image" src="images/palais-justice.webp"
+                        alt="Historic Palace of Justice building in Grand-Bassam" width="800" height="450"
+                        loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Palace of Justice</h3>
+
+                        <p>
+                            Discover a notable historic landmark
+                            associated with the administration and
+                            development of Grand-Bassam.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card-image" src="images/phare-grand-bassam.webp"
+                        alt="Grand-Bassam lighthouse standing near the coast" width="800" height="450" loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Grand-Bassam Lighthouse</h3>
+
+                        <p>
+                            Learn about the lighthouse and the
+                            relationship between the town's history
+                            and its coastal setting.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card-image" src="images/maison-ganamet.webp"
+                        alt="Historic Maison Ganamet building in Grand-Bassam" width="800" height="450" loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Maison Ganamet</h3>
+
+                        <p>
+                            Appreciate the historic architecture
+                            and the role historic residences play
+                            in preserving the town's character.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card-image" src="images/maison-varlet.webp"
+                        alt="Traditional historic architecture at Maison Varlet" width="800" height="450"
+                        loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Maison Varlet</h3>
+
+                        <p>
+                            Discover another example of the historic
+                            architecture that makes Grand-Bassam
+                            an important heritage destination.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card-image" src="images/commercial-buildings.webp"
+                        alt="Historic commercial buildings in Grand-Bassam" width="800" height="450" loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Historic Commercial Buildings</h3>
+
+                        <p>
+                            See how historic commercial architecture
+                            reflects the town's former role as a
+                            center of coastal trade and activity.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Cultural Attractions -->
+        <section class="intro-section">
+            <h2>Culture and Traditions</h2>
+
             <p>
-                Images created specifically for this project should be
-                identified as original work. Do not leave these example
-                credits in the published site without completing them.
+                Grand-Bassam's heritage also lives in its communities,
+                artistic traditions, festivals, and cultural practices.
+                These traditions continue to contribute to the town's
+                identity.
+            </p>
+
+            <div class="card-container">
+
+                <article class="card">
+                    <img class="card-image" src="images/cultural-festival.webp"
+                        alt="Cultural celebration highlighting traditions in Grand-Bassam" width="800" height="450"
+                        loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Cultural Festivals</h3>
+
+                        <p>
+                            Learn about local celebrations and cultural
+                            events that bring communities together
+                            through music, dance, and shared traditions.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card-image" src="images/nzima-community.webp"
+                        alt="Nzima community and cultural life in Grand-Bassam" width="800" height="450" loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Nzima Community</h3>
+
+                        <p>
+                            Discover the traditions and community
+                            heritage of the Nzima people, whose
+                            cultural identity is closely connected
+                            to Grand-Bassam.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card-image" src="images/art-craft.webp"
+                        alt="Traditional artwork and handcrafted objects" width="800" height="450" loading="lazy">
+
+                    <div class="card-content">
+                        <h3>Traditional Art and Crafts</h3>
+
+                        <p>
+                            Explore traditional creativity through
+                            locally produced art, handcrafted objects,
+                            and artistic expressions that reflect
+                            cultural heritage.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Heritage Importance -->
+        <section class="intro-section">
+            <h2>Why Grand-Bassam Matters</h2>
+
+            <p>
+                The Historic Town of Grand-Bassam is recognized as a
+                UNESCO World Heritage Site. Its historic urban layout,
+                architecture, and cultural significance help preserve
+                an important part of Côte d'Ivoire's history.
+            </p>
+
+            <p>
+                Visitors can learn more about its international
+                heritage recognition through the
+                <a href="https://whc.unesco.org/en/list/1322/" target="_blank" rel="noopener noreferrer">
+                    UNESCO World Heritage Centre
+                </a>.
             </p>
         </section>
 
+        <!-- Call to Action -->
         <section class="intro-section">
-            <h2>Fonts</h2>
+            <h2>Plan Your Visit</h2>
+
             <p>
-                The site uses Open Sans and Playfair Display through Google Fonts.
+                Make the most of your visit by exploring the historic
+                quarter, learning about local traditions, and enjoying
+                the coastal environment.
             </p>
+
             <p>
-                <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">
-                    Google Fonts
+                <a class="button" href="contact.html">
+                    Plan Your Visit
+                </a>
+            </p>
+
+            <p>
+                <a class="button-secondary" href="index.html">
+                    Return to Home
                 </a>
             </p>
         </section>
 
-        <section class="intro-section">
-            <h2>Development</h2>
-            <p>
-                The website uses semantic HTML, CSS, and JavaScript modules.
-                Attraction data is loaded from a local JSON file.
-            </p>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Grand-Bassam Cultural Heritage &amp; Tourism Guide</p>
-        <p>Created by Kouame Richard Kouadio | WDD 231</p>
-        <p><a href="attributions.html">Attributions &amp; Sources</a></p>
-        <p><a href="https://drive.google.com/file/d/1NVjxXTC312BFTDWSqo1zwfZQO8ubuysf/view?usp=sharing" target="_blank" rel="noopener noreferrer">Project Video</a></p>
+        <p>
+            &copy; 2026 Grand-Bassam Cultural Heritage &amp; Tourism Guide
+        </p>
+
+        <p>
+            Created by Kouame Richard Kouadio | WDD 231
+        </p>
+
+        <p>
+            <a href="attributions.html">Attributions &amp; Sources</a>
+        </p>
+
+        <p>
+            <a href="video.html">
+                Project Demonstration Video
+            </a>
+        </p>
     </footer>
+
 </body>
 
 </html>

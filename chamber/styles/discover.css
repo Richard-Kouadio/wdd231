@@ -1,165 +1,216 @@
 /* =========================================================
-   DISCOVER PAGE - GRAND-BASSAM CHAMBER OF COMMERCE
+   GRAND-BASSAM CHAMBER OF COMMERCE
+   DISCOVER PAGE
    WDD 231 - Web Frontend Development I
    ========================================================= */
 
-/* ---------- COLOR VARIABLES ---------- */
+/* 1. COLOR VARIABLES */
 
 :root {
-    --ocean-blue: rgb(11, 57, 84);
-    --turquoise: rgb(5, 107, 118);
-    --coral: rgb(184, 59, 50);
-    --sand: rgb(244, 225, 193);
-    --light-gray: rgb(244, 246, 247);
-    --dark-text: rgb(23, 32, 42);
-    --white: rgb(255, 255, 255);
+    --ocean-blue: #0b3954;
+    --turquoise: #056b76;
+    --coral: #b83b32;
+    --sand: #f4e1c1;
+    --light-gray: #f4f6f7;
+    --dark-text: #17202a;
+    --muted-text: #46545e;
+    --white: #ffffff;
+    --border-color: #d6dfe3;
+    --card-shadow: 0 3px 10px rgb(0 0 0 / 10%);
 }
 
-/* ---------- BASE ---------- */
+/* 2. RESET AND GENERAL STYLES */
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
 }
 
 body {
     margin: 0;
-    font-family: "Open Sans", sans-serif;
     background-color: var(--light-gray);
     color: var(--dark-text);
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
-/* Links on the normal light page background.
-   Do not use turquoise globally because navigation has
-   a dark blue background. */
-main a {
-    color: var(--ocean-blue);
-    text-decoration: underline;
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-main a:hover,
-main a:focus-visible {
-    color: var(--coral);
+a,
+button {
+    font: inherit;
 }
 
-/* ---------- HEADER ---------- */
+a {
+    overflow-wrap: anywhere;
+}
 
-.site-header,
-header {
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 4px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* 3. HEADER */
+
+.site-header {
     background-color: var(--ocean-blue);
     color: var(--white);
 }
 
 .header-container {
-    width: min(1100px, 92%);
-    margin: 0 auto;
-    min-height: 100px;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
 }
 
 .logo-link {
     display: block;
-    flex-shrink: 0;
-    color: var(--white);
-    text-decoration: none;
-}
-
-.logo-link:hover,
-.logo-link:focus-visible {
-    color: var(--white);
-    text-decoration: none;
+    flex: 0 0 auto;
+    line-height: 0;
 }
 
 .logo-link img {
-    display: block;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 
-.site-title {
-    flex: 1;
-}
-
-.site-title h1 {
-    margin: 0;
-    color: var(--white);
-    font-family: "Playfair Display", serif;
-    font-size: 1.8rem;
-    line-height: 1.1;
-}
-
-.site-title p {
-    margin: 0.25rem 0 0;
-    color: var(--sand);
-    font-size: 0.95rem;
-}
-
-/* ---------- MENU BUTTON ---------- */
-
-.menu-button {
-    display: none;
-    border: 2px solid var(--white);
-    border-radius: 5px;
-    padding: 0.5rem 0.75rem;
-    background-color: var(--ocean-blue);
-    color: var(--white);
-    font-size: 1.5rem;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.menu-button:hover,
-.menu-button:focus-visible {
-    background-color: var(--coral);
-    color: var(--white);
-}
-
-/* ---------- NAVIGATION ---------- */
-
-.navigation {
-    background-color: var(--ocean-blue);
-}
-
-.navigation ul {
-    width: min(1100px, 92%);
-    margin: 0 auto;
-    padding: 0;
+.brand {
     display: flex;
-    justify-content: center;
-    list-style: none;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
 }
 
-.navigation a {
-    display: block;
-    padding: 0.9rem 1.25rem;
-    background-color: var(--ocean-blue);
+.brand-name {
     color: var(--white);
-    font-weight: 600;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.brand-subtitle {
+    color: var(--sand);
+    font-size: 0.75rem;
+}
+
+/* Compatibility with the existing HTML's .brand wrapper. */
+
+.brand a {
+    color: inherit;
     text-decoration: none;
 }
 
-.navigation a:hover,
-.navigation a:focus-visible,
-.navigation a.active {
+/* 4. MOBILE NAVIGATION */
+
+.menu-button {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.4rem 0.65rem;
+    border: 2px solid var(--white);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.menu-button:hover {
+    background-color: var(--coral);
+}
+
+.main-nav {
+    display: none;
+    background-color: var(--ocean-blue);
+}
+
+.main-nav.open {
+    display: block;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav li {
+    min-width: 0;
+}
+
+.main-nav a {
+    display: block;
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgb(255 255 255 / 15%);
+    color: var(--white);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav a.active {
     background-color: var(--turquoise);
     color: var(--white);
 }
 
-/* ---------- MAIN ---------- */
+.main-nav a[aria-current="page"] {
+    box-shadow: inset 0 -3px 0 var(--sand);
+}
+
+/* 5. MAIN CONTENT */
 
 main {
     min-height: 60vh;
 }
-
-/* ---------- PAGE HEADING ---------- */
 
 .page-heading {
     padding: 2.5rem 1rem;
@@ -167,167 +218,210 @@ main {
     text-align: center;
 }
 
+.page-heading .eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--ocean-blue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 .page-heading h1 {
     margin: 0 0 0.75rem;
     color: var(--ocean-blue);
-    font-family: "Playfair Display", serif;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3.2rem);
 }
 
-.page-heading p {
-    max-width: 750px;
+.page-heading p:last-child {
+    max-width: 760px;
     margin: 0 auto;
     color: var(--dark-text);
 }
 
-/* ---------- VISIT MESSAGE ---------- */
+/* 6. VISITOR MESSAGE */
 
 .visit-message {
-    width: min(1100px, 92%);
+    width: calc(100% - 2rem);
+    max-width: 1200px;
     margin: 1.5rem auto 0;
     padding: 1rem 1.25rem;
     border-left: 5px solid var(--coral);
-    background-color: var(--sand);
-    color: var(--dark-text);
     border-radius: 5px;
+    background-color: var(--white);
+    color: var(--dark-text);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 6%);
 }
 
-/* ---------- DISCOVER CONTENT ---------- */
+/* Hide an empty visitor message before it is populated. */
+
+.visit-message:empty {
+    display: none;
+}
+
+/* 7. DISCOVER SECTION */
 
 .discover-content {
-    width: min(1100px, 92%);
+    width: calc(100% - 2rem);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 3rem;
 }
 
 .discover-content>h2 {
     margin: 0 0 1.5rem;
     color: var(--ocean-blue);
-    font-family: "Playfair Display", serif;
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 4vw, 2.3rem);
     text-align: center;
 }
 
-/* ---------- DISCOVER GRID ---------- */
+/* 8. MOBILE GRID: 320px TO 640px
+   Each card occupies its own named grid area.
+*/
 
 .discover-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "place-1"
+        "place-2"
+        "place-3"
+        "place-4"
+        "place-5"
+        "place-6"
+        "place-7"
+        "place-8";
+    gap: 1.25rem;
 }
 
-/* ---------- DISCOVER CARD ---------- */
+/* 9. DISCOVER CARDS */
 
 .discover-card {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
     overflow: hidden;
-    background-color: var(--white);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 12%);
+    background-color: var(--white);
+    box-shadow: var(--card-shadow);
 }
 
-.discover-card img {
-    display: block;
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.discover-card-content {
-    padding: 1.25rem;
-}
-
-.discover-card h3 {
-    margin: 0 0 0.5rem;
+.discover-card h2 {
+    margin: 0;
+    padding: 1rem 1rem 0.5rem;
     color: var(--ocean-blue);
-    font-family: "Playfair Display", serif;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    overflow-wrap: anywhere;
 }
 
-.discover-card p {
-    margin: 0 0 0.75rem;
+.discover-card figure {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--light-gray);
+}
+
+.discover-card figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .discover-card address {
-    margin-bottom: 1rem;
-    color: var(--dark-text);
+    margin: 0;
+    padding: 0.9rem 1rem 0;
+    color: var(--muted-text);
+    font-size: 0.9rem;
     font-style: normal;
+    overflow-wrap: anywhere;
 }
 
-/* Card links use dark blue on white.
-   This gives strong WCAG contrast. */
-.discover-card a {
-    color: var(--ocean-blue);
-    font-weight: 600;
-    text-decoration: underline;
+.discover-card p {
+    flex: 1;
+    margin: 0;
+    padding: 0.75rem 1rem 1rem;
+    color: var(--dark-text);
 }
 
-.discover-card a:hover,
-.discover-card a:focus-visible {
-    color: var(--coral);
-}
-
-/* ---------- CARD BUTTON ---------- */
-
-.discover-card button {
-    border: 0;
-    padding: 0.75rem 1rem;
+.discover-card .view-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    min-height: 44px;
+    margin: 0 1rem 1rem;
+    padding: 0.65rem 1rem;
+    border: 2px solid var(--ocean-blue);
+    border-radius: 5px;
     background-color: var(--ocean-blue);
     color: var(--white);
-    font-family: inherit;
     font-weight: 700;
-    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.discover-card button:hover,
-.discover-card button:focus-visible {
+.discover-card .view-button:hover {
+    border-color: var(--coral);
     background-color: var(--coral);
     color: var(--white);
 }
 
-/* ---------- FOOTER ---------- */
+.discover-card .view-button:focus-visible {
+    outline-color: var(--coral);
+}
 
-.site-footer,
-footer {
-    margin-top: 2rem;
+/* 10. FOOTER */
+
+.site-footer {
+    margin-top: 1rem;
+    padding: 2rem 1rem 1rem;
     background-color: var(--ocean-blue);
     color: var(--white);
 }
 
 .footer-content {
-    width: min(1100px, 92%);
-    margin: 0 auto;
-    padding: 2rem 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content section {
+    min-width: 0;
 }
 
 .footer-content h2 {
-    margin-top: 0;
+    margin: 0 0 0.75rem;
     color: var(--white);
-    font-family: "Playfair Display", serif;
     font-size: 1.2rem;
 }
 
 .footer-content p {
     margin: 0.4rem 0;
+    overflow-wrap: anywhere;
 }
 
-/* Footer links are explicitly white on dark blue. */
-.footer-content a {
+.footer-content a,
+.footer-bottom a {
     color: var(--white);
     text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .footer-content a:hover,
-.footer-content a:focus-visible {
+.footer-bottom a:hover {
     color: var(--sand);
 }
 
 .footer-bottom {
-    padding: 1rem;
+    max-width: 1200px;
+    margin: 1.5rem auto 0;
+    padding: 1rem 0 0;
     border-top: 1px solid rgb(255 255 255 / 30%);
     text-align: center;
 }
@@ -337,122 +431,314 @@ footer {
     color: var(--white);
 }
 
-/* ---------- TABLET ---------- */
+/* =========================================================
+   MEDIUM SCREENS: 641px TO 1024px
+   Two-column layout with explicit named grid areas.
+   ========================================================= */
 
-@media (min-width: 600px) {
-    .discover-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .discover-card {
-        grid-template-columns: 1fr;
-    }
-
-    .discover-card img {
-        height: 230px;
-    }
-}
-
-/* ---------- DESKTOP ---------- */
-
-@media (min-width: 900px) {
-    .discover-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .discover-card {
-        grid-template-columns: 1fr 1fr;
-        min-height: 300px;
-    }
-
-    .discover-card img {
-        width: 100%;
-        height: 100%;
-        min-height: 300px;
-    }
-
-    .discover-card-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .footer-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* ---------- LARGE DESKTOP ---------- */
-
-@media (min-width: 1100px) {
-    .discover-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .discover-card {
-        grid-template-columns: 1fr;
-    }
-
-    .discover-card img {
-        height: 220px;
-        min-height: 220px;
-    }
-}
-
-/* ---------- MOBILE NAVIGATION ---------- */
-
-@media (max-width: 599px) {
+@media screen and (min-width: 641px) and (max-width: 1024px) {
     .header-container {
-        min-height: 80px;
+        min-height: 90px;
+        padding: 1rem 1.5rem;
     }
 
     .logo-link img {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
 
-    .site-title h1 {
+    .brand-name {
         font-size: 1.35rem;
     }
 
-    .site-title p {
-        font-size: 0.8rem;
+    .brand-subtitle {
+        font-size: 0.85rem;
     }
 
     .menu-button {
-        display: block;
-    }
-
-    .navigation {
         display: none;
     }
 
-    .navigation.open {
+    .main-nav {
         display: block;
     }
 
-    .navigation ul {
-        width: 100%;
-        flex-direction: column;
+    .main-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 1rem;
     }
 
-    .navigation a {
+    .main-nav a {
         padding: 0.85rem 1rem;
-        text-align: center;
-        border-top: 1px solid rgb(255 255 255 / 15%);
+        border-top: 0;
+    }
+
+    .page-heading {
+        padding: 3rem 1.5rem;
+    }
+
+    .discover-content {
+        width: calc(100% - 3rem);
+        padding: 3rem 0;
+    }
+
+    .discover-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "place-1 place-2"
+            "place-3 place-3"
+            "place-4 place-5"
+            "place-6 place-6"
+            "place-7 place-8";
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+
+    .discover-card {
+        height: 100%;
+    }
+
+    .discover-card figure img {
+        height: 210px;
+    }
+
+    /* Cards spanning both columns receive a horizontal layout. */
+
+    .place-3,
+    .place-6 {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto auto 1fr auto;
+        align-items: start;
+    }
+
+    .place-3 h2,
+    .place-6 h2 {
+        grid-column: 1 / -1;
+    }
+
+    .place-3 figure,
+    .place-6 figure {
+        grid-column: 1;
+        grid-row: 2 / 5;
+        align-self: stretch;
+        min-height: 100%;
+    }
+
+    .place-3 figure img,
+    .place-6 figure img {
+        height: 100%;
+        min-height: 260px;
+    }
+
+    .place-3 address,
+    .place-6 address,
+    .place-3 p,
+    .place-6 p,
+    .place-3 .view-button,
+    .place-6 .view-button {
+        grid-column: 2;
+    }
+
+    .place-3 .view-button,
+    .place-6 .view-button {
+        justify-self: start;
     }
 
     .footer-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
     }
 }
 
-/* ---------- REDUCED MOTION ---------- */
+/* =========================================================
+   LARGE SCREENS: 1025px AND ABOVE
+   Three-column composition with named grid areas.
+   ========================================================= */
+
+@media screen and (min-width: 1025px) {
+    .header-container {
+        min-height: 100px;
+        padding: 1rem 1.5rem;
+    }
+
+    .logo-link img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .brand-name {
+        font-size: 1.5rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .main-nav {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0 1.5rem;
+    }
+
+    .main-nav a {
+        padding: 1rem 1.25rem;
+        border-top: 0;
+    }
+
+    .page-heading {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .discover-content {
+        width: calc(100% - 3rem);
+        padding: 3.5rem 0;
+    }
+
+    .discover-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-areas:
+            "place-1 place-1 place-2"
+            "place-3 place-4 place-2"
+            "place-5 place-4 place-6"
+            "place-7 place-8 place-6";
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+
+    .discover-card {
+        height: 100%;
+    }
+
+    .discover-card h2 {
+        padding: 1rem 1rem 0.75rem;
+        font-size: 1.35rem;
+    }
+
+    .discover-card figure img {
+        height: 200px;
+    }
+
+    /* Wider feature cards create a varied editorial layout. */
+
+    .place-1,
+    .place-4,
+    .place-6 {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto auto 1fr auto;
+        align-content: start;
+    }
+
+    .place-1 h2,
+    .place-4 h2,
+    .place-6 h2 {
+        grid-column: 1 / -1;
+    }
+
+    .place-1 figure,
+    .place-4 figure,
+    .place-6 figure {
+        grid-column: 1;
+        grid-row: 2 / 5;
+        align-self: stretch;
+        min-height: 100%;
+    }
+
+    .place-1 figure img,
+    .place-4 figure img,
+    .place-6 figure img {
+        height: 100%;
+        min-height: 240px;
+    }
+
+    .place-1 address,
+    .place-4 address,
+    .place-6 address,
+    .place-1 p,
+    .place-4 p,
+    .place-6 p,
+    .place-1 .view-button,
+    .place-4 .view-button,
+    .place-6 .view-button {
+        grid-column: 2;
+    }
+
+    .place-1 .view-button,
+    .place-4 .view-button,
+    .place-6 .view-button {
+        justify-self: start;
+    }
+
+    .footer-content {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+/* =========================================================
+   IMAGE HOVER EFFECT: LARGE SCREENS ONLY
+   Disabled on mobile and medium screens.
+   ========================================================= */
+
+@media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine) {
+    .discover-card figure img {
+        transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .discover-card figure:hover img {
+        transform: scale(1.05);
+        filter: saturate(1.15);
+    }
+
+    .discover-card figure {
+        isolation: isolate;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* Skip link for keyboard and screen-reader accessibility */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 1000;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #0b3954;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.skip-link:focus {
+    top: 1rem;
 }

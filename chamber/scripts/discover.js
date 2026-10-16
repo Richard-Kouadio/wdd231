@@ -1,77 +1,18 @@
-const places = [
-    {
-        name: "Grand-Bassam Beach",
-        address: "Grand-Bassam, Côte d'Ivoire",
-        image: "images/grand-bassam-beach.webp",
-        alt: "Beach and coastline in Grand-Bassam",
-        description:
-            "Enjoy the Atlantic coastline, sandy beaches, ocean views, and relaxing atmosphere of Grand-Bassam."
-    },
-    {
-        name: "Grand-Bassam National Museum",
-        address: "Quartier France, Grand-Bassam",
-        image: "images/national-museum.webp",
-        alt: "Grand-Bassam National Museum",
-        description:
-            "Discover cultural objects, historical exhibits, and traditions that tell the story of Grand-Bassam."
-    },
-    {
-        name: "Maison Ganamet",
-        address: "Quartier France, Grand-Bassam",
-        image: "images/maison-ganamet.webp",
-        alt: "Historic Maison Ganamet building in Grand-Bassam",
-        description:
-            "Explore one of Grand-Bassam's historic buildings and experience the architectural heritage of the old town."
-    },
-    {
-        name: "Palais de Justice",
-        address: "Quartier France, Grand-Bassam",
-        image: "images/palais-de-justice.webp",
-        alt: "Historic Palais de Justice building",
-        description:
-            "Visit this historic landmark and learn more about Grand-Bassam's important colonial-era architecture."
-    },
-    {
-        name: "Lighthouse of Grand-Bassam",
-        address: "Grand-Bassam, Côte d'Ivoire",
-        image: "images/grand-bassam-lighthouse.webp",
-        alt: "Lighthouse in Grand-Bassam",
-        description:
-            "See the historic lighthouse and learn about Grand-Bassam's connection to maritime activity and trade."
-    },
-    {
-        name: "Sacred Monkey Forest",
-        address: "Grand-Bassam area, Côte d'Ivoire",
-        image: "images/sacred-monkey-forest.webp",
-        alt: "Green forest landscape near Grand-Bassam",
-        description:
-            "Experience a natural setting where visitors can learn about local wildlife and the surrounding environment."
-    },
-    {
-        name: "Colonial Quarter",
-        address: "Quartier France, Grand-Bassam",
-        image: "images/colonial-quarter.webp",
-        alt: "Historic colonial architecture in Grand-Bassam",
-        description:
-            "Walk through the historic quarter and admire buildings that reflect Grand-Bassam's cultural heritage."
-    },
-    {
-        name: "Craft Village",
-        address: "Grand-Bassam, Côte d'Ivoire",
-        image: "images/craft-village.webp",
-        alt: "Traditional crafts and artwork in Grand-Bassam",
-        description:
-            "Explore local crafts, artwork, and handmade products while supporting Grand-Bassam's creative community."
-    }
-];
+import { discoverItems } from "../data/discover.mjs";
+
+/* =========================================
+   SELECT PAGE ELEMENTS
+========================================= */
 
 const discoverGrid = document.querySelector("#discover-grid");
 const visitMessage = document.querySelector("#visit-message");
 const menuButton = document.querySelector("#menu-button");
 const navigation = document.querySelector("#navigation");
 
+const LAST_VISIT_KEY = "discoverLastVisit";
+
 /* =========================================
-CREATE DISCOVER CARDS
+   CREATE DISCOVER CARDS
 ========================================= */
 
 function displayPlaces() {
@@ -79,45 +20,79 @@ function displayPlaces() {
         return;
     }
 
-    discoverGrid.innerHTML = "";
+    // Make sure the data contains the expected eight places.
+    if (!Array.isArray(discoverItems) || discoverItems.length !== 8) {
+        console.error(
+            "Discover page error: expected exactly eight places in discover.mjs."
+        );
+        discoverGrid.textContent =
+            "The places of interest could not be loaded. Please try again later.";
+        return;
+    }
 
-    places.forEach((place) => {
+    const fragment = document.createDocumentFragment();
+
+    discoverItems.forEach((place, index) => {
         const card = document.createElement("article");
         card.className = "discover-card";
+        card.setAttribute("aria-labelledby", `place-title-${index + 1}`);
 
-        card.innerHTML = `
-        <h3>${place.name}</h3>
+        // Named grid-area classes will be used by discover.css.
+        card.classList.add(`place-${index + 1}`);
 
-        <figure>
-            <img
-                src="${place.image}"
-                alt="${place.alt}"
-                width="600"
-                height="400"
-                loading="lazy">
-        </figure>
+        const title = document.createElement("h2");
+        title.id = `place-title-${index + 1}`;
+        title.textContent = place.name;
 
-        <address>${place.address}</address>
+        const figure = document.createElement("figure");
+        figure.className = "discover-card-figure";
 
-        <p>${place.description}</p>
+        const image = document.createElement("img");
+        image.src = place.image;
+        image.alt = place.alt || place.name;
+        image.width = 300;
+        image.height = 200;
+        image.loading = "lazy";
+        image.decoding = "async";
 
-        <a
-            class="view-button"
-            href="https://www.google.com/search?q=${encodeURIComponent(place.name + " Grand-Bassam Côte d'Ivoire")}"
-            target="_blank"
-            rel="noopener noreferrer">
-            Learn More
-        </a>
-    `;
+        figure.appendChild(image);
 
-        discoverGrid.appendChild(card);
+        const address = document.createElement("address");
+        address.textContent = place.address;
+
+        const description = document.createElement("p");
+        description.textContent = place.description;
+
+        const learnMore = document.createElement("a");
+        learnMore.className = "view-button";
+        learnMore.href =
+            `https://www.google.com/search?q=${encodeURIComponent(
+                `${place.name} Grand-Bassam Côte d'Ivoire`
+            )}`;
+        learnMore.target = "_blank";
+        learnMore.rel = "noopener noreferrer";
+        learnMore.textContent = "Learn More";
+        learnMore.setAttribute(
+            "aria-label",
+            `Learn more about ${place.name}`
+        );
+
+        card.append(
+            title,
+            figure,
+            address,
+            description,
+            learnMore
+        );
+
+        fragment.appendChild(card);
     });
 
-
+    discoverGrid.replaceChildren(fragment);
 }
 
 /* =========================================
-VISITOR MESSAGE
+   VISITOR MESSAGE USING LOCALSTORAGE
 ========================================= */
 
 function displayVisitMessage() {
@@ -126,35 +101,45 @@ function displayVisitMessage() {
     }
 
     const now = Date.now();
-    const lastVisit = localStorage.getItem("discoverLastVisit");
+    const storedVisit = localStorage.getItem(LAST_VISIT_KEY);
 
-    if (!lastVisit) {
-        visitMessage.textContent =
-            "Welcome! Let us know if you have any questions about the places you discover in Grand-Bassam.";
+    let message = "";
+
+    if (storedVisit === null) {
+        // First visit.
+        message = "Welcome! Let us know if you have any questions.";
     } else {
-        const previousVisit = Number(lastVisit);
-        const difference = now - previousVisit;
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const previousVisit = Number(storedVisit);
 
-        if (days < 1) {
-            visitMessage.textContent =
-                "Welcome back! We hope you enjoy exploring Grand-Bassam again today.";
-        } else if (days === 1) {
-            visitMessage.textContent =
-                "Welcome back! It has been 1 day since your last visit.";
+        if (!Number.isFinite(previousVisit) || previousVisit <= 0) {
+            // Recover safely if the stored value is invalid.
+            message = "Welcome! Let us know if you have any questions.";
         } else {
-            visitMessage.textContent =
-                `Welcome back! It has been ${days} days since your last visit.`;
+            const elapsedMilliseconds = Math.max(0, now - previousVisit);
+            const oneDay = 24 * 60 * 60 * 1000;
+
+            if (elapsedMilliseconds < oneDay) {
+                message = "Back so soon! Awesome!";
+            } else {
+                const days = Math.floor(
+                    elapsedMilliseconds / oneDay
+                );
+
+                const unit = days === 1 ? "day" : "days";
+
+                message = `You last visited ${days} ${unit} ago.`;
+            }
         }
     }
 
-    localStorage.setItem("discoverLastVisit", String(now));
+    visitMessage.textContent = message;
 
-
+    // Save the current visit time for the next page visit.
+    localStorage.setItem(LAST_VISIT_KEY, String(now));
 }
 
 /* =========================================
-MOBILE NAVIGATION
+   RESPONSIVE MOBILE NAVIGATION
 ========================================= */
 
 function toggleNavigation() {
@@ -165,20 +150,32 @@ function toggleNavigation() {
     const isOpen = navigation.classList.toggle("open");
 
     menuButton.setAttribute("aria-expanded", String(isOpen));
+
     menuButton.setAttribute(
         "aria-label",
         isOpen ? "Close navigation menu" : "Open navigation menu"
     );
-
-
 }
 
-if (menuButton) {
+function closeNavigationOnLinkClick(event) {
+    if (!menuButton || !navigation) {
+        return;
+    }
+
+    if (event.target.closest("a")) {
+        navigation.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+    }
+}
+
+if (menuButton && navigation) {
     menuButton.addEventListener("click", toggleNavigation);
+    navigation.addEventListener("click", closeNavigationOnLinkClick);
 }
 
 /* =========================================
-INITIALIZE PAGE
+   INITIALIZE DISCOVER PAGE
 ========================================= */
 
 displayPlaces();

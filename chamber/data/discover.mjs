@@ -3,64 +3,65 @@ const discoverItems = [
         name: "Grand-Bassam Historic Quarter",
         address: "Quartier France, Grand-Bassam, Côte d'Ivoire",
         description:
-            "The Historic Quarter of Grand-Bassam is known for its colonial architecture, historic streets, and cultural importance as part of the city's heritage.",
-        image: "images/historic-quarter.webp"
+            "Explore the historic center of Grand-Bassam, known for its colonial-era architecture, historic streets, and cultural significance. The area reflects the city's history as an important coastal settlement.",
+        image: "images/historic-quarter.webp",
+        alt: "Historic colonial-era architecture in Grand-Bassam"
     },
-
     {
         name: "National Museum of Costume",
-        address: "Rue du Commerce, Grand-Bassam, Côte d'Ivoire",
+        address: "Boulevard Treich-Laplène, Grand-Bassam, Côte d'Ivoire",
         description:
-            "The National Museum of Costume presents traditional clothing and cultural objects that help visitors understand the diverse heritage of Côte d'Ivoire.",
-        image: "images/national-museum-costume.webp"
+            "Discover traditional clothing, textiles, and cultural objects at the National Museum of Costume. Its collections introduce visitors to the clothing traditions and cultural diversity of Côte d'Ivoire.",
+        image: "images/national-museum-costume.webp",
+        alt: "Exterior of the National Museum of Costume in Grand-Bassam"
     },
-
     {
         name: "Maison Ganamet",
         address: "Quartier France, Grand-Bassam, Côte d'Ivoire",
         description:
-            "Maison Ganamet is a historic building that reflects the architectural character of Grand-Bassam's colonial-era heritage district.",
-        image: "images/maison-ganamet.webp"
+            "Admire the historic architecture of Maison Ganamet, a notable building associated with Grand-Bassam's heritage district. Its architectural character helps tell the story of the city's historic development.",
+        image: "images/maison-ganamet.webp",
+        alt: "Historic Maison Ganamet building in Grand-Bassam"
     },
-
     {
-        name: "Lighthouse of Grand-Bassam",
-        address: "Lighthouse Area, Grand-Bassam, Côte d'Ivoire",
+        name: "Grand-Bassam Lighthouse",
+        address: "Coastal area, Grand-Bassam, Côte d'Ivoire",
         description:
-            "The historic lighthouse is one of Grand-Bassam's recognizable landmarks and reflects the city's important coastal and maritime history.",
-        image: "images/grand-bassam-lighthouse.webp"
+            "Discover Grand-Bassam's coastal landscape and maritime heritage. The shoreline provides an opportunity to learn about the city's relationship with the Atlantic Ocean and its history as a coastal trading center.",
+        image: "images/grand-bassam-lighthouse.webp",
+        alt: "Coastal lighthouse near Grand-Bassam"
     },
-
     {
         name: "Grand-Bassam Beach",
-        address: "Beachfront, Grand-Bassam, Côte d'Ivoire",
+        address: "Atlantic beachfront, Grand-Bassam, Côte d'Ivoire",
         description:
-            "Grand-Bassam Beach offers visitors a coastal setting for relaxation and recreation while experiencing one of the city's most recognizable natural features.",
-        image: "images/grand-bassam-beach.webp"
+            "Enjoy the Atlantic coastline, sandy shoreline, and ocean views. Grand-Bassam's beach area is a popular destination for visitors seeking coastal scenery, recreation, and local hospitality.",
+        image: "images/grand-bassam-beach.webp",
+        alt: "Sandy beach and Atlantic Ocean coastline in Grand-Bassam"
     },
-
     {
         name: "Palais de Justice",
         address: "Quartier France, Grand-Bassam, Côte d'Ivoire",
         description:
-            "The historic Palais de Justice is an important architectural landmark in the old colonial district of Grand-Bassam.",
-        image: "images/palais-de-justice.webp"
+            "View the historic Palais de Justice, an architectural landmark associated with Grand-Bassam's historic district. The building contributes to the area's distinctive architectural and cultural heritage.",
+        image: "images/palais-de-justice.webp",
+        alt: "Historic Palais de Justice building in Grand-Bassam"
     },
-
     {
         name: "Maison Varlet",
         address: "Quartier France, Grand-Bassam, Côte d'Ivoire",
         description:
-            "Maison Varlet is a historic structure that contributes to the architectural and cultural character of Grand-Bassam's heritage area.",
-        image: "images/maison-varlet.webp"
+            "Explore the historic architecture of Maison Varlet and discover another feature of Grand-Bassam's heritage district. The surrounding area offers visitors a glimpse of the city's historic urban character.",
+        image: "images/maison-varlet.webp",
+        alt: "Traditional historic architecture at Maison Varlet"
     },
-
     {
         name: "Grand-Bassam Craft Village",
         address: "Grand-Bassam, Côte d'Ivoire",
         description:
-            "The craft area of Grand-Bassam gives visitors an opportunity to discover locally produced artwork, crafts, and cultural products.",
-        image: "images/craft-village.webp"
+            "Discover local art, handmade crafts, and creative work inspired by Ivorian culture. Visiting local artisans and craft sellers is a way to experience the area's creative community and support local businesses.",
+        image: "images/craft-village.webp",
+        alt: "Handcrafted artwork and traditional crafts in Grand-Bassam"
     }
 ];
 

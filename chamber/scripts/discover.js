@@ -1,3 +1,4 @@
+
 import { discoverItems } from "../data/discover.mjs";
 
 /* =========================================
@@ -20,13 +21,15 @@ function displayPlaces() {
         return;
     }
 
-    // Make sure the data contains the expected eight places.
+    // Ensure the data contains exactly eight places.
     if (!Array.isArray(discoverItems) || discoverItems.length !== 8) {
         console.error(
             "Discover page error: expected exactly eight places in discover.mjs."
         );
+
         discoverGrid.textContent =
             "The places of interest could not be loaded. Please try again later.";
+
         return;
     }
 
@@ -34,16 +37,15 @@ function displayPlaces() {
 
     discoverItems.forEach((place, index) => {
         const card = document.createElement("article");
-        card.className = "discover-card";
+        card.className = `discover-card place-${index + 1}`;
         card.setAttribute("aria-labelledby", `place-title-${index + 1}`);
 
-        // Named grid-area classes will be used by discover.css.
-        card.classList.add(`place-${index + 1}`);
-
+        // Attraction title.
         const title = document.createElement("h2");
         title.id = `place-title-${index + 1}`;
         title.textContent = place.name;
 
+        // Attraction image.
         const figure = document.createElement("figure");
         figure.className = "discover-card-figure";
 
@@ -52,30 +54,41 @@ function displayPlaces() {
         image.alt = place.alt || place.name;
         image.width = 300;
         image.height = 200;
-        image.loading = "lazy";
         image.decoding = "async";
+
+        // Prioritize the first image; lazy-load the remaining images.
+        if (index === 0) {
+            image.loading = "eager";
+            image.fetchPriority = "high";
+        } else {
+            image.loading = "lazy";
+        }
 
         figure.appendChild(image);
 
+        // Attraction address.
         const address = document.createElement("address");
         address.textContent = place.address;
 
+        // Attraction description.
         const description = document.createElement("p");
         description.textContent = place.description;
 
+        // Use a supplied destination if available.
+        // Otherwise, link to a Google Maps search for the attraction.
+        const query = `${place.name}, Grand-Bassam, Côte d'Ivoire`;
+
+        const destination =
+            place.url ||
+            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+
+        // Descriptive link text helps users and search engines.
         const learnMore = document.createElement("a");
         learnMore.className = "view-button";
-        learnMore.href =
-            `https://www.google.com/search?q=${encodeURIComponent(
-                `${place.name} Grand-Bassam Côte d'Ivoire`
-            )}`;
+        learnMore.href = destination;
         learnMore.target = "_blank";
         learnMore.rel = "noopener noreferrer";
-        learnMore.textContent = "Learn More";
-        learnMore.setAttribute(
-            "aria-label",
-            `Learn more about ${place.name}`
-        );
+        learnMore.textContent = `Learn More: ${place.name}`;
 
         card.append(
             title,
@@ -106,13 +119,11 @@ function displayVisitMessage() {
     let message = "";
 
     if (storedVisit === null) {
-        // First visit.
         message = "Welcome! Let us know if you have any questions.";
     } else {
         const previousVisit = Number(storedVisit);
 
         if (!Number.isFinite(previousVisit) || previousVisit <= 0) {
-            // Recover safely if the stored value is invalid.
             message = "Welcome! Let us know if you have any questions.";
         } else {
             const elapsedMilliseconds = Math.max(0, now - previousVisit);
@@ -133,8 +144,6 @@ function displayVisitMessage() {
     }
 
     visitMessage.textContent = message;
-
-    // Save the current visit time for the next page visit.
     localStorage.setItem(LAST_VISIT_KEY, String(now));
 }
 
@@ -150,7 +159,6 @@ function toggleNavigation() {
     const isOpen = navigation.classList.toggle("open");
 
     menuButton.setAttribute("aria-expanded", String(isOpen));
-
     menuButton.setAttribute(
         "aria-label",
         isOpen ? "Close navigation menu" : "Open navigation menu"

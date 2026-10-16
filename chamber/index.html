@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +12,7 @@
         content="Discover local businesses, community events, weather forecasts, and business opportunities with the Grand-Bassam Business and Commerce Chamber.">
     <meta name="author" content="Kouame Richard Kouadio">
 
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="images/logo.png" type="image/png+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <meta property="og:title" content="Grand-Bassam Business &amp; Commerce Chamber">
+    <meta property="og:title" content="Grand-Bassam Business &amp; Commerce Chamber | Home">
     <meta property="og:description"
         content="Connect with local businesses, discover community events, and support commerce in Grand-Bassam, Côte d'Ivoire.">
     <meta property="og:image" content="https://richard-kouadio.github.io/wdd231/chamber/images/hero.jpg">
@@ -39,7 +40,7 @@
     <header class="site-header">
         <div class="header-content">
             <a class="brand" href="index.html" aria-label="Grand-Bassam Chamber home">
-                <span class="brand-logo" aria-hidden="true">GB</span>
+                <img class="brand-logo" src="images/logo.png" alt="" width="48" height="48">
                 <span class="brand-text">
                     <span class="brand-name">Grand-Bassam</span>
                     <span class="brand-subtitle">Business &amp; Commerce Chamber</span>
@@ -54,6 +55,7 @@
 
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
             <a class="active" href="index.html" aria-current="page">Home</a>
+            <a href="discover.html">Discover</a>
             <a href="directory.html">Business Directory</a>
             <a href="#events">Upcoming Events</a>
             <a href="#weather">Local Weather</a>
@@ -62,6 +64,7 @@
     </header>
 
     <main id="main-content">
+
         <section class="hero" aria-labelledby="hero-heading">
             <img src="images/hero.jpg" alt="Coastal scenery in Grand-Bassam, Côte d'Ivoire" width="1200" height="600"
                 fetchpriority="high">
@@ -69,7 +72,9 @@
             <div class="hero-content">
                 <p class="eyebrow">Welcome to Grand-Bassam</p>
 
-                <h1 id="hero-heading">Connecting Businesses. Building Grand-Bassam.</h1>
+                <h1 id="hero-heading">
+                    Connecting Businesses. Building Grand-Bassam.
+                </h1>
 
                 <p>
                     Discover local businesses, build valuable connections,
@@ -81,6 +86,7 @@
         </section>
 
         <section class="home-section events-section" id="events" aria-labelledby="events-heading">
+
             <div class="section-heading">
                 <p class="eyebrow">Get involved</p>
                 <h2 id="events-heading">Upcoming Events</h2>
@@ -124,18 +130,26 @@
         </section>
 
         <section class="home-section weather-section" id="weather" aria-labelledby="weather-heading">
+
             <div class="section-heading">
                 <p class="eyebrow">Local conditions</p>
                 <h2 id="weather-heading">Weather in Grand-Bassam</h2>
-                <p>Check the latest available weather information and forecast.</p>
+                <p>
+                    Check the latest available weather information and forecast.
+                </p>
             </div>
 
             <div class="weather-current" aria-live="polite">
-                <span class="weather-icon" id="weather-icon" aria-hidden="true">🌤️</span>
+                <img class="weather-icon" id="weather-icon" src="https://openweathermap.org/img/wn/01d@2x.png" alt=""
+                    width="80" height="80">
 
                 <div>
-                    <h3 class="weather-temperature" id="current-temperature">Loading...</h3>
-                    <p id="weather-description">Getting weather information...</p>
+                    <h3 class="weather-temperature" id="current-temperature">
+                        Loading...
+                    </h3>
+                    <p id="weather-description">
+                        Getting weather information...
+                    </p>
                     <p class="weather-detail" id="weather-updated"></p>
                 </div>
             </div>
@@ -152,6 +166,7 @@
         </section>
 
         <section class="home-section spotlight-section" aria-labelledby="spotlight-heading">
+
             <div class="section-heading">
                 <p class="eyebrow">Meet our members</p>
                 <h2 id="spotlight-heading">Business Spotlights</h2>
@@ -169,16 +184,20 @@
                 Business spotlights could not be loaded. Please try again later.
             </p>
         </section>
+
     </main>
 
     <footer class="site-footer">
         <div class="footer-content">
+
             <div class="footer-brand">
                 <a class="brand" href="index.html">
-                    <span class="brand-logo" aria-hidden="true">GB</span>
+                    <img class="brand-logo" src="images/logo.png" alt="" width="48" height="48">
                     <span class="brand-text">
                         <span class="brand-name">Grand-Bassam</span>
-                        <span class="brand-subtitle">Business &amp; Commerce Chamber</span>
+                        <span class="brand-subtitle">
+                            Business &amp; Commerce Chamber
+                        </span>
                     </span>
                 </a>
 
@@ -188,20 +207,57 @@
             <div class="contact-info">
                 <h2>Contact Us</h2>
                 <p><strong>Location:</strong> Grand-Bassam, Côte d'Ivoire</p>
-                <p><strong>Email:</strong> info@grandbassamchamber.example</p>
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:info@grandbassamchamber.com">
+                        info@grandbassamchamber.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="social-links">
+                <h2>Follow Us</h2>
+
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook">
+                            <img src="images/facebook.jpg" alt="" width="32" height="32">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram">
+                            <img src="images/instagram.jpg" alt="" width="32" height="32">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn">
+                            <img src="images/linkedin.jpg" alt="" width="32" height="32">
+                        </a>
+                    </li>
+                </ul>
             </div>
 
             <div class="development-info">
                 <h2>Website Information</h2>
-                <p>&copy; <span id="current-year">2026</span> Grand-Bassam Chamber</p>
+                <p>
+                    &copy; <span id="current-year">2026</span>
+                    Grand-Bassam Chamber
+                </p>
                 <p class="last-modified">
                     Last Modified:
-                    <time id="last-modified" datetime="2000-01-01T00:00:00Z">Loading date...</time>
+                    <time id="last-modified" datetime="2000-01-01T00:00:00Z">
+                        Loading date...
+                    </time>
                 </p>
                 <p>WDD 231 Web Frontend Development</p>
             </div>
+
         </div>
     </footer>
 </body>
 
 </html>
+```

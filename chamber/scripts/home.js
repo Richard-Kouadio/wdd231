@@ -1,11 +1,20 @@
 
-const API_KEY = "YOUR_OPENWEATHERMAP_API_KEY";
+"use strict";
 
-const weatherURL =
-    `https://api.openweathermap.org/data/2.5/forecast?lat=5.2&lon=-3.74&units=metric&appid=${API_KEY}`;
+// ============================================
+// WDD 231 - Chamber Home Page
+// Grand-Bassam, Côte d'Ivoire
+// ============================================
 
+// Weather configuration
+const API_KEY = "";
+const LATITUDE = 5.2;
+const LONGITUDE = -3.74;
+const UNITS = "metric";
 
+// ============================================
 // Footer information
+// ============================================
 
 function setFooterInformation() {
     const yearElement = document.querySelector("#current-year");
@@ -19,27 +28,24 @@ function setFooterInformation() {
         const modifiedDate = new Date(document.lastModified);
 
         if (!Number.isNaN(modifiedDate.getTime())) {
-            modifiedElement.setAttribute(
-                "datetime",
-                modifiedDate.toISOString()
-            );
-
             modifiedElement.textContent =
                 modifiedDate.toLocaleString("en-GB", {
                     day: "2-digit",
                     month: "short",
-                    year: "numeric",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    timeZone: "UTC",
-                    timeZoneName: "short"
+                    year: "numeric"
                 });
+
+            modifiedElement.setAttribute(
+                "datetime",
+                modifiedDate.toISOString()
+            );
         }
     }
 }
 
-
+// ============================================
 // Mobile navigation
+// ============================================
 
 function toggleMenu() {
     const menuButton = document.querySelector("#menu-button");
@@ -71,36 +77,9 @@ function toggleMenu() {
     });
 }
 
-
-// Weather icons
-
-function getWeatherIcon(iconCode) {
-    const icons = {
-        "01d": "☀️",
-        "01n": "🌙",
-        "02d": "⛅",
-        "02n": "☁️",
-        "03d": "☁️",
-        "03n": "☁️",
-        "04d": "☁️",
-        "04n": "☁️",
-        "09d": "🌧️",
-        "09n": "🌧️",
-        "10d": "🌦️",
-        "10n": "🌧️",
-        "11d": "⛈️",
-        "11n": "⛈️",
-        "13d": "❄️",
-        "13n": "❄️",
-        "50d": "🌫️",
-        "50n": "🌫️"
-    };
-
-    return icons[iconCode] || "🌤️";
-}
-
-
+// ============================================
 // Date helpers
+// ============================================
 
 function getLocalDateKey(date) {
     const year = date.getFullYear();
@@ -120,25 +99,60 @@ function formatDay(dateString) {
     }).format(date);
 }
 
+// ============================================
+// Display weather errors
+// ============================================
 
-// Load weather
-
-async function loadWeather() {
+function showWeatherError(message) {
     const temperatureElement =
         document.querySelector("#current-temperature");
-
     const descriptionElement =
         document.querySelector("#weather-description");
-
     const iconElement =
         document.querySelector("#weather-icon");
-
-    const updatedElement =
-        document.querySelector("#weather-updated");
-
     const forecastContainer =
         document.querySelector("#forecast-container");
+    const errorElement =
+        document.querySelector("#weather-error");
 
+    if (temperatureElement) {
+        temperatureElement.textContent = "--";
+    }
+
+    if (descriptionElement) {
+        descriptionElement.textContent =
+            "Weather information is unavailable.";
+    }
+
+    if (iconElement) {
+        iconElement.removeAttribute("src");
+        iconElement.alt = "";
+        iconElement.hidden = true;
+    }
+
+    if (forecastContainer) {
+        forecastContainer.replaceChildren();
+    }
+
+    if (errorElement) {
+        errorElement.textContent = message;
+        errorElement.hidden = false;
+    }
+}
+
+// ============================================
+// Display the current weather
+// ============================================
+
+function displayCurrentWeather(weatherData) {
+    const temperatureElement =
+        document.querySelector("#current-temperature");
+    const descriptionElement =
+        document.querySelector("#weather-description");
+    const iconElement =
+        document.querySelector("#weather-icon");
+    const updatedElement =
+        document.querySelector("#weather-updated");
     const errorElement =
         document.querySelector("#weather-error");
 
@@ -146,137 +160,179 @@ async function loadWeather() {
         !temperatureElement ||
         !descriptionElement ||
         !iconElement ||
-        !forecastContainer ||
-        !errorElement
+        !weatherData.main ||
+        !weatherData.weather?.[0]
     ) {
+        throw new Error("Required weather information is missing.");
+    }
+
+    const weather = weatherData.weather[0];
+
+    temperatureElement.textContent =
+        `${Math.round(weatherData.main.temp)}°C`;
+
+    descriptionElement.textContent = weather.description;
+
+    // Use the icon code returned by OpenWeatherMap.
+    iconElement.src =
+        `https://openweathermap.org/img/wn/${weather.icon}@2x.png`;
+
+    iconElement.alt = weather.description;
+    iconElement.hidden = false;
+
+    if (updatedElement) {
+        updatedElement.textContent =
+            `Updated at ${new Date().toLocaleTimeString("en-GB", {
+                hour: "2-digit",
+                minute: "2-digit"
+            })}`;
+    }
+
+    if (errorElement) {
+        errorElement.textContent = "";
+        errorElement.hidden = true;
+    }
+}
+
+// ============================================
+// Display the three-day forecast
+// ============================================
+
+function displayForecast(forecastList) {
+    const forecastContainer =
+        document.querySelector("#forecast-container");
+
+    if (!forecastContainer) {
         return;
     }
 
-    if (
-        !API_KEY ||
-        API_KEY === "YOUR_OPENWEATHERMAP_API_KEY"
-    ) {
+    const dailyForecasts = new Map();
+
+    forecastList.forEach((forecast) => {
+        const date = forecast.dt_txt.split(" ")[0];
+
+        if (!dailyForecasts.has(date)) {
+            dailyForecasts.set(date, []);
+        }
+
+        dailyForecasts.get(date).push(forecast);
+    });
+
+    const today = getLocalDateKey(new Date());
+
+    const upcomingDays = [...dailyForecasts.entries()]
+        .filter(([date]) => date !== today)
+        .slice(0, 3);
+
+    forecastContainer.replaceChildren();
+
+    upcomingDays.forEach(([date, forecasts]) => {
+        const temperatures = forecasts.map(
+            (forecast) => forecast.main.temp
+        );
+
+        const minimum = Math.round(Math.min(...temperatures));
+        const maximum = Math.round(Math.max(...temperatures));
+
+        const middayForecast =
+            forecasts.find((forecast) =>
+                forecast.dt_txt.includes("12:00:00")
+            ) || forecasts[0];
+
+        const weather = middayForecast.weather[0];
+
+        const card = document.createElement("article");
+        card.className = "forecast-card";
+
+        const heading = document.createElement("h3");
+        heading.textContent = formatDay(date);
+
+        const icon = document.createElement("img");
+        icon.src =
+            `https://openweathermap.org/img/wn/${weather.icon}@2x.png`;
+        icon.alt = weather.description;
+        icon.width = 80;
+        icon.height = 80;
+        icon.loading = "lazy";
+
+        const temperature = document.createElement("p");
+        temperature.className = "forecast-temperature";
+        temperature.textContent = `${minimum}°C – ${maximum}°C`;
+
+        const description = document.createElement("p");
+        description.textContent = weather.description;
+
+        card.append(heading, icon, temperature, description);
+        forecastContainer.appendChild(card);
+    });
+
+    if (upcomingDays.length === 0) {
+        forecastContainer.textContent =
+            "No upcoming forecast is available.";
+    }
+}
+
+// ============================================
+// Load weather data from OpenWeatherMap
+// ============================================
+
+async function loadWeather() {
+    if (!API_KEY) {
         showWeatherError(
-            temperatureElement,
-            descriptionElement,
-            forecastContainer,
-            errorElement
+            "Weather is unavailable because the API key has not been configured."
         );
         return;
     }
 
+    const currentWeatherURL =
+        `https://api.openweathermap.org/data/2.5/weather` +
+        `?lat=${LATITUDE}&lon=${LONGITUDE}` +
+        `&units=${UNITS}&appid=${API_KEY}`;
+
+    const forecastURL =
+        `https://api.openweathermap.org/data/2.5/forecast` +
+        `?lat=${LATITUDE}&lon=${LONGITUDE}` +
+        `&units=${UNITS}&appid=${API_KEY}`;
+
     try {
-        const response = await fetch(weatherURL);
+        const currentResponse = await fetch(currentWeatherURL);
 
-        if (!response.ok) {
-            throw new Error("Unable to retrieve weather data.");
-        }
-
-        const data = await response.json();
-
-        if (!Array.isArray(data.list) || data.list.length === 0) {
-            throw new Error("No forecast data was returned.");
-        }
-
-        const currentForecast = data.list[0];
-
-        temperatureElement.textContent =
-            `${Math.round(currentForecast.main.temp)}°C`;
-
-        descriptionElement.textContent =
-            currentForecast.weather[0].description;
-
-        iconElement.textContent =
-            getWeatherIcon(currentForecast.weather[0].icon);
-
-        if (updatedElement) {
-            updatedElement.textContent =
-                `Forecast updated: ${new Date().toLocaleTimeString(
-                    "en-GB",
-                    { hour: "2-digit", minute: "2-digit" }
-                )}`;
-        }
-
-        const dailyForecasts = {};
-
-        data.list.forEach((forecast) => {
-            const dateKey = forecast.dt_txt.split(" ")[0];
-
-            if (!dailyForecasts[dateKey]) {
-                dailyForecasts[dateKey] = [];
-            }
-
-            dailyForecasts[dateKey].push(forecast);
-        });
-
-        const today = getLocalDateKey(new Date());
-
-        const forecastDates = Object.keys(dailyForecasts)
-            .filter((date) => date !== today)
-            .slice(0, 3);
-
-        forecastContainer.replaceChildren();
-
-        forecastDates.forEach((date) => {
-            const forecasts = dailyForecasts[date];
-
-            const temperatures = forecasts.map(
-                (forecast) => forecast.main.temp
+        if (!currentResponse.ok) {
+            throw new Error(
+                `Current weather request failed: ${currentResponse.status}`
             );
-
-            const averageTemperature =
-                temperatures.reduce((sum, temp) => sum + temp, 0) /
-                temperatures.length;
-
-            const card = document.createElement("article");
-            card.className = "forecast-card";
-
-            const heading = document.createElement("h4");
-            heading.textContent = formatDay(date);
-
-            const temperature = document.createElement("p");
-            temperature.className = "forecast-temperature";
-            temperature.textContent =
-                `${Math.round(averageTemperature)}°C`;
-
-            card.append(heading, temperature);
-            forecastContainer.appendChild(card);
-        });
-
-        if (forecastDates.length === 0) {
-            forecastContainer.textContent =
-                "No upcoming forecast is available.";
         }
 
-        errorElement.hidden = true;
+        const currentData = await currentResponse.json();
+        displayCurrentWeather(currentData);
+
+        const forecastResponse = await fetch(forecastURL);
+
+        if (!forecastResponse.ok) {
+            throw new Error(
+                `Forecast request failed: ${forecastResponse.status}`
+            );
+        }
+
+        const forecastData = await forecastResponse.json();
+
+        if (!Array.isArray(forecastData.list)) {
+            throw new Error("The forecast data is invalid.");
+        }
+
+        displayForecast(forecastData.list);
     } catch (error) {
         console.error("Weather error:", error);
 
         showWeatherError(
-            temperatureElement,
-            descriptionElement,
-            forecastContainer,
-            errorElement
+            "Unable to load weather information. Please try again later."
         );
     }
 }
 
-function showWeatherError(
-    temperatureElement,
-    descriptionElement,
-    forecastContainer,
-    errorElement
-) {
-    temperatureElement.textContent = "Unavailable";
-    descriptionElement.textContent =
-        "Weather information is currently unavailable.";
-
-    forecastContainer.replaceChildren();
-    errorElement.hidden = false;
-}
-
-
+// ============================================
 // Membership level
+// ============================================
 
 function getMembershipName(level) {
     if (level === 3) {
@@ -290,17 +346,17 @@ function getMembershipName(level) {
     return "Member";
 }
 
-
+// ============================================
 // Load business spotlights
+// ============================================
 
 async function loadSpotlights() {
     const container =
         document.querySelector("#spotlight-container");
-
     const errorElement =
         document.querySelector("#spotlight-error");
 
-    if (!container || !errorElement) {
+    if (!container) {
         return;
     }
 
@@ -314,23 +370,29 @@ async function loadSpotlights() {
         const data = await response.json();
 
         if (!Array.isArray(data.members)) {
-            throw new Error("The member data is not in the expected format.");
+            throw new Error("Invalid member data.");
         }
 
-        const qualifiedMembers = data.members.filter(
+        const eligibleMembers = data.members.filter(
             (member) =>
                 member.membership === 2 ||
                 member.membership === 3
         );
 
-        // Randomly select up to three Silver and Gold members.
-        const shuffledMembers = [...qualifiedMembers];
+        // Shuffle the eligible members.
+        const shuffledMembers = [...eligibleMembers];
 
-        for (let i = shuffledMembers.length - 1; i > 0; i--) {
-            const randomIndex = Math.floor(Math.random() * (i + 1));
+        for (let index = shuffledMembers.length - 1; index > 0; index--) {
+            const randomIndex =
+                Math.floor(Math.random() * (index + 1));
 
-            [shuffledMembers[i], shuffledMembers[randomIndex]] =
-                [shuffledMembers[randomIndex], shuffledMembers[i]];
+            [
+                shuffledMembers[index],
+                shuffledMembers[randomIndex]
+            ] = [
+                    shuffledMembers[randomIndex],
+                    shuffledMembers[index]
+                ];
         }
 
         const selectedMembers = shuffledMembers.slice(0, 3);
@@ -344,18 +406,16 @@ async function loadSpotlights() {
             const image = document.createElement("img");
             image.className = "spotlight-image";
             image.src = `images/${member.image}`;
-            image.alt = `${member.name} business`;
+            image.alt = `${member.name} logo`;
             image.loading = "lazy";
-            image.width = 600;
-            image.height = 400;
+            image.width = 300;
+            image.height = 200;
 
             const heading = document.createElement("h3");
             heading.textContent = member.name;
 
-            const membership = document.createElement("span");
-            membership.className =
-                `spotlight-membership ${member.membership === 3 ? "gold" : "silver"
-                }`;
+            const membership = document.createElement("p");
+            membership.className = "spotlight-membership";
             membership.textContent =
                 getMembershipName(member.membership);
 
@@ -366,21 +426,19 @@ async function loadSpotlights() {
             address.textContent = member.address;
 
             const phoneParagraph = document.createElement("p");
-            const phoneLabel = document.createElement("strong");
-            phoneLabel.textContent = "Phone: ";
-
             const phoneLink = document.createElement("a");
-            phoneLink.href = `tel:${member.phone.replace(/[^\d+]/g, "")}`;
+            phoneLink.href =
+                `tel:${String(member.phone).replace(/[^\d+]/g, "")}`;
             phoneLink.textContent = member.phone;
+            phoneLink.setAttribute("aria-label", `Call ${member.name}`);
 
-            phoneParagraph.append(phoneLabel, phoneLink);
+            phoneParagraph.append("Phone: ", phoneLink);
 
             const websiteLink = document.createElement("a");
-            websiteLink.className = "website-link";
             websiteLink.href = member.website;
+            websiteLink.textContent = "Visit Website";
             websiteLink.target = "_blank";
             websiteLink.rel = "noopener noreferrer";
-            websiteLink.textContent = "Visit Website";
 
             card.append(
                 image,
@@ -400,18 +458,39 @@ async function loadSpotlights() {
                 "No member spotlights are available yet.";
         }
 
-        errorElement.hidden = true;
+        if (errorElement) {
+            errorElement.textContent = "";
+            errorElement.hidden = true;
+        }
     } catch (error) {
         console.error("Spotlight error:", error);
+
         container.replaceChildren();
-        errorElement.hidden = false;
+
+        if (errorElement) {
+            errorElement.textContent =
+                "Business spotlights are currently unavailable.";
+            errorElement.hidden = false;
+        }
     }
 }
 
-
+// ============================================
 // Start the page
+// ============================================
 
-toggleMenu();
-setFooterInformation();
-loadWeather();
-loadSpotlights();
+function initializeHomePage() {
+    setFooterInformation();
+    toggleMenu();
+    loadWeather();
+    loadSpotlights();
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializeHomePage
+    );
+} else {
+    initializeHomePage();
+}
